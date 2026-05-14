@@ -134,7 +134,11 @@ namespace TheFinalProject
             
             loginPanel.Visible = true;
             loginPanel.BringToFront();
-           
+            username.Text = "Username";
+            username.ForeColor = SystemColors.ControlDark;
+            password.Text = "Password";
+            password.ForeColor = SystemColors.ControlDark;
+            password.PasswordChar = '\0';
         }
 
         private void loginPanel_Paint(object sender, PaintEventArgs e)
@@ -147,6 +151,60 @@ namespace TheFinalProject
 
             adminwindow adminwindow = new adminwindow();
             adminwindow.Show();
+        }
+
+        private void showpassbtn_MouseDown(object sender, MouseEventArgs e)
+        {
+            password.PasswordChar = '\0';
+           
+        }
+
+        private void showpassbtn_MouseUp(object sender, MouseEventArgs e)
+        {
+            password.PasswordChar = '*';
+            
+        }
+
+        private void showpassbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void username_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(username.Text) || string.IsNullOrWhiteSpace(username.Text)|| username.Text == "Username")
+            {
+                username.Text = "Username";
+                username.ForeColor = Color.DarkGray;
+            }
+        }
+
+        private void username_Enter(object sender, EventArgs e)
+        {
+            username.SelectAll();
+            username.ForeColor = Color.Black;
+        }
+
+        private void password_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(password.Text) || string.IsNullOrWhiteSpace(password.Text)|| password.Text == "Password")
+            {
+                password.Text = "Password";
+                password.ForeColor = Color.DarkGray;
+                password.PasswordChar = '\0';
+            }
+        }
+
+        private void password_Enter(object sender, EventArgs e)
+        {
+            password.SelectAll();
+            password.ForeColor = Color.Black;
+           
+        }
+
+        private void password_TextChanged(object sender, EventArgs e)
+        {
+            password.PasswordChar = '*';
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.registerpanel = new System.Windows.Forms.Panel();
+            this.showpassbtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             // 
             // registerpanel
             // 
+            this.registerpanel.Controls.Add(this.showpassbtn);
             this.registerpanel.Controls.Add(this.label3);
             this.registerpanel.Controls.Add(this.panel4);
             this.registerpanel.Controls.Add(this.label5);
@@ -69,8 +71,19 @@
             this.registerpanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.registerpanel.Location = new System.Drawing.Point(0, 0);
             this.registerpanel.Name = "registerpanel";
-            this.registerpanel.Size = new System.Drawing.Size(800, 450);
+            this.registerpanel.Size = new System.Drawing.Size(884, 681);
             this.registerpanel.TabIndex = 14;
+            // 
+            // showpassbtn
+            // 
+            this.showpassbtn.Location = new System.Drawing.Point(504, 304);
+            this.showpassbtn.Name = "showpassbtn";
+            this.showpassbtn.Size = new System.Drawing.Size(75, 23);
+            this.showpassbtn.TabIndex = 20;
+            this.showpassbtn.Text = "button1";
+            this.showpassbtn.UseVisualStyleBackColor = true;
+            this.showpassbtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.showpassbtn_MouseDown);
+            this.showpassbtn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.showpassbtn_MouseUp);
             // 
             // label3
             // 
@@ -235,7 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(884, 681);
             this.Controls.Add(this.registerpanel);
             this.Name = "userRegistry";
             this.Text = "userRegistry";
@@ -264,5 +277,6 @@
         private System.Windows.Forms.Button Registerbtn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox RegisterPassword;
+        private System.Windows.Forms.Button showpassbtn;
     }
 }

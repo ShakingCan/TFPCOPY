@@ -82,7 +82,7 @@
             this.usermainpanel.Location = new System.Drawing.Point(0, 0);
             this.usermainpanel.Margin = new System.Windows.Forms.Padding(2);
             this.usermainpanel.Name = "usermainpanel";
-            this.usermainpanel.Size = new System.Drawing.Size(800, 450);
+            this.usermainpanel.Size = new System.Drawing.Size(884, 681);
             this.usermainpanel.TabIndex = 1;
             // 
             // panel2
@@ -366,7 +366,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(884, 681);
             this.Controls.Add(this.usermainpanel);
             this.Name = "coachfrm";
             this.Text = "coachfrm";

@@ -151,6 +151,18 @@ namespace TheFinalProject.Resources
             passrepeatguide.Visible = false;
         }
 
+        private void showpassbtn_MouseDown(object sender, MouseEventArgs e)
+        {
+            RegisterPassword.PasswordChar = '\0';
+            registerpassrepeat.PasswordChar = '\0';
+        }
+
+        private void showpassbtn_MouseUp(object sender, MouseEventArgs e)
+        {
+            RegisterPassword.PasswordChar = '*';
+            registerpassrepeat.PasswordChar = '*';
+        }
+
 
 
 

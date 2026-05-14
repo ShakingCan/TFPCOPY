@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace TheFinalProject.Resources
 {
@@ -16,7 +17,7 @@ namespace TheFinalProject.Resources
         public registerform()
         {
             InitializeComponent();
-
+            
         }
 
         private void RegisterUsername_TextChanged(object sender, EventArgs e)
@@ -28,6 +29,7 @@ namespace TheFinalProject.Resources
             }
                
         }
+        
 
         private void RegisterUsername_MouseClick(object sender, MouseEventArgs e)
         {
@@ -36,7 +38,7 @@ namespace TheFinalProject.Resources
 
         private void RegisterPassword_TextChanged(object sender, EventArgs e)
         {
-            RegisterPassword.ForeColor = Color.Black;
+            
             comparePass();
             if (!string.IsNullOrWhiteSpace(RegisterPassword.Text))
             {
@@ -47,7 +49,7 @@ namespace TheFinalProject.Resources
 
         private void registerpassrepeat_TextChanged(object sender, EventArgs e)
         {
-            registerpassrepeat.ForeColor = Color.Black;
+            
             comparePass();
             if (!string.IsNullOrWhiteSpace(registerpassrepeat.Text))
             {
@@ -55,7 +57,7 @@ namespace TheFinalProject.Resources
             }
 
         }
-
+       
         private void RegisterPassword_MouseClick(object sender, MouseEventArgs e)
         {
             RegisterPassword.SelectAll();
@@ -68,28 +70,7 @@ namespace TheFinalProject.Resources
 
        
 
-        private void registerpassrepeat_Enter(object sender, EventArgs e)
-        {
-           
-
-
-            /*
-             while(passwordrepeat != password)
-            {
-                passrepeatguide.Visible = true;
-                passrepeatguide.Text = "Passwords do not match!";
-               passrepeatguide.ForeColor = Color.Red;
-              
-               String password = RegisterPassword.Text;
-            String passwordrepeat = registerpassrepeat.Text;
-            if (passwordrepeat != password)
-            {
-
-            }
-            }
-            */
-
-        }
+       
         void comparePass()
         {
             String password = RegisterPassword.Text;
@@ -194,10 +175,84 @@ namespace TheFinalProject.Resources
         {
 
         }
+        private void showpassbtn_MouseDown(object sender, MouseEventArgs e)
+        {
+            RegisterPassword.PasswordChar = '\0';
+            registerpassrepeat.PasswordChar = '\0';
 
+        }
+
+        private void showpassbtn_MouseUp(object sender, MouseEventArgs e)
+        {
+            RegisterPassword.PasswordChar = '*';
+            registerpassrepeat.PasswordChar = '*';
+
+        }
         private void registerform_Load(object sender, EventArgs e)
         {
-            
+            RegisterUsername.Text = "Username";
+            RegisterUsername.ForeColor = SystemColors.ControlDark;
+
+            RegisterPassword.Text = "Password";
+            RegisterPassword.ForeColor = SystemColors.ControlDark;
+            RegisterPassword.PasswordChar = '\0';
+
+            registerpassrepeat.ForeColor = SystemColors.ControlDark;
+            registerpassrepeat.PasswordChar = '\0';
+            registerpassrepeat.Text = "Re-enter Password";
+
         }
+
+        private void RegisterUsername_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(RegisterUsername.Text) || string.IsNullOrWhiteSpace(RegisterUsername.Text) || RegisterUsername.Text == "Username")
+            {
+                RegisterUsername.Text = "Username";
+                RegisterUsername.ForeColor = Color.DarkGray;
+            }
+        }
+
+        private void RegisterUsername_Enter(object sender, EventArgs e)
+        {
+            RegisterUsername.SelectAll();
+            RegisterUsername.ForeColor = Color.Black;
+        }
+
+        private void RegisterPassword_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(RegisterPassword.Text) || string.IsNullOrWhiteSpace(RegisterPassword.Text) || RegisterPassword.Text == "Password")
+            {
+                RegisterPassword.Text = "Password";
+                RegisterPassword.ForeColor = Color.DarkGray;
+                
+
+            }
+        }
+
+        private void RegisterPassword_Enter(object sender, EventArgs e)
+        {
+            RegisterPassword.SelectAll();
+            RegisterPassword.ForeColor = Color.Black;
+        }
+        
+
+        private void registerpassrepeat_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(registerpassrepeat.Text) || string.IsNullOrWhiteSpace(registerpassrepeat.Text) || registerpassrepeat.Text == "Re-enter Password")
+            {
+                registerpassrepeat.Text = "Re-enter Password";
+                registerpassrepeat.ForeColor = Color.DarkGray;
+                
+            }
+        }
+        private void registerpassrepeat_Enter(object sender, EventArgs e)
+        {
+            registerpassrepeat.SelectAll();
+            registerpassrepeat.ForeColor = Color.Black;
+        }
+
+
+
     }
-}
+    }
+

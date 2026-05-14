@@ -156,5 +156,20 @@
   <ItemGroup>
     <None Include="Resources\tambay mambo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grey rect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white rect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Betacell Fitness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show pass icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
