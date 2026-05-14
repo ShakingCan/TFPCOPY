@@ -590,3 +590,93 @@ namespace TheFinalProject.Resources
     }
    
 }
+/*EVERYTHING IN CELL DESIGNING THAT I MAY NEED
+ 
+ 
+ 
+ private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+{
+    if (e.RowIndex < 0) return;
+
+    e.Handled = true;
+    e.PaintBackground(e.CellBounds, true);
+
+    bool selected = dataGridView1.Rows[e.RowIndex].Selected;
+
+    Graphics g = e.Graphics;
+    g.SmoothingMode = SmoothingMode.AntiAlias;
+
+    Rectangle rowRect = dataGridView1.GetRowDisplayRectangle(e.RowIndex, true);
+
+    // CARD BACKGROUND
+    using (SolidBrush bg = new SolidBrush(Color.FromArgb(40, 40, 40)))
+    {
+        g.FillRectangle(bg, rowRect);
+    }
+
+    // BLUE BORDER IF SELECTED
+    if (selected)
+    {
+        using (Pen p = new Pen(Color.DodgerBlue, 2))
+        {
+            Rectangle borderRect = new Rectangle(
+                rowRect.X + 2,
+                rowRect.Y + 2,
+                rowRect.Width - 4,
+                rowRect.Height - 4
+            );
+
+            g.DrawRectangle(p, borderRect);
+        }
+    }
+
+    // TEXT DRAWING
+    TextRenderer.DrawText(
+        g,
+        e.FormattedValue?.ToString(),
+        e.CellStyle.Font,
+        e.CellBounds,
+        Color.Gainsboro,
+        TextFormatFlags.VerticalCenter | TextFormatFlags.Left
+    );
+}
+ 
+ 
+ 
+ dataGridView1.EnableHeadersVisualStyles = false;
+dataGridView1.BorderStyle = BorderStyle.None;
+dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
+
+dataGridView1.BackgroundColor = Color.FromArgb(30, 30, 30);
+dataGridView1.RowHeadersVisible = false;
+
+dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Transparent;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ */

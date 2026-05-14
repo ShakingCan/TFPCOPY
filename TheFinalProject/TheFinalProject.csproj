@@ -67,12 +67,6 @@
     <Compile Include="Resources\coachfrm.Designer.cs">
       <DependentUpon>coachfrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Resources\datagridPractice.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Resources\datagridPractice.Designer.cs">
-      <DependentUpon>datagridPractice.cs</DependentUpon>
-    </Compile>
     <Compile Include="Resources\registerfrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,9 +109,6 @@
     </Compile>
     <EmbeddedResource Include="Resources\coachfrm.resx">
       <DependentUpon>coachfrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\datagridPractice.resx">
-      <DependentUpon>datagridPractice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\registerfrm.resx">
       <DependentUpon>registerfrm.cs</DependentUpon>

@@ -4,12 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-
+using System.Drawing;
+using System.Drawing.Drawing2D;
 namespace TheFinalProject.Resources
 {
     public partial class registerform : Form   
@@ -38,7 +40,7 @@ namespace TheFinalProject.Resources
 
         private void RegisterPassword_TextChanged(object sender, EventArgs e)
         {
-            
+            RegisterPassword.PasswordChar = '*';
             comparePass();
             if (!string.IsNullOrWhiteSpace(RegisterPassword.Text))
             {
@@ -49,7 +51,7 @@ namespace TheFinalProject.Resources
 
         private void registerpassrepeat_TextChanged(object sender, EventArgs e)
         {
-            
+            registerpassrepeat.PasswordChar = '*';
             comparePass();
             if (!string.IsNullOrWhiteSpace(registerpassrepeat.Text))
             {
@@ -190,6 +192,11 @@ namespace TheFinalProject.Resources
         }
         private void registerform_Load(object sender, EventArgs e)
         {
+            coach.FlatStyle = FlatStyle.Flat;
+            userrr.FlatStyle = FlatStyle.Flat;
+
+            coach.Paint += CustomRadioButton_Paint;
+            userrr.Paint += CustomRadioButton_Paint;
             RegisterUsername.Text = "Username";
             RegisterUsername.ForeColor = SystemColors.ControlDark;
 
@@ -197,12 +204,42 @@ namespace TheFinalProject.Resources
             RegisterPassword.ForeColor = SystemColors.ControlDark;
             RegisterPassword.PasswordChar = '\0';
 
+            registerpassrepeat.Text = "Re-enter Password";
             registerpassrepeat.ForeColor = SystemColors.ControlDark;
             registerpassrepeat.PasswordChar = '\0';
-            registerpassrepeat.Text = "Re-enter Password";
+            
 
         }
+      private void CustomRadioButton_Paint(object sender, PaintEventArgs e)
+{
+    RadioButton rb = sender as RadioButton;
 
+    e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+    int size = 14;
+    int x = 2;
+    int y = (rb.Height - size) / 2;
+
+    Rectangle rect = new Rectangle(x, y, size, size);
+
+    // Always draw clean base (no system colors)
+    using (SolidBrush bg = new SolidBrush(Color.White))
+    {
+        e.Graphics.FillEllipse(bg, rect);
+    }
+
+    // Fill state
+    if (rb.Checked)
+    {
+        e.Graphics.FillEllipse(Brushes.Gray, rect);
+    }
+
+    // Outline
+    using (Pen pen = new Pen(Color.Black, 2f))
+    {
+        e.Graphics.DrawEllipse(pen, rect);
+    }
+}
         private void RegisterUsername_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(RegisterUsername.Text) || string.IsNullOrWhiteSpace(RegisterUsername.Text) || RegisterUsername.Text == "Username")
@@ -222,6 +259,7 @@ namespace TheFinalProject.Resources
         {
             if (string.IsNullOrEmpty(RegisterPassword.Text) || string.IsNullOrWhiteSpace(RegisterPassword.Text) || RegisterPassword.Text == "Password")
             {
+                RegisterPassword.PasswordChar = '\0';
                 RegisterPassword.Text = "Password";
                 RegisterPassword.ForeColor = Color.DarkGray;
                 
@@ -240,6 +278,7 @@ namespace TheFinalProject.Resources
         {
             if (string.IsNullOrEmpty(registerpassrepeat.Text) || string.IsNullOrWhiteSpace(registerpassrepeat.Text) || registerpassrepeat.Text == "Re-enter Password")
             {
+                registerpassrepeat.PasswordChar = '\0';
                 registerpassrepeat.Text = "Re-enter Password";
                 registerpassrepeat.ForeColor = Color.DarkGray;
                 
@@ -260,6 +299,45 @@ namespace TheFinalProject.Resources
         private void userrr_CheckedChanged(object sender, EventArgs e)
         {
             pictureBox3.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\userpic.png");
+        }
+
+        private void RadioButton_Paint(object sender, PaintEventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            Graphics g = e.Graphics;
+
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+
+            // Hide default radio button
+            RadioButtonRenderer.DrawParentBackground(g, rb.ClientRectangle, rb);
+
+            float size = 18f;
+
+            RectangleF rect = new RectangleF(
+                1,
+                (rb.Height - size) / 2,
+                size,
+                size
+            );
+
+            using (Pen pen = new Pen(Color.Black, 1.5f))
+            using (SolidBrush whiteBrush = new SolidBrush(Color.White))
+            using (SolidBrush grayBrush = new SolidBrush(Color.Gray))
+            using (SolidBrush textBrush = new SolidBrush(rb.ForeColor))
+            {
+                // Draw custom circle
+                g.FillEllipse(rb.Checked ? grayBrush : whiteBrush, rect);
+                g.DrawEllipse(pen, rect);
+
+                // Draw text manually
+                g.DrawString(
+                    rb.Text,
+                    rb.Font,
+                    textBrush,
+                    size + 8,
+                    (rb.Height - rb.Font.Height) / 2
+                );
+            }
         }
     }
     }

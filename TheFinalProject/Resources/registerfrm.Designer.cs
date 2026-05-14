@@ -68,7 +68,7 @@
             this.registerpanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.registerpanel.Location = new System.Drawing.Point(0, 0);
             this.registerpanel.Name = "registerpanel";
-            this.registerpanel.Size = new System.Drawing.Size(884, 681);
+            this.registerpanel.Size = new System.Drawing.Size(884, 511);
             this.registerpanel.TabIndex = 13;
             // 
             // label3
@@ -117,9 +117,11 @@
             // userrr
             // 
             this.userrr.AutoSize = true;
-            this.userrr.Location = new System.Drawing.Point(205, 373);
+            this.userrr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userrr.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.userrr.Location = new System.Drawing.Point(195, 346);
             this.userrr.Name = "userrr";
-            this.userrr.Size = new System.Drawing.Size(47, 17);
+            this.userrr.Size = new System.Drawing.Size(71, 28);
             this.userrr.TabIndex = 21;
             this.userrr.TabStop = true;
             this.userrr.Text = "User";
@@ -129,9 +131,11 @@
             // coach
             // 
             this.coach.AutoSize = true;
-            this.coach.Location = new System.Drawing.Point(29, 373);
+            this.coach.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coach.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.coach.Location = new System.Drawing.Point(102, 346);
             this.coach.Name = "coach";
-            this.coach.Size = new System.Drawing.Size(56, 17);
+            this.coach.Size = new System.Drawing.Size(88, 28);
             this.coach.TabIndex = 20;
             this.coach.TabStop = true;
             this.coach.Text = "Coach";
@@ -316,7 +320,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 681);
+            this.ClientSize = new System.Drawing.Size(884, 511);
             this.Controls.Add(this.registerpanel);
             this.Name = "registerform";
             this.Text = "registerForm";
