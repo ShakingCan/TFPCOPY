@@ -251,8 +251,16 @@ namespace TheFinalProject.Resources
             registerpassrepeat.ForeColor = Color.Black;
         }
 
+        private void coach_CheckedChanged(object sender, EventArgs e)
+        {
+            pictureBox3.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\Coachpic.png");
+           
+        }
 
-
+        private void userrr_CheckedChanged(object sender, EventArgs e)
+        {
+            pictureBox3.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\userpic.png");
+        }
     }
     }
 

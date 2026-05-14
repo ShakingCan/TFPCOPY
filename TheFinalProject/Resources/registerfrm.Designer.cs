@@ -32,6 +32,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.userrr = new System.Windows.Forms.RadioButton();
+            this.coach = new System.Windows.Forms.RadioButton();
             this.RegisterUsername = new System.Windows.Forms.TextBox();
             this.RegisterPassword = new System.Windows.Forms.TextBox();
             this.registerpassrepeat = new System.Windows.Forms.TextBox();
@@ -40,15 +42,12 @@
             this.Registerbtn = new System.Windows.Forms.Button();
             this.passguide = new System.Windows.Forms.Label();
             this.showpassbtn = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Usertoggle = new System.Windows.Forms.RadioButton();
             this.Coachtoggle = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.coach = new System.Windows.Forms.RadioButton();
-            this.userrr = new System.Windows.Forms.RadioButton();
             this.registerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
@@ -109,12 +108,35 @@
             this.panel5.Controls.Add(this.Registerbtn);
             this.panel5.Controls.Add(this.passguide);
             this.panel5.Controls.Add(this.showpassbtn);
-            this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Location = new System.Drawing.Point(454, 29);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(345, 408);
             this.panel5.TabIndex = 23;
+            // 
+            // userrr
+            // 
+            this.userrr.AutoSize = true;
+            this.userrr.Location = new System.Drawing.Point(205, 373);
+            this.userrr.Name = "userrr";
+            this.userrr.Size = new System.Drawing.Size(47, 17);
+            this.userrr.TabIndex = 21;
+            this.userrr.TabStop = true;
+            this.userrr.Text = "User";
+            this.userrr.UseVisualStyleBackColor = true;
+            this.userrr.CheckedChanged += new System.EventHandler(this.userrr_CheckedChanged);
+            // 
+            // coach
+            // 
+            this.coach.AutoSize = true;
+            this.coach.Location = new System.Drawing.Point(29, 373);
+            this.coach.Name = "coach";
+            this.coach.Size = new System.Drawing.Size(56, 17);
+            this.coach.TabIndex = 20;
+            this.coach.TabStop = true;
+            this.coach.Text = "Coach";
+            this.coach.UseVisualStyleBackColor = true;
+            this.coach.CheckedChanged += new System.EventHandler(this.coach_CheckedChanged);
             // 
             // RegisterUsername
             // 
@@ -224,28 +246,16 @@
             this.showpassbtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.showpassbtn_MouseDown);
             this.showpassbtn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.showpassbtn_MouseUp);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(169, 44);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 24);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Login";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Gray;
-            this.label7.Location = new System.Drawing.Point(81, 44);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Location = new System.Drawing.Point(124, 48);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 24);
+            this.label7.Size = new System.Drawing.Size(87, 24);
             this.label7.TabIndex = 9;
-            this.label7.Text = "Register ";
+            this.label7.Text = "Register";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pictureBox2
@@ -302,28 +312,6 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Create Account";
             // 
-            // coach
-            // 
-            this.coach.AutoSize = true;
-            this.coach.Location = new System.Drawing.Point(29, 373);
-            this.coach.Name = "coach";
-            this.coach.Size = new System.Drawing.Size(56, 17);
-            this.coach.TabIndex = 20;
-            this.coach.TabStop = true;
-            this.coach.Text = "Coach";
-            this.coach.UseVisualStyleBackColor = true;
-            // 
-            // userrr
-            // 
-            this.userrr.AutoSize = true;
-            this.userrr.Location = new System.Drawing.Point(205, 373);
-            this.userrr.Name = "userrr";
-            this.userrr.Size = new System.Drawing.Size(47, 17);
-            this.userrr.TabIndex = 21;
-            this.userrr.TabStop = true;
-            this.userrr.Text = "User";
-            this.userrr.UseVisualStyleBackColor = true;
-            // 
             // registerform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,7 +348,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button showpassbtn;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
