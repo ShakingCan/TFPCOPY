@@ -73,9 +73,29 @@ namespace TheFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap approvebtn {
+            get {
+                object obj = ResourceManager.GetObject("approvebtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Betacell_Fitness {
             get {
                 object obj = ResourceManager.GetObject("Betacell Fitness", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap confirmbook {
+            get {
+                object obj = ResourceManager.GetObject("confirmbook", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

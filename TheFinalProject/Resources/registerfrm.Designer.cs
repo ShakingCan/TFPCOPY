@@ -68,7 +68,7 @@
             this.registerpanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.registerpanel.Location = new System.Drawing.Point(0, 0);
             this.registerpanel.Name = "registerpanel";
-            this.registerpanel.Size = new System.Drawing.Size(884, 511);
+            this.registerpanel.Size = new System.Drawing.Size(984, 511);
             this.registerpanel.TabIndex = 13;
             // 
             // label3
@@ -77,7 +77,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Cascadia Code", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(140, 71);
+            this.label3.Location = new System.Drawing.Point(190, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(235, 33);
             this.label3.TabIndex = 27;
@@ -88,7 +88,7 @@
             // 
             this.pictureBox3.BackgroundImage = global::TheFinalProject.Properties.Resources.image_2;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(115, 107);
+            this.pictureBox3.Location = new System.Drawing.Point(165, 101);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(298, 270);
             this.pictureBox3.TabIndex = 26;
@@ -109,7 +109,7 @@
             this.panel5.Controls.Add(this.passguide);
             this.panel5.Controls.Add(this.showpassbtn);
             this.panel5.Controls.Add(this.label7);
-            this.panel5.Location = new System.Drawing.Point(454, 29);
+            this.panel5.Location = new System.Drawing.Point(504, 23);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(345, 408);
             this.panel5.TabIndex = 23;
@@ -266,7 +266,7 @@
             // 
             this.pictureBox2.BackgroundImage = global::TheFinalProject.Properties.Resources.white_rect;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(444, 29);
+            this.pictureBox2.Location = new System.Drawing.Point(494, 23);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(367, 408);
             this.pictureBox2.TabIndex = 25;
@@ -276,7 +276,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::TheFinalProject.Properties.Resources.grey_rect;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(81, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(131, 23);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(367, 408);
             this.pictureBox1.TabIndex = 24;
@@ -286,7 +286,7 @@
             // 
             this.Usertoggle.AutoSize = true;
             this.Usertoggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Usertoggle.Location = new System.Drawing.Point(426, 415);
+            this.Usertoggle.Location = new System.Drawing.Point(476, 409);
             this.Usertoggle.Name = "Usertoggle";
             this.Usertoggle.Size = new System.Drawing.Size(62, 22);
             this.Usertoggle.TabIndex = 21;
@@ -298,7 +298,7 @@
             // 
             this.Coachtoggle.AutoSize = true;
             this.Coachtoggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Coachtoggle.Location = new System.Drawing.Point(335, 415);
+            this.Coachtoggle.Location = new System.Drawing.Point(385, 409);
             this.Coachtoggle.Name = "Coachtoggle";
             this.Coachtoggle.Size = new System.Drawing.Size(75, 22);
             this.Coachtoggle.TabIndex = 20;
@@ -310,7 +310,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(336, 375);
+            this.label2.Location = new System.Drawing.Point(386, 369);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(154, 24);
             this.label2.TabIndex = 13;
@@ -320,7 +320,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 511);
+            this.ClientSize = new System.Drawing.Size(984, 511);
             this.Controls.Add(this.registerpanel);
             this.Name = "registerform";
             this.Text = "registerForm";

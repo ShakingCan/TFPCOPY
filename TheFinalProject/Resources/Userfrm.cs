@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,7 +63,7 @@ namespace TheFinalProject.Resources
 
         private void Userfrm_Load(object sender, EventArgs e)
         {
-
+            
             
 
             try
@@ -140,6 +141,10 @@ namespace TheFinalProject.Resources
                     adapter.Fill(upcomingSessionstable);
 
                     upcomingsessionsdata.DataSource = upcomingSessionstable;
+                    if (upcomingsessionsdata.Columns.Contains("RequestID"))
+                    {
+                        upcomingsessionsdata.Columns["RequestID"].Visible = false;
+                    }
 
                 }
                 string pastquery = @"SELECT
@@ -166,6 +171,10 @@ namespace TheFinalProject.Resources
                     adapter.Fill(pastSessionstable);
 
                     dataGridView2.DataSource = pastSessionstable;
+                    if (dataGridView2.Columns.Contains("RequestID"))
+                    {
+                        dataGridView2.Columns["RequestID"].Visible = false;
+                    }
 
                 }
                 string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\nAND (UserApproved IS NULL OR UserApproved <> 'Approved')";
@@ -263,10 +272,20 @@ namespace TheFinalProject.Resources
                 requestdateguide.ForeColor = Color.Red;
                 return;
             }
+            if (string.IsNullOrEmpty(durationbox.Text)||string.IsNullOrWhiteSpace(durationbox.Text)) {
+
+                durationguide.Visible = true;
+                durationguide.Text = "Please select a session duration!";
+                durationguide.ForeColor = Color.Red;
+                return;
+
+            }
+
 
             if (!string.IsNullOrWhiteSpace(searchbox.Text) && dateTimePicker1.Value >= DateTime.Now.AddHours(1))
             {
                 int coachId;
+                
                 string connectionString = @"Data Source=DESKTOP-MOE35KS;Initial Catalog=finalprojectDB;Integrated Security=True;";
                 try
                 {
@@ -304,9 +323,10 @@ namespace TheFinalProject.Resources
                                 return;
                             }
                         }
-                        String query = "INSERT INTO BookingRequests(USERID, COACHID,RequestDateTime) VALUES (@UserID, @CoachID, @RequestDate)";
+                        String query = "INSERT INTO BookingRequests(USERID, COACHID,RequestDateTime, Duration) VALUES (@UserID, @CoachID, @RequestDate,@Duration)";
                         using (SqlCommand cmd2 = new SqlCommand(query, conn))
                         {
+                            cmd2.Parameters.AddWithValue("@Duration", durationbox.Text.ToString());
                             cmd2.Parameters.AddWithValue("@UserID", CurrentUserID);
                             cmd2.Parameters.AddWithValue("@CoachID", coachId);
                             cmd2.Parameters.AddWithValue("@RequestDate", dateTimePicker1.Value);
@@ -565,6 +585,8 @@ namespace TheFinalProject.Resources
 
         }
 
+        
+
         private void viewprofilebutton_Click(object sender, EventArgs e)
         {
             loginform lg = new loginform();
@@ -586,6 +608,42 @@ namespace TheFinalProject.Resources
         private void TogglePanel(Panel panel)
         {
             panel.Visible = !panel.Visible;
+        }
+
+        private void upcomingsessionsdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+      
+
+        private void tabControl1_DrawItem_1(object sender, DrawItemEventArgs e)
+        {
+            // Colors from your mockup
+            Color activeColor = Color.FromArgb(100, 100, 100); // Dark Gray
+            Color inactiveColor = Color.FromArgb(220, 220, 220); // Light Gray
+            Color textColor = Color.White;
+
+            TabPage page = tabControl1.TabPages[e.Index];
+            Rectangle tabBounds = tabControl1.GetTabRect(e.Index);
+
+            // Check if the tab is selected
+            if (e.State == DrawItemState.Selected)
+            {
+                e.Graphics.FillRectangle(new SolidBrush(activeColor), tabBounds);
+            }
+            else
+            {
+                e.Graphics.FillRectangle(new SolidBrush(inactiveColor), tabBounds);
+                textColor = Color.Black; // Inactive tabs usually have dark text
+            }
+
+            // Draw the text in the middle
+            TextRenderer.DrawText(e.Graphics, page.Text, page.Font, tabBounds, textColor, TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
    

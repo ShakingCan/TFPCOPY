@@ -162,5 +162,11 @@
   <ItemGroup>
     <None Include="Resources\show pass icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirmbook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\approvebtn.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

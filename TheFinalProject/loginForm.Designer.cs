@@ -61,7 +61,7 @@
             this.loginPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loginPanel.Location = new System.Drawing.Point(0, 0);
             this.loginPanel.Name = "loginPanel";
-            this.loginPanel.Size = new System.Drawing.Size(884, 511);
+            this.loginPanel.Size = new System.Drawing.Size(984, 511);
             this.loginPanel.TabIndex = 5;
             this.loginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.loginPanel_Paint);
             // 
@@ -71,7 +71,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Cascadia Code", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(114, 70);
+            this.label3.Location = new System.Drawing.Point(186, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(235, 33);
             this.label3.TabIndex = 17;
@@ -82,7 +82,7 @@
             // 
             this.pictureBox3.BackgroundImage = global::TheFinalProject.Properties.Resources.image_2;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(89, 106);
+            this.pictureBox3.Location = new System.Drawing.Point(161, 101);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(298, 270);
             this.pictureBox3.TabIndex = 16;
@@ -90,9 +90,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(806, 42);
+            this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 22);
             this.button1.TabIndex = 13;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             this.panel5.Controls.Add(this.username);
             this.panel5.Controls.Add(this.loginBtn);
             this.panel5.Controls.Add(this.registerbtn);
-            this.panel5.Location = new System.Drawing.Point(428, 70);
+            this.panel5.Location = new System.Drawing.Point(500, 65);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(345, 315);
             this.panel5.TabIndex = 12;
@@ -225,7 +225,7 @@
             // 
             this.pictureBox2.BackgroundImage = global::TheFinalProject.Properties.Resources.white_rect;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(418, 28);
+            this.pictureBox2.Location = new System.Drawing.Point(490, 23);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(367, 408);
             this.pictureBox2.TabIndex = 15;
@@ -235,7 +235,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::TheFinalProject.Properties.Resources.grey_rect;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(55, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(127, 23);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(367, 408);
             this.pictureBox1.TabIndex = 14;
@@ -245,7 +245,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 511);
+            this.ClientSize = new System.Drawing.Size(984, 511);
             this.Controls.Add(this.loginPanel);
             this.Name = "loginform";
             this.Text = "Form1";
