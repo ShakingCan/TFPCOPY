@@ -97,7 +97,11 @@ namespace TheFinalProject.Resources
                     dataGridView2.DataSource = pastSessionstable;
 
                 }
-                string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE COACHID = @currentUserID\r\nAND (CoachApproved IS NULL OR CoachApproved <> 'Approved')";
+                string processingquery = @"
+    SELECT COUNT(*)
+    FROM BookingRequests
+    WHERE COACHID = @currentUserID
+    AND (CoachApproved IS NULL OR TRIM(CoachApproved) = 'Pending')";
 
                 using (SqlCommand cmd = new SqlCommand(processingquery, conn))
                 {
@@ -157,7 +161,13 @@ namespace TheFinalProject.Resources
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE COACHID = @currentUserID\r\nAND (CoachApproved IS NULL OR CoachApproved <> 'Approved')";
+                string processingquery = @"
+            SELECT COUNT(*) 
+            FROM BookingRequests 
+            WHERE COACHID = @currentUserID 
+              AND Status = 'Pending'
+              AND (CoachApproved IS NULL OR TRIM(CoachApproved) = 'Pending')
+              AND RequestDateTime >= GETDATE();";
 
                 using (SqlCommand cmd = new SqlCommand(processingquery, conn))
                 {
@@ -172,7 +182,14 @@ namespace TheFinalProject.Resources
                     toprocesscount.Text = ProcessingCount.ToString();
                 }
 
-                string upcomingreminderquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE COACHID = @currentUserID\r\n  AND Status = 'Approved'\r\n  AND UserApproved = 'Approved'\r\n  AND CoachApproved = 'Approved'\r\n  AND RequestDateTime >= CAST(GETDATE() AS DATE);";
+                string upcomingreminderquery = @"
+            SELECT COUNT(*) 
+            FROM BookingRequests 
+            WHERE COACHID = @currentUserID 
+              AND Status = 'Approved' 
+              AND UserApproved = 'Approved' 
+              AND CoachApproved = 'Approved' 
+              AND RequestDateTime >= GETDATE();";
 
                 using (SqlCommand cmd = new SqlCommand(upcomingreminderquery, conn))
                 {

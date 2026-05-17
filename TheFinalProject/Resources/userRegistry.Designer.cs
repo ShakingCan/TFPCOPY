@@ -29,220 +29,256 @@
         private void InitializeComponent()
         {
             this.registerpanel = new System.Windows.Forms.Panel();
-            this.showpassbtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.passguide = new System.Windows.Forms.Label();
-            this.passrepeatguide = new System.Windows.Forms.Label();
-            this.userguide = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.registerpassrepeat = new System.Windows.Forms.TextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.RegisterUsername = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Registerbtn = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.RegisterPassword = new System.Windows.Forms.TextBox();
+            this.registerpassrepeat = new System.Windows.Forms.TextBox();
+            this.userguide = new System.Windows.Forms.Label();
+            this.passrepeatguide = new System.Windows.Forms.Label();
+            this.Registerbtn = new System.Windows.Forms.Button();
+            this.passguide = new System.Windows.Forms.Label();
+            this.showpassbtn = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Usertoggle = new System.Windows.Forms.RadioButton();
+            this.Coachtoggle = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.registerpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // registerpanel
             // 
-            this.registerpanel.Controls.Add(this.showpassbtn);
             this.registerpanel.Controls.Add(this.label3);
-            this.registerpanel.Controls.Add(this.panel4);
-            this.registerpanel.Controls.Add(this.label5);
-            this.registerpanel.Controls.Add(this.label4);
-            this.registerpanel.Controls.Add(this.label1);
-            this.registerpanel.Controls.Add(this.passguide);
-            this.registerpanel.Controls.Add(this.passrepeatguide);
-            this.registerpanel.Controls.Add(this.userguide);
-            this.registerpanel.Controls.Add(this.panel1);
+            this.registerpanel.Controls.Add(this.pictureBox3);
+            this.registerpanel.Controls.Add(this.panel5);
+            this.registerpanel.Controls.Add(this.pictureBox2);
+            this.registerpanel.Controls.Add(this.pictureBox1);
+            this.registerpanel.Controls.Add(this.Usertoggle);
+            this.registerpanel.Controls.Add(this.Coachtoggle);
             this.registerpanel.Controls.Add(this.label2);
-            this.registerpanel.Controls.Add(this.registerpassrepeat);
-            this.registerpanel.Controls.Add(this.RegisterUsername);
-            this.registerpanel.Controls.Add(this.panel2);
-            this.registerpanel.Controls.Add(this.Registerbtn);
-            this.registerpanel.Controls.Add(this.panel3);
-            this.registerpanel.Controls.Add(this.RegisterPassword);
             this.registerpanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.registerpanel.Location = new System.Drawing.Point(0, 0);
             this.registerpanel.Name = "registerpanel";
             this.registerpanel.Size = new System.Drawing.Size(884, 681);
             this.registerpanel.TabIndex = 14;
             // 
-            // showpassbtn
-            // 
-            this.showpassbtn.Location = new System.Drawing.Point(504, 304);
-            this.showpassbtn.Name = "showpassbtn";
-            this.showpassbtn.Size = new System.Drawing.Size(75, 23);
-            this.showpassbtn.TabIndex = 20;
-            this.showpassbtn.Text = "button1";
-            this.showpassbtn.UseVisualStyleBackColor = true;
-            this.showpassbtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.showpassbtn_MouseDown);
-            this.showpassbtn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.showpassbtn_MouseUp);
-            // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(19, 109);
+            this.label3.BackColor = System.Drawing.Color.Gray;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Cascadia Code", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(190, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 24);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "app name";
+            this.label3.Size = new System.Drawing.Size(235, 33);
+            this.label3.TabIndex = 27;
+            this.label3.Tag = "";
+            this.label3.Text = "Betacell Wellness";
             // 
-            // panel4
+            // pictureBox3
             // 
-            this.panel4.BackgroundImage = global::TheFinalProject.Properties.Resources.tambay_mambo;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Location = new System.Drawing.Point(3, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(138, 100);
-            this.panel4.TabIndex = 11;
+            this.pictureBox3.BackgroundImage = global::TheFinalProject.Properties.Resources.image_2;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(165, 101);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(298, 270);
+            this.pictureBox3.TabIndex = 26;
+            this.pictureBox3.TabStop = false;
             // 
-            // label5
+            // panel5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(295, 214);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 18);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Password";
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.BackgroundImage = global::TheFinalProject.Properties.Resources.white_rect;
+            this.panel5.Controls.Add(this.RegisterUsername);
+            this.panel5.Controls.Add(this.RegisterPassword);
+            this.panel5.Controls.Add(this.registerpassrepeat);
+            this.panel5.Controls.Add(this.userguide);
+            this.panel5.Controls.Add(this.passrepeatguide);
+            this.panel5.Controls.Add(this.Registerbtn);
+            this.panel5.Controls.Add(this.passguide);
+            this.panel5.Controls.Add(this.showpassbtn);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Location = new System.Drawing.Point(504, 23);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(345, 408);
+            this.panel5.TabIndex = 23;
             // 
-            // label4
+            // RegisterUsername
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(295, 278);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 18);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Confirm password";
+            this.RegisterUsername.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.RegisterUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RegisterUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegisterUsername.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.RegisterUsername.Location = new System.Drawing.Point(66, 111);
+            this.RegisterUsername.Multiline = true;
+            this.RegisterUsername.Name = "RegisterUsername";
+            this.RegisterUsername.Size = new System.Drawing.Size(200, 24);
+            this.RegisterUsername.TabIndex = 3;
+            this.RegisterUsername.Click += new System.EventHandler(this.RegisterUsername_Click);
+            this.RegisterUsername.TextChanged += new System.EventHandler(this.RegisterUsername_TextChanged);
+            this.RegisterUsername.Leave += new System.EventHandler(this.RegisterUsername_Leave);
             // 
-            // label1
+            // RegisterPassword
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(295, 151);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 18);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Username";
+            this.RegisterPassword.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.RegisterPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RegisterPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegisterPassword.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.RegisterPassword.Location = new System.Drawing.Point(66, 168);
+            this.RegisterPassword.Multiline = true;
+            this.RegisterPassword.Name = "RegisterPassword";
+            this.RegisterPassword.PasswordChar = '*';
+            this.RegisterPassword.Size = new System.Drawing.Size(200, 24);
+            this.RegisterPassword.TabIndex = 7;
+            this.RegisterPassword.Click += new System.EventHandler(this.RegisterPassword_Click);
+            this.RegisterPassword.TextChanged += new System.EventHandler(this.RegisterPassword_TextChanged);
+            this.RegisterPassword.Leave += new System.EventHandler(this.RegisterPassword_Leave);
             // 
-            // passguide
+            // registerpassrepeat
             // 
-            this.passguide.Location = new System.Drawing.Point(443, 221);
-            this.passguide.Name = "passguide";
-            this.passguide.Size = new System.Drawing.Size(149, 13);
-            this.passguide.TabIndex = 15;
-            this.passguide.Text = "passguide";
-            this.passguide.Visible = false;
-            // 
-            // passrepeatguide
-            // 
-            this.passrepeatguide.Location = new System.Drawing.Point(447, 283);
-            this.passrepeatguide.Name = "passrepeatguide";
-            this.passrepeatguide.Size = new System.Drawing.Size(162, 13);
-            this.passrepeatguide.TabIndex = 14;
-            this.passrepeatguide.Text = "passrepeatguide";
-            this.passrepeatguide.Visible = false;
+            this.registerpassrepeat.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.registerpassrepeat.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.registerpassrepeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerpassrepeat.ForeColor = System.Drawing.Color.DarkGray;
+            this.registerpassrepeat.Location = new System.Drawing.Point(66, 225);
+            this.registerpassrepeat.Multiline = true;
+            this.registerpassrepeat.Name = "registerpassrepeat";
+            this.registerpassrepeat.PasswordChar = '*';
+            this.registerpassrepeat.Size = new System.Drawing.Size(200, 24);
+            this.registerpassrepeat.TabIndex = 9;
+            this.registerpassrepeat.Click += new System.EventHandler(this.registerpassrepeat_Click);
+            this.registerpassrepeat.TextChanged += new System.EventHandler(this.registerpassrepeat_TextChanged);
+            this.registerpassrepeat.Leave += new System.EventHandler(this.registerpassrepeat_Leave);
             // 
             // userguide
             // 
-            this.userguide.Location = new System.Drawing.Point(445, 156);
+            this.userguide.Location = new System.Drawing.Point(213, 95);
             this.userguide.Name = "userguide";
             this.userguide.Size = new System.Drawing.Size(147, 13);
             this.userguide.TabIndex = 16;
             this.userguide.Text = "userguide";
             this.userguide.Visible = false;
             // 
-            // panel1
+            // passrepeatguide
             // 
-            this.panel1.BackgroundImage = global::TheFinalProject.Properties.Resources._lock;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(253, 297);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(39, 30);
-            this.panel1.TabIndex = 8;
+            this.passrepeatguide.Location = new System.Drawing.Point(215, 210);
+            this.passrepeatguide.Name = "passrepeatguide";
+            this.passrepeatguide.Size = new System.Drawing.Size(162, 13);
+            this.passrepeatguide.TabIndex = 14;
+            this.passrepeatguide.Text = "passrepeatguide";
+            this.passrepeatguide.Visible = false;
+            // 
+            // Registerbtn
+            // 
+            this.Registerbtn.BackColor = System.Drawing.Color.DarkGray;
+            this.Registerbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Registerbtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Registerbtn.ForeColor = System.Drawing.Color.White;
+            this.Registerbtn.Location = new System.Drawing.Point(66, 275);
+            this.Registerbtn.Margin = new System.Windows.Forms.Padding(0);
+            this.Registerbtn.Name = "Registerbtn";
+            this.Registerbtn.Size = new System.Drawing.Size(200, 39);
+            this.Registerbtn.TabIndex = 0;
+            this.Registerbtn.Text = "Register";
+            this.Registerbtn.UseVisualStyleBackColor = false;
+            this.Registerbtn.Click += new System.EventHandler(this.Registerbtn_Click);
+            // 
+            // passguide
+            // 
+            this.passguide.Location = new System.Drawing.Point(211, 154);
+            this.passguide.Name = "passguide";
+            this.passguide.Size = new System.Drawing.Size(149, 13);
+            this.passguide.TabIndex = 15;
+            this.passguide.Text = "passguide";
+            this.passguide.Visible = false;
+            // 
+            // showpassbtn
+            // 
+            this.showpassbtn.BackgroundImage = global::TheFinalProject.Properties.Resources.show_pass_icon;
+            this.showpassbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.showpassbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showpassbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.showpassbtn.Location = new System.Drawing.Point(269, 223);
+            this.showpassbtn.Margin = new System.Windows.Forms.Padding(0);
+            this.showpassbtn.Name = "showpassbtn";
+            this.showpassbtn.Size = new System.Drawing.Size(31, 29);
+            this.showpassbtn.TabIndex = 19;
+            this.showpassbtn.UseVisualStyleBackColor = true;
+            this.showpassbtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.showpassbtn_MouseDown);
+            this.showpassbtn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.showpassbtn_MouseUp);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Location = new System.Drawing.Point(124, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 24);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Register";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::TheFinalProject.Properties.Resources.white_rect;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(494, 23);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(367, 408);
+            this.pictureBox2.TabIndex = 25;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::TheFinalProject.Properties.Resources.grey_rect;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(131, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(367, 408);
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Usertoggle
+            // 
+            this.Usertoggle.AutoSize = true;
+            this.Usertoggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Usertoggle.Location = new System.Drawing.Point(476, 409);
+            this.Usertoggle.Name = "Usertoggle";
+            this.Usertoggle.Size = new System.Drawing.Size(62, 22);
+            this.Usertoggle.TabIndex = 21;
+            this.Usertoggle.TabStop = true;
+            this.Usertoggle.Text = "User";
+            this.Usertoggle.UseVisualStyleBackColor = true;
+            // 
+            // Coachtoggle
+            // 
+            this.Coachtoggle.AutoSize = true;
+            this.Coachtoggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Coachtoggle.Location = new System.Drawing.Point(385, 409);
+            this.Coachtoggle.Name = "Coachtoggle";
+            this.Coachtoggle.Size = new System.Drawing.Size(75, 22);
+            this.Coachtoggle.TabIndex = 20;
+            this.Coachtoggle.TabStop = true;
+            this.Coachtoggle.Text = "Coach";
+            this.Coachtoggle.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(294, 68);
+            this.label2.Location = new System.Drawing.Point(386, 369);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(154, 24);
             this.label2.TabIndex = 13;
             this.label2.Text = "Create Account";
-            // 
-            // registerpassrepeat
-            // 
-            this.registerpassrepeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerpassrepeat.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.registerpassrepeat.Location = new System.Drawing.Point(298, 298);
-            this.registerpassrepeat.Name = "registerpassrepeat";
-            this.registerpassrepeat.PasswordChar = '*';
-            this.registerpassrepeat.Size = new System.Drawing.Size(200, 29);
-            this.registerpassrepeat.TabIndex = 9;
-            this.registerpassrepeat.Click += new System.EventHandler(this.registerpassrepeat_Click);
-            this.registerpassrepeat.TextChanged += new System.EventHandler(this.registerpassrepeat_TextChanged);
-            // 
-            // RegisterUsername
-            // 
-            this.RegisterUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterUsername.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.RegisterUsername.Location = new System.Drawing.Point(298, 172);
-            this.RegisterUsername.Name = "RegisterUsername";
-            this.RegisterUsername.Size = new System.Drawing.Size(200, 29);
-            this.RegisterUsername.TabIndex = 3;
-            this.RegisterUsername.Click += new System.EventHandler(this.RegisterUsername_Click);
-            this.RegisterUsername.TextChanged += new System.EventHandler(this.RegisterUsername_TextChanged);
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::TheFinalProject.Properties.Resources.user;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Location = new System.Drawing.Point(253, 171);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(39, 30);
-            this.panel2.TabIndex = 5;
-            // 
-            // Registerbtn
-            // 
-            this.Registerbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Registerbtn.Location = new System.Drawing.Point(343, 333);
-            this.Registerbtn.Name = "Registerbtn";
-            this.Registerbtn.Size = new System.Drawing.Size(91, 39);
-            this.Registerbtn.TabIndex = 0;
-            this.Registerbtn.Text = "Register";
-            this.Registerbtn.UseVisualStyleBackColor = true;
-            this.Registerbtn.Click += new System.EventHandler(this.Registerbtn_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::TheFinalProject.Properties.Resources._lock;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(253, 234);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(39, 30);
-            this.panel3.TabIndex = 6;
-            // 
-            // RegisterPassword
-            // 
-            this.RegisterPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterPassword.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.RegisterPassword.Location = new System.Drawing.Point(298, 235);
-            this.RegisterPassword.Name = "RegisterPassword";
-            this.RegisterPassword.PasswordChar = '*';
-            this.RegisterPassword.Size = new System.Drawing.Size(200, 29);
-            this.RegisterPassword.TabIndex = 7;
-            this.RegisterPassword.Click += new System.EventHandler(this.RegisterPassword_Click);
-            this.RegisterPassword.TextChanged += new System.EventHandler(this.RegisterPassword_TextChanged);
             // 
             // userRegistry
             // 
@@ -254,6 +290,11 @@
             this.Text = "userRegistry";
             this.registerpanel.ResumeLayout(false);
             this.registerpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,21 +303,21 @@
 
         private System.Windows.Forms.Panel registerpanel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label passguide;
-        private System.Windows.Forms.Label passrepeatguide;
-        private System.Windows.Forms.Label userguide;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox registerpassrepeat;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox RegisterUsername;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button Registerbtn;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox RegisterPassword;
+        private System.Windows.Forms.TextBox registerpassrepeat;
+        private System.Windows.Forms.Label userguide;
+        private System.Windows.Forms.Label passrepeatguide;
+        private System.Windows.Forms.Button Registerbtn;
+        private System.Windows.Forms.Label passguide;
         private System.Windows.Forms.Button showpassbtn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton Usertoggle;
+        private System.Windows.Forms.RadioButton Coachtoggle;
+        private System.Windows.Forms.Label label2;
     }
 }

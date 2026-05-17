@@ -123,6 +123,16 @@ namespace TheFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logoutbtn {
+            get {
+                object obj = ResourceManager.GetObject("logoutbtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap show_pass_icon {
             get {
                 object obj = ResourceManager.GetObject("show pass icon", resourceCulture);

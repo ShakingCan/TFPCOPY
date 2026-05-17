@@ -645,6 +645,22 @@ namespace TheFinalProject.Resources
         {
 
         }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 2)
+            {
+                approvebtn.Visible = true;
+                refreshbtn.Visible = true;
+                declinebtn.Visible = true;
+            }
+            else
+            {
+                approvebtn.Visible = false;
+                refreshbtn.Visible = false;
+                declinebtn.Visible = false;
+            }
+        }
     }
    
 }

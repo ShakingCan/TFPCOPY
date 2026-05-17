@@ -163,7 +163,50 @@ namespace TheFinalProject.Resources
             registerpassrepeat.PasswordChar = '*';
         }
 
+        private void RegisterUsername_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(RegisterUsername.Text) || string.IsNullOrWhiteSpace(RegisterUsername.Text) || RegisterUsername.Text == "Username")
+            {
+                RegisterUsername.Text = "Username";
+                RegisterUsername.ForeColor = Color.DarkGray;
+            }
+        }
 
+        private void RegisterUsername_Enter(object sender, EventArgs e)
+        {
+            RegisterUsername.SelectAll();
+            RegisterUsername.ForeColor = Color.Black;
+        }
+
+        private void RegisterPassword_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(RegisterPassword.Text) || string.IsNullOrWhiteSpace(RegisterPassword.Text) || RegisterPassword.Text == "Password")
+            {
+                RegisterPassword.PasswordChar = '\0';
+                RegisterPassword.Text = "Password";
+                RegisterPassword.ForeColor = Color.DarkGray;
+
+
+            }
+        }
+
+        private void RegisterPassword_Enter(object sender, EventArgs e)
+        {
+            RegisterPassword.SelectAll();
+            RegisterPassword.ForeColor = Color.Black;
+        }
+
+
+        private void registerpassrepeat_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(registerpassrepeat.Text) || string.IsNullOrWhiteSpace(registerpassrepeat.Text) || registerpassrepeat.Text == "Re-enter Password")
+            {
+                registerpassrepeat.PasswordChar = '\0';
+                registerpassrepeat.Text = "Re-enter Password";
+                registerpassrepeat.ForeColor = Color.DarkGray;
+
+            }
+        }
 
 
         /* 
