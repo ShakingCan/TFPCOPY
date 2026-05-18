@@ -102,20 +102,19 @@ namespace TheFinalProject
                             }
                             else if (result != null && role == "Coach")
                             {
-                               
+
                                 MessageBox.Show("Login successful!");
 
                                 coachfrm cform = new coachfrm(userID);
                                 cform.Show();
                                 this.Hide();
                             }
-                            else
-                            {
-                                MessageBox.Show("Invalid username or password!");
-                            }
-
                         }
-                    
+                        else
+                        {
+                            MessageBox.Show("Invalid username or password!");
+                        }
+
                     }
 
                   
