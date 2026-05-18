@@ -105,6 +105,15 @@ namespace TheFinalProject.Resources
             {
                 clearGuide();
             }
+            if (RegisterUsername.Text != "Username" || RegisterPassword.Text != "Password" || registerpassrepeat.Text != "Re-enter Password")
+            {
+                Registerbtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\activeLoginBtn.png");
+            }
+            else
+            {
+                Registerbtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\logoutbtn.png");
+                Registerbtn.BackgroundImageLayout = ImageLayout.Stretch;
+            }
         }
 
         private void RegisterPassword_TextChanged(object sender, EventArgs e)
@@ -115,6 +124,15 @@ namespace TheFinalProject.Resources
             {
                 clearGuide();
             }
+            if (RegisterUsername.Text != "Username" || RegisterPassword.Text != "Password" || registerpassrepeat.Text != "Re-enter Password")
+            {
+                Registerbtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\activeLoginBtn.png");
+            }
+            else
+            {
+                Registerbtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\logoutbtn.png");
+                Registerbtn.BackgroundImageLayout = ImageLayout.Stretch;
+            }
         }
 
         private void registerpassrepeat_TextChanged(object sender, EventArgs e)
@@ -124,6 +142,15 @@ namespace TheFinalProject.Resources
             if (!string.IsNullOrWhiteSpace(registerpassrepeat.Text))
             {
                 clearGuide();
+            }
+            if (RegisterUsername.Text != "Username" || RegisterPassword.Text != "Password" || registerpassrepeat.Text != "Re-enter Password")
+            {
+                Registerbtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\activeLoginBtn.png");
+            }
+            else
+            {
+                Registerbtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\logoutbtn.png");
+                Registerbtn.BackgroundImageLayout = ImageLayout.Stretch;
             }
         }
         void comparePass()
@@ -206,6 +233,18 @@ namespace TheFinalProject.Resources
                 registerpassrepeat.ForeColor = Color.DarkGray;
 
             }
+        }
+
+        private void userRegistry_Load(object sender, EventArgs e)
+        {
+            RegisterUsername.Text = "Username";
+            RegisterPassword.Text = "Password";
+            registerpassrepeat.Text = "Re-enter Password";
+            RegisterPassword.PasswordChar = '\0';
+            registerpassrepeat.PasswordChar = '\0';
+            RegisterUsername.ForeColor = SystemColors.ControlDark;
+            RegisterPassword.ForeColor = SystemColors.ControlDark;
+            registerpassrepeat.ForeColor = SystemColors.ControlDark;
         }
 
 

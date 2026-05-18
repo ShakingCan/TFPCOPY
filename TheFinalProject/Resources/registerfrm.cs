@@ -29,7 +29,16 @@ namespace TheFinalProject.Resources
                 {
                     clearGuide();
             }
-               
+            if (RegisterUsername.Text != "Username" || RegisterPassword.Text != "Password" || registerpassrepeat.Text != "Re-enter Password")
+            {
+                Registerbtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\activeLoginBtn.png");
+            }
+            else
+            {
+                Registerbtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\logoutbtn.png");
+                Registerbtn.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+
         }
         
 
@@ -46,6 +55,15 @@ namespace TheFinalProject.Resources
             {
                 clearGuide();
             }
+            if (RegisterUsername.Text != "Username" || RegisterPassword.Text != "Password" || registerpassrepeat.Text != "Re-enter Password")
+            {
+                Registerbtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\activeLoginBtn.png");
+            }
+            else
+            {
+                Registerbtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\logoutbtn.png");
+                Registerbtn.BackgroundImageLayout = ImageLayout.Stretch;
+            }
 
         }
 
@@ -56,6 +74,15 @@ namespace TheFinalProject.Resources
             if (!string.IsNullOrWhiteSpace(registerpassrepeat.Text))
             {
                 clearGuide();
+            }
+            if (RegisterUsername.Text != "Username" || RegisterPassword.Text != "Password" || registerpassrepeat.Text != "Re-enter Password")
+            {
+                Registerbtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\activeLoginBtn.png");
+            }
+            else
+            {
+                Registerbtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\logoutbtn.png");
+                Registerbtn.BackgroundImageLayout = ImageLayout.Stretch;
             }
 
         }

@@ -24,6 +24,16 @@ namespace TheFinalProject
         {
             
             username.ForeColor = Color.Black;
+            if(username.Text != "Username" ||password.Text != "Password")
+            {
+                loginBtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\activeLoginBtn.png");
+
+            }
+            else
+            {
+                loginBtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\logoutbtn.png");
+                loginBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            }
         }
 
         private void username_MouseClick(object sender, MouseEventArgs e)
@@ -204,6 +214,21 @@ namespace TheFinalProject
         private void password_TextChanged(object sender, EventArgs e)
         {
             password.PasswordChar = '*';
+            if (username.Text != "Username" || password.Text != "Password")
+            {
+                loginBtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\activeLoginBtn.png");
+            }
+            else
+            {
+                loginBtn.BackgroundImage = Image.FromFile("C:\\Users\\Allan\\Desktop\\New folder\\logoutbtn.png");
+                loginBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            adminwindow a = new adminwindow();
+            a.Visible = true;
         }
     }
 }

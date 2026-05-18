@@ -31,8 +31,8 @@
             this.loginPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.showpassbtn = new System.Windows.Forms.Button();
             this.password = new System.Windows.Forms.TextBox();
             this.passguidelogin = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@
             this.registerbtn = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.loginPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
@@ -52,9 +53,9 @@
             // 
             // loginPanel
             // 
+            this.loginPanel.Controls.Add(this.button1);
             this.loginPanel.Controls.Add(this.label3);
             this.loginPanel.Controls.Add(this.pictureBox3);
-            this.loginPanel.Controls.Add(this.button1);
             this.loginPanel.Controls.Add(this.panel5);
             this.loginPanel.Controls.Add(this.pictureBox2);
             this.loginPanel.Controls.Add(this.pictureBox1);
@@ -71,7 +72,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Cascadia Code", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(186, 65);
+            this.label3.Location = new System.Drawing.Point(131, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(235, 33);
             this.label3.TabIndex = 17;
@@ -82,26 +83,17 @@
             // 
             this.pictureBox3.BackgroundImage = global::TheFinalProject.Properties.Resources.image_2;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(161, 101);
+            this.pictureBox3.Location = new System.Drawing.Point(92, 139);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(298, 270);
             this.pictureBox3.TabIndex = 16;
             this.pictureBox3.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 22);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.BackgroundImage = global::TheFinalProject.Properties.Resources.white_rect;
+            this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.showpassbtn);
             this.panel5.Controls.Add(this.password);
             this.panel5.Controls.Add(this.passguidelogin);
@@ -110,10 +102,19 @@
             this.panel5.Controls.Add(this.username);
             this.panel5.Controls.Add(this.loginBtn);
             this.panel5.Controls.Add(this.registerbtn);
-            this.panel5.Location = new System.Drawing.Point(500, 65);
+            this.panel5.Location = new System.Drawing.Point(572, 74);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(345, 315);
             this.panel5.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(129, 285);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Contact us";
             // 
             // showpassbtn
             // 
@@ -167,7 +168,6 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(168, 36);
@@ -225,9 +225,9 @@
             // 
             this.pictureBox2.BackgroundImage = global::TheFinalProject.Properties.Resources.white_rect;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(490, 23);
+            this.pictureBox2.Location = new System.Drawing.Point(490, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(367, 408);
+            this.pictureBox2.Size = new System.Drawing.Size(494, 505);
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
             // 
@@ -235,11 +235,21 @@
             // 
             this.pictureBox1.BackgroundImage = global::TheFinalProject.Properties.Resources.grey_rect;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(127, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(367, 408);
+            this.pictureBox1.Size = new System.Drawing.Size(491, 505);
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(704, 437);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // loginform
             // 
@@ -266,17 +276,18 @@
         private System.Windows.Forms.TextBox username;
         private System.Windows.Forms.Panel loginPanel;
         private System.Windows.Forms.TextBox password;
-        private System.Windows.Forms.Label registerbtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label userguidelogin;
         private System.Windows.Forms.Label passguidelogin;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button showpassbtn;
+        private System.Windows.Forms.Label registerbtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
