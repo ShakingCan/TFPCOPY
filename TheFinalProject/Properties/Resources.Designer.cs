@@ -73,6 +73,16 @@ namespace TheFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap adminbtns {
+            get {
+                object obj = ResourceManager.GetObject("adminbtns", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap approvebtn {
             get {
                 object obj = ResourceManager.GetObject("approvebtn", resourceCulture);

@@ -443,7 +443,34 @@ ORDER BY
             panel.Visible = !panel.Visible;
         }
 
-       
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void tabControl1_DrawItem_1(object sender, DrawItemEventArgs e)
+        {
+            // Colors from your mockup
+            Color activeColor = Color.FromArgb(100, 100, 100); // Dark Gray
+            Color inactiveColor = Color.FromArgb(220, 220, 220); // Light Gray
+            Color textColor = Color.White;
+
+            TabPage page = tabControl1.TabPages[e.Index];
+            Rectangle tabBounds = tabControl1.GetTabRect(e.Index);
+
+            // Check if the tab is selected
+            if (e.State == DrawItemState.Selected)
+            {
+                e.Graphics.FillRectangle(new SolidBrush(activeColor), tabBounds);
+            }
+            else
+            {
+                e.Graphics.FillRectangle(new SolidBrush(inactiveColor), tabBounds);
+                textColor = Color.Black; // Inactive tabs usually have dark text
+            }
+
+            // Draw the text in the middle
+            TextRenderer.DrawText(e.Graphics, page.Text, page.Font, tabBounds, textColor, TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
+        }
     }
 
        

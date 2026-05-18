@@ -252,10 +252,17 @@ namespace TheFinalProject.Resources
         private void approvebtn_Click(object sender, EventArgs e)
         {
             int requestID;
+           
+            if (sessionstoapprove.CurrentRow == null)
+            {
+                MessageBox.Show("There are no sessions available to select.");
+                return;
+            }
             var selected = sessionstoapprove.CurrentRow.Cells["RequestID"].Value;
-            if (selected == null)
+            if (selected == null || selected == DBNull.Value)
             {
                 MessageBox.Show("Please select a row with values");
+                return;
             }
             requestID = Convert.ToInt32(selected);
             string connectionString = @"Data Source=DESKTOP-MOE35KS;Initial Catalog=finalprojectDB;Integrated Security=True;";
@@ -281,10 +288,16 @@ namespace TheFinalProject.Resources
         private void declinebtn_Click(object sender, EventArgs e)
         {
             int requestID;
+            if (sessionstoapprove.CurrentRow == null)
+            {
+                MessageBox.Show("There are no sessions available to select.");
+                return;
+            }
             var selected = sessionstoapprove.CurrentRow.Cells["RequestID"].Value;
-            if (selected == null)
+            if (selected == null || selected == DBNull.Value)
             {
                 MessageBox.Show("Please select a row with values");
+                return;
             }
             requestID = Convert.ToInt32(selected);
             string connectionString = @"Data Source=DESKTOP-MOE35KS;Initial Catalog=finalprojectDB;Integrated Security=True;";
