@@ -79,6 +79,9 @@
     <Compile Include="Resources\scraps.Designer.cs">
       <DependentUpon>scraps.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resources\transparent shit.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Resources\Userfrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +176,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\adminbtns.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginpage image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

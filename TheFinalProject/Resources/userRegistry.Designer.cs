@@ -30,6 +30,9 @@
         {
             this.registerpanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.Usertoggle = new System.Windows.Forms.RadioButton();
+            this.Coachtoggle = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.RegisterUsername = new System.Windows.Forms.TextBox();
@@ -43,9 +46,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Usertoggle = new System.Windows.Forms.RadioButton();
-            this.Coachtoggle = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.registerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
@@ -81,6 +81,40 @@
             this.label3.TabIndex = 27;
             this.label3.Tag = "";
             this.label3.Text = "Betacell Wellness";
+            // 
+            // Usertoggle
+            // 
+            this.Usertoggle.AutoSize = true;
+            this.Usertoggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Usertoggle.Location = new System.Drawing.Point(476, 409);
+            this.Usertoggle.Name = "Usertoggle";
+            this.Usertoggle.Size = new System.Drawing.Size(62, 22);
+            this.Usertoggle.TabIndex = 21;
+            this.Usertoggle.TabStop = true;
+            this.Usertoggle.Text = "User";
+            this.Usertoggle.UseVisualStyleBackColor = true;
+            // 
+            // Coachtoggle
+            // 
+            this.Coachtoggle.AutoSize = true;
+            this.Coachtoggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Coachtoggle.Location = new System.Drawing.Point(385, 409);
+            this.Coachtoggle.Name = "Coachtoggle";
+            this.Coachtoggle.Size = new System.Drawing.Size(75, 22);
+            this.Coachtoggle.TabIndex = 20;
+            this.Coachtoggle.TabStop = true;
+            this.Coachtoggle.Text = "Coach";
+            this.Coachtoggle.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(386, 369);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(154, 24);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Create Account";
             // 
             // pictureBox3
             // 
@@ -245,40 +279,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(491, 505);
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
-            // 
-            // Usertoggle
-            // 
-            this.Usertoggle.AutoSize = true;
-            this.Usertoggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Usertoggle.Location = new System.Drawing.Point(476, 409);
-            this.Usertoggle.Name = "Usertoggle";
-            this.Usertoggle.Size = new System.Drawing.Size(62, 22);
-            this.Usertoggle.TabIndex = 21;
-            this.Usertoggle.TabStop = true;
-            this.Usertoggle.Text = "User";
-            this.Usertoggle.UseVisualStyleBackColor = true;
-            // 
-            // Coachtoggle
-            // 
-            this.Coachtoggle.AutoSize = true;
-            this.Coachtoggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Coachtoggle.Location = new System.Drawing.Point(385, 409);
-            this.Coachtoggle.Name = "Coachtoggle";
-            this.Coachtoggle.Size = new System.Drawing.Size(75, 22);
-            this.Coachtoggle.TabIndex = 20;
-            this.Coachtoggle.TabStop = true;
-            this.Coachtoggle.Text = "Coach";
-            this.Coachtoggle.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(386, 369);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 24);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Create Account";
             // 
             // userRegistry
             // 

@@ -14,6 +14,7 @@ namespace TheFinalProject.Resources
 {
     public partial class Userfrm : Form
     {
+        private int selectedPrimaryKey = -1;
         string connectionString = @"Data Source=DESKTOP-MOE35KS;Initial Catalog=finalprojectDB;Integrated Security=True;";
 
         private int upcomingcount;
@@ -63,19 +64,19 @@ namespace TheFinalProject.Resources
 
         private void Userfrm_Load(object sender, EventArgs e)
         {
-            
-            
+
+
 
             try
             {
 
-                
+
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
 
                     string query = "SELECT username FROM UsersNew WHERE role = 'coach'";
-                   
+
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -85,7 +86,7 @@ namespace TheFinalProject.Resources
                         }
                     }
                     string usernamequery = "SELECT username FROM UsersNew WHERE ID = @userid";
-                    using (SqlCommand command  = new SqlCommand(usernamequery, conn))
+                    using (SqlCommand command = new SqlCommand(usernamequery, conn))
                     {
                         command.Parameters.AddWithValue("userid", CurrentUserID);
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -93,13 +94,13 @@ namespace TheFinalProject.Resources
                             while (reader.Read())
                             {
                                 string username = reader["username"].ToString();
-                               accountname.Text = username;
+                                accountname.Text = username;
                             }
                         }
 
                     }
 
-                   
+
                 }
             }
 
@@ -113,7 +114,7 @@ namespace TheFinalProject.Resources
             searchbox.Items.AddRange(allUsernames.ToArray());
             MessageBox.Show(allUsernames.Count.ToString());
 
-            
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
@@ -177,6 +178,7 @@ namespace TheFinalProject.Resources
                     }
 
                 }
+                //notif queries
                 string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\nAND (UserApproved IS NULL OR UserApproved <> 'Approved')";
 
                 using (SqlCommand cmd = new SqlCommand(processingquery, conn))
@@ -189,7 +191,7 @@ namespace TheFinalProject.Resources
 
                     ProcessingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
-                    toprocesscount.Text = ProcessingCount.ToString();
+                    
                 }
                 string upcomingreminderquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\n  AND Status = 'Approved'\r\n  AND UserApproved = 'Approved'\r\n  AND CoachApproved = 'Approved'\r\n  AND RequestDateTime >= CAST(GETDATE() AS DATE);";
 
@@ -201,11 +203,11 @@ namespace TheFinalProject.Resources
 
                     UpcomingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
-                    upcomingseshcount.Text = UpcomingCount.ToString();
+                    
                 }
                 int totalcount = UpcomingCount + ProcessingCount;
                 Reminderbtn.Text = "Reminders(" + totalcount + ")";
-                
+
 
 
             }
@@ -213,14 +215,14 @@ namespace TheFinalProject.Resources
             loadSessions();
 
             //implement data tables for upcoming sessions grid and past sessions
-            
+
 
         }
         public void refreshnotif()
-        { 
-        using(SqlConnection conn = new SqlConnection(connectionString))
-            { 
-                conn.Open(); 
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
                 string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\nAND (UserApproved IS NULL OR UserApproved <> 'Approved')";
 
                 using (SqlCommand cmd = new SqlCommand(processingquery, conn))
@@ -233,7 +235,7 @@ namespace TheFinalProject.Resources
 
                     ProcessingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
-                    toprocesscount.Text = ProcessingCount.ToString();
+                    
                 }
                 string upcomingreminderquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\n  AND Status = 'Approved'\r\n  AND UserApproved = 'Approved'\r\n  AND CoachApproved = 'Approved'\r\n  AND RequestDateTime >= CAST(GETDATE() AS DATE);";
 
@@ -245,7 +247,7 @@ namespace TheFinalProject.Resources
 
                     UpcomingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
-                    upcomingseshcount.Text = UpcomingCount.ToString();
+                    
                 }
                 int totalcount = UpcomingCount + ProcessingCount;
                 Reminderbtn.Text = "Reminders(" + totalcount + ")";
@@ -272,7 +274,8 @@ namespace TheFinalProject.Resources
                 requestdateguide.ForeColor = Color.Red;
                 return;
             }
-            if (string.IsNullOrEmpty(durationbox.Text)||string.IsNullOrWhiteSpace(durationbox.Text)) {
+            if (string.IsNullOrEmpty(durationbox.Text) || string.IsNullOrWhiteSpace(durationbox.Text))
+            {
 
                 durationguide.Visible = true;
                 durationguide.Text = "Please select a session duration!";
@@ -285,7 +288,7 @@ namespace TheFinalProject.Resources
             if (!string.IsNullOrWhiteSpace(searchbox.Text) && dateTimePicker1.Value >= DateTime.Now.AddHours(1))
             {
                 int coachId;
-                
+
                 string connectionString = @"Data Source=DESKTOP-MOE35KS;Initial Catalog=finalprojectDB;Integrated Security=True;";
                 try
                 {
@@ -334,8 +337,8 @@ namespace TheFinalProject.Resources
 
                             //debug shit
                             MessageBox.Show("Booking request sent successfully!");
-                            
-                            
+
+
                         }
 
                     }
@@ -364,7 +367,7 @@ namespace TheFinalProject.Resources
         }
         private void sessionstoapprove_Load(object sender, EventArgs e)
         {
-           
+
         }
         //this will also be used in the coach feature
         private void approvebtn_Click(object sender, EventArgs e)
@@ -383,7 +386,8 @@ namespace TheFinalProject.Resources
             }
             requestID = Convert.ToInt32(selected);
             string connectionString = @"Data Source=DESKTOP-MOE35KS;Initial Catalog=finalprojectDB;Integrated Security=True;";
-            using (SqlConnection conn = new SqlConnection(connectionString)) {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
                 conn.Open();
                 string approvingquery = "UPDATE BookingRequests SET UserApproved = 'Approved' WHERE RequestID = @requestID";
                 using (SqlCommand cmd = new SqlCommand(approvingquery, conn))
@@ -444,7 +448,7 @@ namespace TheFinalProject.Resources
             loadSessions();
             refreshnotif();
         }
-        
+
 
 
         public void loadSessions()
@@ -481,20 +485,63 @@ namespace TheFinalProject.Resources
         }
         public void loadUpcomingSessions()
         {
-          
-        }
 
+        }
+        private void ExecuteUserAction(int requestID, string actionName, string sqlQuery)
+        {
+            string connectionString = @"Data Source=DESKTOP-MOE35KS;Initial Catalog=finalprojectDB;Integrated Security=True;";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sqlQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@requestID", requestID);
+                    cmd.ExecuteNonQuery();
+
+                    // Your debug alert showing exactly what row did what
+                    MessageBox.Show($"Session {actionName.ToLower()} successfully!");
+                }
+            }
+
+            // Refresh notifications and reload the grid data immediately so the approved/declined row disappears/updates
+            refreshnotif();
+            loadSessions();
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            refreshnotif();
-        }
+            // 1. Ignore clicks on the header row (-1)
+            if (e.RowIndex < 0) return;
 
+            // 2. Safely extract the RequestID from the row where the button was clicked
+            var selectedValue = dataGridView1.Rows[e.RowIndex].Cells["RequestID"].Value;
+            if (selectedValue == null || selectedValue == DBNull.Value)
+            {
+                MessageBox.Show("Please select a valid row with session values.");
+                return;
+            }
+            int requestID = Convert.ToInt32(selectedValue);
+
+            // 3. Check if they clicked the APPROVE (Check ✔️) column
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "ApproveAction")
+            {
+                ExecuteUserAction(requestID, "Approved", "UPDATE BookingRequests SET UserApproved = 'Approved' WHERE RequestID = @requestID");
+            }
+
+            // 4. Check if they clicked the DECLINE (X ❌) column
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "RejectAction")
+            {
+                // Note: Using 'UserApproved' here instead of 'UserApprovedx' just in case that 'x' was a typo in your database column name!
+                ExecuteUserAction(requestID, "Declined", "UPDATE BookingRequests SET UserApproved = 'Declined' WHERE RequestID = @requestID");
+            }
+        }
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             string connectionString = @"Data Source=DESKTOP-MOE35KS;Initial Catalog=finalprojectDB;Integrated Security=True;";
-            using (SqlConnection conn = new SqlConnection(connectionString)) { 
-            conn.Open ();
-                 string query = @"SELECT 
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = @"SELECT 
                      br.RequestID AS RequestID,
                      u.username AS UserName,
                      c.username AS CoachName,
@@ -537,11 +584,11 @@ namespace TheFinalProject.Resources
                     {
                         conn.Open();
                         //FIX THIS SHIT 
-                        
+
 
 
                         String identificationQuery = "SELECT ID FROM UsersNew WHERE username = @username";
-                       
+
 
                         using (SqlCommand cmd = new SqlCommand(identificationQuery, conn))
                         {
@@ -597,7 +644,7 @@ namespace TheFinalProject.Resources
 
         }
 
-        
+
 
         private void viewprofilebutton_Click(object sender, EventArgs e)
         {
@@ -609,12 +656,12 @@ namespace TheFinalProject.Resources
 
         private void upcomingsessionsdata_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-           
+
         }
 
         private void Reminderbtn_Click(object sender, EventArgs e)
         {
-            TogglePanel(panel2);
+           
             refreshnotif();
         }
         private void TogglePanel(Panel panel)
@@ -627,33 +674,33 @@ namespace TheFinalProject.Resources
 
         }
 
-       
-       
-          private void tabControl1_DrawItem_1(object sender, DrawItemEventArgs e)
-         {
-             // Colors from your mockup
-             Color activeColor = Color.FromArgb(100, 100, 100); // Dark Gray
-             Color inactiveColor = Color.FromArgb(220, 220, 220); // Light Gray
-             Color textColor = Color.White;
 
-             TabPage page = tabControl1.TabPages[e.Index];
-             Rectangle tabBounds = tabControl1.GetTabRect(e.Index);
 
-             // Check if the tab is selected
-             if (e.State == DrawItemState.Selected)
-             {
-                 e.Graphics.FillRectangle(new SolidBrush(activeColor), tabBounds);
-             }
-             else
-             {
-                 e.Graphics.FillRectangle(new SolidBrush(inactiveColor), tabBounds);
-                 textColor = Color.Black; // Inactive tabs usually have dark text
-             }
+        private void tabControl1_DrawItem_1(object sender, DrawItemEventArgs e)
+        {
+            // Colors from your mockup
+            Color activeColor = Color.FromArgb(100, 100, 100); // Dark Gray
+            Color inactiveColor = Color.FromArgb(220, 220, 220); // Light Gray
+            Color textColor = Color.White;
 
-             // Draw the text in the middle
-             TextRenderer.DrawText(e.Graphics, page.Text, page.Font, tabBounds, textColor, TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
-         }
-         
+            TabPage page = tabControl1.TabPages[e.Index];
+            Rectangle tabBounds = tabControl1.GetTabRect(e.Index);
+
+            // Check if the tab is selected
+            if (e.State == DrawItemState.Selected)
+            {
+                e.Graphics.FillRectangle(new SolidBrush(activeColor), tabBounds);
+            }
+            else
+            {
+                e.Graphics.FillRectangle(new SolidBrush(inactiveColor), tabBounds);
+                textColor = Color.Black; // Inactive tabs usually have dark text
+            }
+
+            // Draw the text in the middle
+            TextRenderer.DrawText(e.Graphics, page.Text, page.Font, tabBounds, textColor, TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
+        }
+
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
@@ -675,8 +722,69 @@ namespace TheFinalProject.Resources
                 declinebtn.Visible = false;
             }
         }
+
+        private void dataGridView1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        //to implement on coach
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            if (sender is DataGridView grid)
+            {
+                var row = grid.Rows[e.RowIndex];
+                if (row.IsNewRow) return;
+
+                if (row.Cells["RequestID"].Value != null && int.TryParse(row.Cells["RequestID"].Value.ToString(), out int currentRowsKey))
+                {
+                    bool isSelected = (currentRowsKey == selectedPrimaryKey);
+
+                    int glyphSize = 14; // Checkboxes look slightly cleaner a tiny bit smaller (14x14)
+                    int x = e.RowBounds.Left + (grid.RowHeadersWidth - glyphSize) / 2;
+                    int y = e.RowBounds.Top + (row.Height - glyphSize) / 2;
+
+                    // Swapped to DrawCheckBox
+                    ButtonState state = isSelected ? ButtonState.Checked : ButtonState.Normal;
+                    ControlPaint.DrawCheckBox(e.Graphics, x, y, glyphSize, glyphSize, state);
+                }
+            }
+        }
+
+        // To implement on coach
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var clickedRow = dataGridView1.Rows[e.RowIndex];
+
+                if (clickedRow.Cells["RequestID"].Value != null)
+                {
+                    int clickedKey = Convert.ToInt32(clickedRow.Cells["RequestID"].Value);
+
+                    // OPTIONAL "TOGGLE" LOGIC: 
+                    // If they click the already checked row, uncheck it. Otherwise, check the new one.
+                    if (selectedPrimaryKey == clickedKey)
+                    {
+                        selectedPrimaryKey = -1; // Clear selection
+                    }
+                    else
+                    {
+                        selectedPrimaryKey = clickedKey; // Set new selection
+                    }
+
+                    // Force the grid to redraw and display the checkbox immediately
+                    dataGridView1.Invalidate();
+
+                    // Optional: Test to see if it works!
+                    if (selectedPrimaryKey != -1)
+                    {
+                        MessageBox.Show($"Selected Primary Key: {selectedPrimaryKey}");
+                    }
+                }
+            }
+        }
+
     }
-   
 }
 /*EVERYTHING IN CELL DESIGNING THAT I MAY NEED
  
