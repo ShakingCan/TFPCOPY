@@ -17,6 +17,7 @@ namespace TheFinalProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new loginform());
+            Application.EnableVisualStyles();
         }
     }
 }

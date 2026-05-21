@@ -110,12 +110,13 @@ namespace TheFinalProject.Resources
             searchbox.SelectionStart = searchbox.Text.Length;
             searchbox.DroppedDown = true;
 
+
         }
 
         private void Userfrm_Load(object sender, EventArgs e)
         {
-            
-           
+
+
 
             try
             {
@@ -243,7 +244,7 @@ namespace TheFinalProject.Resources
 
                     ProcessingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
-                    
+
                 }
                 string upcomingreminderquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\n  AND Status = 'Approved'\r\n  AND UserApproved = 'Approved'\r\n  AND CoachApproved = 'Approved'\r\n  AND RequestDateTime >= CAST(GETDATE() AS DATE);";
 
@@ -252,10 +253,11 @@ namespace TheFinalProject.Resources
                     cmd.Parameters.AddWithValue("@currentUserID", CurrentUserID);
 
                     object result = cmd.ExecuteScalar();
+                    MessageBox.Show(result.ToString());
 
                     UpcomingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
-                    
+
                 }
                 int totalcount = UpcomingCount + ProcessingCount;
                 Reminderbtn.Text = "  Reminders";
@@ -272,7 +274,7 @@ namespace TheFinalProject.Resources
         }
         private void yourBackgroundContainer_Paint(object sender, PaintEventArgs e)
         {
-            
+
             // 1. Forces the text edges to blend perfectly into the gritty gym photo
             e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
 
@@ -290,7 +292,7 @@ namespace TheFinalProject.Resources
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\nAND (UserApproved IS NULL OR UserApproved <> 'Approved')";
+                string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\nAND (UserApproved IS NULL OR UserApproved <> 'Approved') AND RequestDateTime >= GETDATE()";
 
                 using (SqlCommand cmd = new SqlCommand(processingquery, conn))
                 {
@@ -302,22 +304,23 @@ namespace TheFinalProject.Resources
 
                     ProcessingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
-                    
+
                 }
-                string upcomingreminderquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\n  AND Status = 'Approved'\r\n  AND UserApproved = 'Approved'\r\n  AND CoachApproved = 'Approved'\r\n  AND RequestDateTime >= CAST(GETDATE() AS DATE);";
+                string upcomingreminderquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\n  AND Status = 'Approved'\r\n  AND UserApproved = 'Approved'\r\n  AND CoachApproved = 'Approved'\r\n  AND RequestDateTime >= GETDATE();";
 
                 using (SqlCommand cmd = new SqlCommand(upcomingreminderquery, conn))
                 {
                     cmd.Parameters.AddWithValue("@currentUserID", CurrentUserID);
 
                     object result = cmd.ExecuteScalar();
+                    MessageBox.Show(result.ToString());
 
                     UpcomingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
-                    
+
                 }
                 int totalcount = UpcomingCount + ProcessingCount;
-                Reminderbtn.Text = "Reminders(" + totalcount + ")";
+                Reminderbtn.Text = "  Reminders";
             }
         }
         private void searchtb_TextChanged(object sender, EventArgs e)
@@ -728,7 +731,7 @@ namespace TheFinalProject.Resources
 
         private void Reminderbtn_Click(object sender, EventArgs e)
         {
-           
+
             refreshnotif();
         }
         private void TogglePanel(Panel panel)
@@ -768,7 +771,7 @@ namespace TheFinalProject.Resources
             TextRenderer.DrawText(e.Graphics, page.Text, page.Font, tabBounds, textColor, TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
         }
 
-
+       
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
@@ -850,7 +853,76 @@ namespace TheFinalProject.Resources
                 }
             }
         }
+        private void searchbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadCalendarDays(searchbox.Text);
+        }
+        private void LoadCalendarDays(string coachName)
+        {
+            // 1. Clear out any bolded dates from the previous coach selection
+            monthCalendar1.RemoveAllBoldedDates();
 
+            List<DateTime> bookedDates = new List<DateTime>();
+
+            // 2. Your exact beautiful JOIN query
+            string query = "SELECT BookingRequests.RequestDateTime, UsersNew.username AS COACHNAME " +
+                           "FROM BookingRequests " +
+                           "JOIN UsersNew ON BookingRequests.COACHID = UsersNew.ID " +
+                           "WHERE UsersNew.username = @coachname";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@coachname", coachName);
+
+                    try
+                    {
+                        conn.Open();
+                        using (SqlDataReader dataReader = cmd.ExecuteReader())
+                        {
+                            while (dataReader.Read())
+                            {
+                                if (dataReader["RequestDateTime"] != DBNull.Value)
+                                {
+                                    bookedDates.Add(Convert.ToDateTime(dataReader["RequestDateTime"]));
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error fetching coach schedule: " + ex.Message);
+                    }
+                }
+            }
+
+            // 3. Pass the dates to the native calendar so they stand out
+            foreach (DateTime bookedDate in bookedDates)
+            {
+                monthCalendar1.AddBoldedDate(bookedDate.Date);
+            }
+
+            // 4. CRITICAL: Tell Windows to repaint the calendar so the changes show up
+            monthCalendar1.UpdateBoldedDates();
+        }
+
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            DateTime selectedDate = e.Start.Date;
+
+            // Check if the date they clicked is in the calendar's bolded list
+            if (monthCalendar1.BoldedDates.Contains(selectedDate))
+            {
+                MessageBox.Show("This coach is already booked on this day! Please select a regular date.",
+                                "Slot Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                // Optional: Reset selection back to today's date
+                monthCalendar1.SetDate(DateTime.Now);
+            }
+        }
+
+       
     }
 }
 /*EVERYTHING IN CELL DESIGNING THAT I MAY NEED
