@@ -133,6 +133,16 @@ namespace TheFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_white {
+            get {
+                object obj = ResourceManager.GetObject("icon white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap image_2 {
             get {
                 object obj = ResourceManager.GetObject("image 2", resourceCulture);
@@ -206,6 +216,16 @@ namespace TheFinalProject.Properties {
         internal static System.Drawing.Bitmap user {
             get {
                 object obj = ResourceManager.GetObject("user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap white_icon {
+            get {
+                object obj = ResourceManager.GetObject("white icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

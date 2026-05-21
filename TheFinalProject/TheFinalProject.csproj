@@ -189,5 +189,11 @@
   <ItemGroup>
     <Folder Include="Resources\NewFolder1\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

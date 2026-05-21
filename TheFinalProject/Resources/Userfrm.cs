@@ -16,6 +16,12 @@ namespace TheFinalProject.Resources
     {
         private int selectedPrimaryKey = -1;
         string connectionString = @"Data Source=DESKTOP-MOE35KS;Initial Catalog=finalprojectDB;Integrated Security=True;";
+        private string currentAccountName = "Loading...";
+        public string AccountNameVar
+        {
+            get { return currentAccountName; }
+            set { currentAccountName = value; }
+        }
 
         private int upcomingcount;
         private int processingcount;
@@ -36,12 +42,56 @@ namespace TheFinalProject.Resources
         {
             InitializeComponent();
             CurrentUserID = userId;
+            // 1. Force the label to sit INSIDE the picture box layer
+            this.accountname.Parent = this.pictureBox1;
+
+            // 2. Now 'Transparent' will look directly at the gym banner image pixels
+            this.accountname.BackColor = Color.Transparent;
+            this.accountname.ForeColor = Color.White;
+
+            this.Reminderbtn.Paint += new PaintEventHandler(Reminderbtn_Paint);
+
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "MM/dd/yyyy hh:mm tt";
 
 
         }
+        private void Reminderbtn_Paint(object sender, PaintEventArgs e)
+        {
+            int totalCount = UpcomingCount + ProcessingCount;
 
+            // Only draw the red badge if there are actually pending/upcoming notifications!
+            if (totalCount > 0)
+            {
+                // Smooth out the circle edges so it looks clean and modern
+                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+
+                // 1. Define the size and position of the red circle
+                int circleRadius = 18;
+                int x = this.Reminderbtn.Width - circleRadius - 5; // 6 pixels off the right edge
+                int y = 8;                                        // 4 pixels down from the top edge
+
+                // 2. Draw the solid red circle
+                using (Brush redBrush = new SolidBrush(Color.Red))
+                {
+                    e.Graphics.FillEllipse(redBrush, x, y, circleRadius, circleRadius);
+                }
+
+                // 3. Draw the count number right inside the circle
+                string countText = totalCount.ToString();
+                using (Font font = new Font("Segoe UI", 9, FontStyle.Bold))
+                using (Brush textBrush = new SolidBrush(Color.White))
+                {
+                    // Measure the text size so we can center it perfectly inside the circle
+                    SizeF textSize = e.Graphics.MeasureString(countText, font);
+                    float textX = x + (circleRadius - textSize.Width) / 2;
+                    float textY = y + (circleRadius - textSize.Height) / 2;
+
+                    e.Graphics.DrawString(countText, font, textBrush, textX, textY);
+                }
+            }
+        }
         private void searchbox_TextChanged(object sender, EventArgs e)
         {
             coachguide.Visible = false;
@@ -64,8 +114,8 @@ namespace TheFinalProject.Resources
 
         private void Userfrm_Load(object sender, EventArgs e)
         {
-
-
+            
+           
 
             try
             {
@@ -95,10 +145,12 @@ namespace TheFinalProject.Resources
                             {
                                 string username = reader["username"].ToString();
                                 accountname.Text = username;
+                                AccountNameVar = username;
                             }
                         }
 
                     }
+                    this.accountname.Invalidate();
 
 
                 }
@@ -206,7 +258,7 @@ namespace TheFinalProject.Resources
                     
                 }
                 int totalcount = UpcomingCount + ProcessingCount;
-                Reminderbtn.Text = "Reminders(" + totalcount + ")";
+                Reminderbtn.Text = "  Reminders";
 
 
 
@@ -217,6 +269,21 @@ namespace TheFinalProject.Resources
             //implement data tables for upcoming sessions grid and past sessions
 
 
+        }
+        private void yourBackgroundContainer_Paint(object sender, PaintEventArgs e)
+        {
+            
+            // 1. Forces the text edges to blend perfectly into the gritty gym photo
+            e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+
+            // 2. Set your white font styling to match the brand mockup
+            using (Font font = new Font("Segoe UI", 14, FontStyle.Bold))
+            using (Brush brush = new SolidBrush(Color.White))
+            {
+                // 3. CRITICAL: Draw at (0, 0) so it paints cleanly inside the label boundaries,
+                // instead of flying off-screen into the void!
+                e.Graphics.DrawString(AccountNameVar, font, brush, 0, 0);
+            }
         }
         public void refreshnotif()
         {

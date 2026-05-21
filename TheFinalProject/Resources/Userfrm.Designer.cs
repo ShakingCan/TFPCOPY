@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.usermainpanel = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.Reminderbtn = new System.Windows.Forms.Button();
-            this.viewprofilebutton = new System.Windows.Forms.Button();
+            this.accountname = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.mybookingstab = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -57,19 +55,21 @@
             this.requestdateguide = new System.Windows.Forms.Label();
             this.coachguide = new System.Windows.Forms.Label();
             this.searchbox = new System.Windows.Forms.ComboBox();
-            this.Confirmbook = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.sessionstoapprovetab = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Reminderbtn = new System.Windows.Forms.Button();
+            this.viewprofilebutton = new System.Windows.Forms.Button();
+            this.Confirmbook = new System.Windows.Forms.Button();
             this.refreshbtn = new System.Windows.Forms.Button();
             this.declinebtn = new System.Windows.Forms.Button();
             this.approvebtn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.usermainpanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.mybookingstab.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -80,12 +80,14 @@
             this.panel3.SuspendLayout();
             this.sessionstoapprovetab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // usermainpanel
             // 
             this.usermainpanel.Controls.Add(this.pictureBox2);
+            this.usermainpanel.Controls.Add(this.accountname);
             this.usermainpanel.Controls.Add(this.Reminderbtn);
             this.usermainpanel.Controls.Add(this.viewprofilebutton);
             this.usermainpanel.Controls.Add(this.tabControl1);
@@ -97,46 +99,15 @@
             this.usermainpanel.Size = new System.Drawing.Size(984, 511);
             this.usermainpanel.TabIndex = 0;
             // 
-            // pictureBox2
+            // accountname
             // 
-            this.pictureBox2.BackgroundImage = global::TheFinalProject.Properties.Resources.OIP_removebg_preview;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(853, 26);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(102, 91);
-            this.pictureBox2.TabIndex = 31;
-            this.pictureBox2.TabStop = false;
-            // 
-            // Reminderbtn
-            // 
-            this.Reminderbtn.BackgroundImage = global::TheFinalProject.Properties.Resources.logoutbtn;
-            this.Reminderbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Reminderbtn.FlatAppearance.BorderSize = 0;
-            this.Reminderbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Reminderbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.Reminderbtn.Location = new System.Drawing.Point(725, 55);
-            this.Reminderbtn.Name = "Reminderbtn";
-            this.Reminderbtn.Size = new System.Drawing.Size(120, 33);
-            this.Reminderbtn.TabIndex = 21;
-            this.Reminderbtn.UseVisualStyleBackColor = true;
-            this.Reminderbtn.Click += new System.EventHandler(this.Reminderbtn_Click);
-            // 
-            // viewprofilebutton
-            // 
-            this.viewprofilebutton.BackgroundImage = global::TheFinalProject.Properties.Resources.logoutbtn;
-            this.viewprofilebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.viewprofilebutton.FlatAppearance.BorderSize = 0;
-            this.viewprofilebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewprofilebutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.viewprofilebutton.ForeColor = System.Drawing.Color.Black;
-            this.viewprofilebutton.Location = new System.Drawing.Point(599, 55);
-            this.viewprofilebutton.Margin = new System.Windows.Forms.Padding(2);
-            this.viewprofilebutton.Name = "viewprofilebutton";
-            this.viewprofilebutton.Size = new System.Drawing.Size(120, 33);
-            this.viewprofilebutton.TabIndex = 16;
-            this.viewprofilebutton.Text = "logout";
-            this.viewprofilebutton.UseVisualStyleBackColor = true;
-            this.viewprofilebutton.Click += new System.EventHandler(this.viewprofilebutton_Click);
+            this.accountname.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.accountname.Location = new System.Drawing.Point(603, 17);
+            this.accountname.Name = "accountname";
+            this.accountname.Size = new System.Drawing.Size(242, 35);
+            this.accountname.TabIndex = 33;
+            this.accountname.Text = "label2";
+            this.accountname.Paint += new System.Windows.Forms.PaintEventHandler(this.yourBackgroundContainer_Paint);
             // 
             // tabControl1
             // 
@@ -145,12 +116,12 @@
             this.tabControl1.Controls.Add(this.sessionbookingstab);
             this.tabControl1.Controls.Add(this.sessionstoapprovetab);
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl1.ItemSize = new System.Drawing.Size(120, 40);
-            this.tabControl1.Location = new System.Drawing.Point(16, 122);
+            this.tabControl1.ItemSize = new System.Drawing.Size(140, 40);
+            this.tabControl1.Location = new System.Drawing.Point(-7, 122);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(943, 348);
+            this.tabControl1.Size = new System.Drawing.Size(1000, 399);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem_1);
@@ -166,7 +137,7 @@
             this.mybookingstab.Margin = new System.Windows.Forms.Padding(2);
             this.mybookingstab.Name = "mybookingstab";
             this.mybookingstab.Padding = new System.Windows.Forms.Padding(2);
-            this.mybookingstab.Size = new System.Drawing.Size(935, 300);
+            this.mybookingstab.Size = new System.Drawing.Size(992, 351);
             this.mybookingstab.TabIndex = 0;
             this.mybookingstab.Text = "My bookings";
             // 
@@ -174,10 +145,10 @@
             // 
             this.panel1.Controls.Add(this.dataGridView2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(468, 2);
+            this.panel1.Location = new System.Drawing.Point(492, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(484, 289);
+            this.panel1.Size = new System.Drawing.Size(484, 347);
             this.panel1.TabIndex = 12;
             // 
             // dataGridView2
@@ -186,32 +157,32 @@
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AllowUserToResizeColumns = false;
             this.dataGridView2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightGray;
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.LightGray;
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.Location = new System.Drawing.Point(3, 35);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 44;
-            this.dataGridView2.Size = new System.Drawing.Size(464, 251);
+            this.dataGridView2.Size = new System.Drawing.Size(481, 310);
             this.dataGridView2.TabIndex = 9;
             // 
             // label1
@@ -231,7 +202,7 @@
             this.Pendingsessionspanel.Location = new System.Drawing.Point(4, 5);
             this.Pendingsessionspanel.Margin = new System.Windows.Forms.Padding(2);
             this.Pendingsessionspanel.Name = "Pendingsessionspanel";
-            this.Pendingsessionspanel.Size = new System.Drawing.Size(462, 284);
+            this.Pendingsessionspanel.Size = new System.Drawing.Size(473, 340);
             this.Pendingsessionspanel.TabIndex = 11;
             // 
             // upcomingsessionsdata
@@ -240,33 +211,33 @@
             this.upcomingsessionsdata.AllowUserToDeleteRows = false;
             this.upcomingsessionsdata.AllowUserToResizeColumns = false;
             this.upcomingsessionsdata.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.upcomingsessionsdata.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.upcomingsessionsdata.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
             this.upcomingsessionsdata.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.upcomingsessionsdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.upcomingsessionsdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.upcomingsessionsdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.upcomingsessionsdata.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.upcomingsessionsdata.DefaultCellStyle = dataGridViewCellStyle24;
             this.upcomingsessionsdata.EnableHeadersVisualStyles = false;
             this.upcomingsessionsdata.Location = new System.Drawing.Point(-1, 32);
             this.upcomingsessionsdata.Name = "upcomingsessionsdata";
             this.upcomingsessionsdata.RowHeadersVisible = false;
             this.upcomingsessionsdata.RowTemplate.Height = 44;
-            this.upcomingsessionsdata.Size = new System.Drawing.Size(464, 251);
+            this.upcomingsessionsdata.Size = new System.Drawing.Size(474, 308);
             this.upcomingsessionsdata.TabIndex = 8;
             this.upcomingsessionsdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.upcomingsessionsdata_CellContentClick);
             this.upcomingsessionsdata.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.upcomingsessionsdata_DataBindingComplete);
@@ -384,20 +355,6 @@
             this.searchbox.TabIndex = 2;
             this.searchbox.TextChanged += new System.EventHandler(this.searchbox_TextChanged);
             // 
-            // Confirmbook
-            // 
-            this.Confirmbook.BackgroundImage = global::TheFinalProject.Properties.Resources.confirmbook;
-            this.Confirmbook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Confirmbook.FlatAppearance.BorderSize = 0;
-            this.Confirmbook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Confirmbook.Location = new System.Drawing.Point(42, 234);
-            this.Confirmbook.Margin = new System.Windows.Forms.Padding(2);
-            this.Confirmbook.Name = "Confirmbook";
-            this.Confirmbook.Size = new System.Drawing.Size(207, 33);
-            this.Confirmbook.TabIndex = 3;
-            this.Confirmbook.UseVisualStyleBackColor = true;
-            this.Confirmbook.Click += new System.EventHandler(this.Confirmbook_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -456,6 +413,104 @@
             this.sessionstoapprovetab.Text = "Sessions to approve";
             this.sessionstoapprovetab.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle27;
+            this.dataGridView1.Location = new System.Drawing.Point(1, 0);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(933, 252);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
+            this.dataGridView1.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView1_Paint);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.pictureBox2.BackgroundImage = global::TheFinalProject.Properties.Resources.white_icon;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(861, 17);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(86, 62);
+            this.pictureBox2.TabIndex = 34;
+            this.pictureBox2.TabStop = false;
+            // 
+            // Reminderbtn
+            // 
+            this.Reminderbtn.BackgroundImage = global::TheFinalProject.Properties.Resources.logoutbtn;
+            this.Reminderbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Reminderbtn.FlatAppearance.BorderSize = 0;
+            this.Reminderbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reminderbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.Reminderbtn.ForeColor = System.Drawing.Color.White;
+            this.Reminderbtn.Location = new System.Drawing.Point(725, 55);
+            this.Reminderbtn.Name = "Reminderbtn";
+            this.Reminderbtn.Size = new System.Drawing.Size(120, 33);
+            this.Reminderbtn.TabIndex = 21;
+            this.Reminderbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Reminderbtn.UseVisualStyleBackColor = true;
+            this.Reminderbtn.Click += new System.EventHandler(this.Reminderbtn_Click);
+            // 
+            // viewprofilebutton
+            // 
+            this.viewprofilebutton.BackgroundImage = global::TheFinalProject.Properties.Resources.logoutbtn;
+            this.viewprofilebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.viewprofilebutton.FlatAppearance.BorderSize = 0;
+            this.viewprofilebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewprofilebutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.viewprofilebutton.ForeColor = System.Drawing.Color.White;
+            this.viewprofilebutton.Location = new System.Drawing.Point(599, 55);
+            this.viewprofilebutton.Margin = new System.Windows.Forms.Padding(2);
+            this.viewprofilebutton.Name = "viewprofilebutton";
+            this.viewprofilebutton.Size = new System.Drawing.Size(120, 33);
+            this.viewprofilebutton.TabIndex = 16;
+            this.viewprofilebutton.Text = "logout";
+            this.viewprofilebutton.UseVisualStyleBackColor = true;
+            this.viewprofilebutton.Click += new System.EventHandler(this.viewprofilebutton_Click);
+            // 
+            // Confirmbook
+            // 
+            this.Confirmbook.BackgroundImage = global::TheFinalProject.Properties.Resources.confirmbook;
+            this.Confirmbook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Confirmbook.FlatAppearance.BorderSize = 0;
+            this.Confirmbook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Confirmbook.Location = new System.Drawing.Point(42, 234);
+            this.Confirmbook.Margin = new System.Windows.Forms.Padding(2);
+            this.Confirmbook.Name = "Confirmbook";
+            this.Confirmbook.Size = new System.Drawing.Size(207, 33);
+            this.Confirmbook.TabIndex = 3;
+            this.Confirmbook.UseVisualStyleBackColor = true;
+            this.Confirmbook.Click += new System.EventHandler(this.Confirmbook_Click);
+            // 
             // refreshbtn
             // 
             this.refreshbtn.BackColor = System.Drawing.Color.White;
@@ -509,46 +564,6 @@
             this.approvebtn.UseVisualStyleBackColor = true;
             this.approvebtn.Click += new System.EventHandler(this.approvebtn_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle18;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 0);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(933, 252);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
-            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
-            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
-            this.dataGridView1.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView1_Paint);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::TheFinalProject.Properties.Resources.banner;
@@ -570,7 +585,6 @@
             this.Text = "Userfrm";
             this.Load += new System.EventHandler(this.Userfrm_Load);
             this.usermainpanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.mybookingstab.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -582,6 +596,7 @@
             this.panel3.PerformLayout();
             this.sessionstoapprovetab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -618,7 +633,8 @@
         private System.Windows.Forms.Button declinebtn;
         private System.Windows.Forms.Button approvebtn;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label accountname;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
