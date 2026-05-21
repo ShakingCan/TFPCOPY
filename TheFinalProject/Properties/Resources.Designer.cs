@@ -123,6 +123,16 @@ namespace TheFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download {
+            get {
+                object obj = ResourceManager.GetObject("download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap grey_rect {
             get {
                 object obj = ResourceManager.GetObject("grey rect", resourceCulture);
@@ -153,9 +163,29 @@ namespace TheFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap loginimagescreenshot {
+            get {
+                object obj = ResourceManager.GetObject("loginimagescreenshot", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loginpage_image {
             get {
                 object obj = ResourceManager.GetObject("loginpage image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loginpageimg_0_5opacity {
+            get {
+                object obj = ResourceManager.GetObject("loginpageimg 0.5opacity", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -231,8 +231,8 @@ namespace TheFinalProject.Resources
                     }
 
                 }
-                //notif queries
-                string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\nAND (UserApproved IS NULL OR UserApproved <> 'Approved')";
+                //needs fixing 
+                string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\nAND (UserApproved IS NULL OR UserApproved = 'Pending') AND RequestDateTime >= GETDATE()";
 
                 using (SqlCommand cmd = new SqlCommand(processingquery, conn))
                 {
@@ -246,6 +246,7 @@ namespace TheFinalProject.Resources
 
 
                 }
+                //needs fixing 
                 string upcomingreminderquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\n  AND Status = 'Approved'\r\n  AND UserApproved = 'Approved'\r\n  AND CoachApproved = 'Approved'\r\n  AND RequestDateTime >= CAST(GETDATE() AS DATE);";
 
                 using (SqlCommand cmd = new SqlCommand(upcomingreminderquery, conn))
@@ -396,9 +397,10 @@ namespace TheFinalProject.Resources
                                 return;
                             }
                         }
-                        String query = "INSERT INTO BookingRequests(USERID, COACHID,RequestDateTime, Duration) VALUES (@UserID, @CoachID, @RequestDate,@Duration)";
+                        String query = "INSERT INTO BookingRequests(USERID, COACHID,RequestDateTime, Duration,UserApproved) VALUES (@UserID, @CoachID, @RequestDate,@Duration,@InnateStatus)";
                         using (SqlCommand cmd2 = new SqlCommand(query, conn))
                         {
+                            cmd2.Parameters.AddWithValue("@InnateStatus", "Pending");
                             cmd2.Parameters.AddWithValue("@Duration", durationbox.Text.ToString());
                             cmd2.Parameters.AddWithValue("@UserID", CurrentUserID);
                             cmd2.Parameters.AddWithValue("@CoachID", coachId);
@@ -472,6 +474,7 @@ namespace TheFinalProject.Resources
 
 
             }
+            loadSessions();
             refreshnotif();
 
 
@@ -509,6 +512,7 @@ namespace TheFinalProject.Resources
 
 
             }
+            loadSessions();
             refreshnotif();
         }
 

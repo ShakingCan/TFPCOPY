@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.registerpanel = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Usertoggle = new System.Windows.Forms.RadioButton();
-            this.Coachtoggle = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.RegisterUsername = new System.Windows.Forms.TextBox();
             this.RegisterPassword = new System.Windows.Forms.TextBox();
@@ -46,16 +41,19 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Usertoggle = new System.Windows.Forms.RadioButton();
+            this.Coachtoggle = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.registerpanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // registerpanel
             // 
-            this.registerpanel.Controls.Add(this.label3);
             this.registerpanel.Controls.Add(this.pictureBox3);
             this.registerpanel.Controls.Add(this.panel5);
             this.registerpanel.Controls.Add(this.pictureBox2);
@@ -68,63 +66,6 @@
             this.registerpanel.Name = "registerpanel";
             this.registerpanel.Size = new System.Drawing.Size(984, 511);
             this.registerpanel.TabIndex = 14;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Gray;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Cascadia Code", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(131, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(235, 33);
-            this.label3.TabIndex = 27;
-            this.label3.Tag = "";
-            this.label3.Text = "Betacell Wellness";
-            // 
-            // Usertoggle
-            // 
-            this.Usertoggle.AutoSize = true;
-            this.Usertoggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Usertoggle.Location = new System.Drawing.Point(476, 409);
-            this.Usertoggle.Name = "Usertoggle";
-            this.Usertoggle.Size = new System.Drawing.Size(62, 22);
-            this.Usertoggle.TabIndex = 21;
-            this.Usertoggle.TabStop = true;
-            this.Usertoggle.Text = "User";
-            this.Usertoggle.UseVisualStyleBackColor = true;
-            // 
-            // Coachtoggle
-            // 
-            this.Coachtoggle.AutoSize = true;
-            this.Coachtoggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Coachtoggle.Location = new System.Drawing.Point(385, 409);
-            this.Coachtoggle.Name = "Coachtoggle";
-            this.Coachtoggle.Size = new System.Drawing.Size(75, 22);
-            this.Coachtoggle.TabIndex = 20;
-            this.Coachtoggle.TabStop = true;
-            this.Coachtoggle.Text = "Coach";
-            this.Coachtoggle.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(386, 369);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 24);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Create Account";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::TheFinalProject.Properties.Resources.image_2;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(92, 139);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(298, 270);
-            this.pictureBox3.TabIndex = 26;
-            this.pictureBox3.TabStop = false;
             // 
             // panel5
             // 
@@ -280,6 +221,50 @@
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
+            // Usertoggle
+            // 
+            this.Usertoggle.AutoSize = true;
+            this.Usertoggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Usertoggle.Location = new System.Drawing.Point(476, 409);
+            this.Usertoggle.Name = "Usertoggle";
+            this.Usertoggle.Size = new System.Drawing.Size(62, 22);
+            this.Usertoggle.TabIndex = 21;
+            this.Usertoggle.TabStop = true;
+            this.Usertoggle.Text = "User";
+            this.Usertoggle.UseVisualStyleBackColor = true;
+            // 
+            // Coachtoggle
+            // 
+            this.Coachtoggle.AutoSize = true;
+            this.Coachtoggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Coachtoggle.Location = new System.Drawing.Point(385, 409);
+            this.Coachtoggle.Name = "Coachtoggle";
+            this.Coachtoggle.Size = new System.Drawing.Size(75, 22);
+            this.Coachtoggle.TabIndex = 20;
+            this.Coachtoggle.TabStop = true;
+            this.Coachtoggle.Text = "Coach";
+            this.Coachtoggle.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(386, 369);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(154, 24);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Create Account";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::TheFinalProject.Properties.Resources.loginpage_image;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(1, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(491, 511);
+            this.pictureBox3.TabIndex = 26;
+            this.pictureBox3.TabStop = false;
+            // 
             // userRegistry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,11 +276,11 @@
             this.Load += new System.EventHandler(this.userRegistry_Load);
             this.registerpanel.ResumeLayout(false);
             this.registerpanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -303,8 +288,6 @@
         #endregion
 
         private System.Windows.Forms.Panel registerpanel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox RegisterUsername;
         private System.Windows.Forms.TextBox RegisterPassword;
@@ -320,5 +303,6 @@
         private System.Windows.Forms.RadioButton Usertoggle;
         private System.Windows.Forms.RadioButton Coachtoggle;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

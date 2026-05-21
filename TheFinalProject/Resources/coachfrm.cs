@@ -321,6 +321,7 @@ namespace TheFinalProject.Resources
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
+                //needs fixing
                 string processingquery = @"
             SELECT COUNT(*) 
             FROM BookingRequests 
@@ -341,7 +342,7 @@ namespace TheFinalProject.Resources
 
                    
                 }
-
+                //needs fixing
                 string upcomingreminderquery = @"
             SELECT COUNT(*) 
             FROM BookingRequests 
@@ -442,6 +443,7 @@ namespace TheFinalProject.Resources
 
 
             }
+            reloadSessions();
             refreshnotif();
         }
 
@@ -477,10 +479,17 @@ namespace TheFinalProject.Resources
 
 
             }
+            reloadSessions();
             refreshnotif();
         }
 
         private void refreshbtn_Click(object sender, EventArgs e)
+        {
+            reloadSessions();
+            refreshnotif();
+
+        }
+        public void reloadSessions()
         {
             string sessionstoapprovequery = @"SELECT 
                      br.RequestID AS RequestID,
@@ -492,7 +501,9 @@ namespace TheFinalProject.Resources
                     JOIN UsersNew c ON br.CoachID = c.ID
                     WHERE br.CoachID = @CurrentUserID
                     AND br.CoachApproved IS NULL;";
-            using (SqlConnection conn = new SqlConnection(connectionString)) { conn.Open();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
 
                 using (SqlCommand cmd = new SqlCommand(sessionstoapprovequery, conn))
                 {
@@ -506,8 +517,6 @@ namespace TheFinalProject.Resources
                     MessageBox.Show("Session view refreshed");
                 }
             }
-            refreshnotif();
-
         }
 
         private void viewprofilebutton_Click(object sender, EventArgs e)
