@@ -292,7 +292,7 @@ namespace TheFinalProject.Resources
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\nAND (UserApproved IS NULL OR UserApproved <> 'Approved') AND RequestDateTime >= GETDATE()";
+                string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\nAND (UserApproved IS NULL OR UserApproved <> 'Approved') AND RequestDateTime = GETDATE()";
 
                 using (SqlCommand cmd = new SqlCommand(processingquery, conn))
                 {

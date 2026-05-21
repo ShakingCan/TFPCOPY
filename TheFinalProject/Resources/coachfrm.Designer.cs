@@ -38,13 +38,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.usermainpanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.upcomingseshcount = new System.Windows.Forms.Label();
-            this.toprocesscount = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Reminderbtn = new System.Windows.Forms.Button();
+            this.viewprofilebutton = new System.Windows.Forms.Button();
+            this.accountname = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.mybookingstab = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -58,11 +55,8 @@
             this.declinebtn = new System.Windows.Forms.Button();
             this.approvebtn = new System.Windows.Forms.Button();
             this.sessionstoapprove = new System.Windows.Forms.DataGridView();
-            this.Reminderbtn = new System.Windows.Forms.Button();
-            this.viewprofilebutton = new System.Windows.Forms.Button();
-            this.accountname = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.usermainpanel.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.mybookingstab.SuspendLayout();
@@ -72,17 +66,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.upcomingsessionsdata)).BeginInit();
             this.sessionstoapprovetab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sessionstoapprove)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // usermainpanel
             // 
-            this.usermainpanel.Controls.Add(this.panel2);
-            this.usermainpanel.Controls.Add(this.pictureBox2);
-            this.usermainpanel.Controls.Add(this.label2);
-            this.usermainpanel.Controls.Add(this.tabControl1);
             this.usermainpanel.Controls.Add(this.Reminderbtn);
             this.usermainpanel.Controls.Add(this.viewprofilebutton);
             this.usermainpanel.Controls.Add(this.accountname);
+            this.usermainpanel.Controls.Add(this.pictureBox2);
+            this.usermainpanel.Controls.Add(this.tabControl1);
+            this.usermainpanel.Controls.Add(this.pictureBox1);
             this.usermainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.usermainpanel.Location = new System.Drawing.Point(0, 0);
             this.usermainpanel.Margin = new System.Windows.Forms.Padding(2);
@@ -90,80 +84,60 @@
             this.usermainpanel.Size = new System.Drawing.Size(984, 511);
             this.usermainpanel.TabIndex = 1;
             // 
-            // panel2
+            // Reminderbtn
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Controls.Add(this.upcomingseshcount);
-            this.panel2.Controls.Add(this.toprocesscount);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(572, 88);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(278, 75);
-            this.panel2.TabIndex = 20;
-            this.panel2.Visible = false;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.Reminderbtn.BackgroundImage = global::TheFinalProject.Properties.Resources.logoutbtn;
+            this.Reminderbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Reminderbtn.FlatAppearance.BorderSize = 0;
+            this.Reminderbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reminderbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.Reminderbtn.ForeColor = System.Drawing.Color.White;
+            this.Reminderbtn.Location = new System.Drawing.Point(725, 55);
+            this.Reminderbtn.Name = "Reminderbtn";
+            this.Reminderbtn.Size = new System.Drawing.Size(120, 33);
+            this.Reminderbtn.TabIndex = 38;
+            this.Reminderbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Reminderbtn.UseVisualStyleBackColor = true;
+            this.Reminderbtn.Click += new System.EventHandler(this.Reminderbtn_Click);
+            this.Reminderbtn.Paint += new System.Windows.Forms.PaintEventHandler(this.Reminderbtn_Paint);
             // 
-            // upcomingseshcount
+            // viewprofilebutton
             // 
-            this.upcomingseshcount.AutoSize = true;
-            this.upcomingseshcount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upcomingseshcount.Location = new System.Drawing.Point(223, 42);
-            this.upcomingseshcount.Name = "upcomingseshcount";
-            this.upcomingseshcount.Size = new System.Drawing.Size(0, 20);
-            this.upcomingseshcount.TabIndex = 24;
+            this.viewprofilebutton.BackgroundImage = global::TheFinalProject.Properties.Resources.logoutbtn;
+            this.viewprofilebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.viewprofilebutton.FlatAppearance.BorderSize = 0;
+            this.viewprofilebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewprofilebutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.viewprofilebutton.ForeColor = System.Drawing.Color.White;
+            this.viewprofilebutton.Location = new System.Drawing.Point(599, 55);
+            this.viewprofilebutton.Margin = new System.Windows.Forms.Padding(2);
+            this.viewprofilebutton.Name = "viewprofilebutton";
+            this.viewprofilebutton.Size = new System.Drawing.Size(120, 33);
+            this.viewprofilebutton.TabIndex = 37;
+            this.viewprofilebutton.Text = "logout";
+            this.viewprofilebutton.UseVisualStyleBackColor = true;
+            this.viewprofilebutton.Click += new System.EventHandler(this.viewprofilebutton_Click);
             // 
-            // toprocesscount
+            // accountname
             // 
-            this.toprocesscount.AutoSize = true;
-            this.toprocesscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toprocesscount.Location = new System.Drawing.Point(106, 2);
-            this.toprocesscount.Name = "toprocesscount";
-            this.toprocesscount.Size = new System.Drawing.Size(0, 20);
-            this.toprocesscount.TabIndex = 23;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 42);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(220, 20);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "upcoming sessions today: ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 2);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 20);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "To process: ";
+            this.accountname.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.accountname.Location = new System.Drawing.Point(603, 17);
+            this.accountname.Name = "accountname";
+            this.accountname.Size = new System.Drawing.Size(242, 35);
+            this.accountname.TabIndex = 36;
+            this.accountname.Text = "label2";
+            this.accountname.Paint += new System.Windows.Forms.PaintEventHandler(this.yourBackgroundContainer_Paint);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::TheFinalProject.Properties.Resources.OIP_removebg_preview;
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.pictureBox2.BackgroundImage = global::TheFinalProject.Properties.Resources.white_icon;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(853, 26);
+            this.pictureBox2.Location = new System.Drawing.Point(861, 17);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(102, 91);
-            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.Size = new System.Drawing.Size(86, 62);
+            this.pictureBox2.TabIndex = 35;
             this.pictureBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Cascadia Code", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(15, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(235, 33);
-            this.label2.TabIndex = 29;
-            this.label2.Tag = "";
-            this.label2.Text = "Betacell Wellness";
             // 
             // tabControl1
             // 
@@ -171,17 +145,19 @@
             this.tabControl1.Controls.Add(this.mybookingstab);
             this.tabControl1.Controls.Add(this.sessionstoapprovetab);
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl1.ItemSize = new System.Drawing.Size(120, 40);
-            this.tabControl1.Location = new System.Drawing.Point(16, 122);
+            this.tabControl1.ItemSize = new System.Drawing.Size(140, 40);
+            this.tabControl1.Location = new System.Drawing.Point(-7, 122);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(943, 348);
+            this.tabControl1.Size = new System.Drawing.Size(991, 389);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 21;
+            this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem_1);
             // 
             // mybookingstab
             // 
+            this.mybookingstab.BackColor = System.Drawing.SystemColors.ControlDark;
             this.mybookingstab.Controls.Add(this.panel1);
             this.mybookingstab.Controls.Add(this.Pendingsessionspanel);
             this.mybookingstab.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
@@ -189,19 +165,18 @@
             this.mybookingstab.Margin = new System.Windows.Forms.Padding(2);
             this.mybookingstab.Name = "mybookingstab";
             this.mybookingstab.Padding = new System.Windows.Forms.Padding(2);
-            this.mybookingstab.Size = new System.Drawing.Size(935, 300);
+            this.mybookingstab.Size = new System.Drawing.Size(983, 341);
             this.mybookingstab.TabIndex = 0;
             this.mybookingstab.Text = "My bookings";
-            this.mybookingstab.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dataGridView2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(468, 2);
+            this.panel1.Location = new System.Drawing.Point(492, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(484, 289);
+            this.panel1.Size = new System.Drawing.Size(484, 347);
             this.panel1.TabIndex = 12;
             // 
             // dataGridView2
@@ -235,7 +210,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 44;
-            this.dataGridView2.Size = new System.Drawing.Size(464, 251);
+            this.dataGridView2.Size = new System.Drawing.Size(481, 310);
             this.dataGridView2.TabIndex = 9;
             // 
             // label1
@@ -255,7 +230,7 @@
             this.Pendingsessionspanel.Location = new System.Drawing.Point(4, 5);
             this.Pendingsessionspanel.Margin = new System.Windows.Forms.Padding(2);
             this.Pendingsessionspanel.Name = "Pendingsessionspanel";
-            this.Pendingsessionspanel.Size = new System.Drawing.Size(462, 284);
+            this.Pendingsessionspanel.Size = new System.Drawing.Size(473, 340);
             this.Pendingsessionspanel.TabIndex = 11;
             // 
             // upcomingsessionsdata
@@ -290,7 +265,7 @@
             this.upcomingsessionsdata.Name = "upcomingsessionsdata";
             this.upcomingsessionsdata.RowHeadersVisible = false;
             this.upcomingsessionsdata.RowTemplate.Height = 44;
-            this.upcomingsessionsdata.Size = new System.Drawing.Size(464, 251);
+            this.upcomingsessionsdata.Size = new System.Drawing.Size(474, 308);
             this.upcomingsessionsdata.TabIndex = 8;
             // 
             // label3
@@ -313,7 +288,7 @@
             this.sessionstoapprovetab.Location = new System.Drawing.Point(4, 44);
             this.sessionstoapprovetab.Name = "sessionstoapprovetab";
             this.sessionstoapprovetab.Padding = new System.Windows.Forms.Padding(3);
-            this.sessionstoapprovetab.Size = new System.Drawing.Size(935, 300);
+            this.sessionstoapprovetab.Size = new System.Drawing.Size(983, 341);
             this.sessionstoapprovetab.TabIndex = 2;
             this.sessionstoapprovetab.Text = "Sessions to approve";
             this.sessionstoapprovetab.UseVisualStyleBackColor = true;
@@ -402,52 +377,21 @@
             this.sessionstoapprove.Location = new System.Drawing.Point(1, 0);
             this.sessionstoapprove.MultiSelect = false;
             this.sessionstoapprove.Name = "sessionstoapprove";
-            this.sessionstoapprove.RowHeadersVisible = false;
             this.sessionstoapprove.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.sessionstoapprove.Size = new System.Drawing.Size(933, 252);
             this.sessionstoapprove.TabIndex = 0;
+            this.sessionstoapprove.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.sessionstoapprove_RowHeaderMouseClick);
+            this.sessionstoapprove.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.sessionstoapprove_RowPostPaint);
             // 
-            // Reminderbtn
+            // pictureBox1
             // 
-            this.Reminderbtn.BackgroundImage = global::TheFinalProject.Properties.Resources.logoutbtn;
-            this.Reminderbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Reminderbtn.FlatAppearance.BorderSize = 0;
-            this.Reminderbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Reminderbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.Reminderbtn.Location = new System.Drawing.Point(725, 55);
-            this.Reminderbtn.Name = "Reminderbtn";
-            this.Reminderbtn.Size = new System.Drawing.Size(120, 33);
-            this.Reminderbtn.TabIndex = 19;
-            this.Reminderbtn.Text = "reminder";
-            this.Reminderbtn.UseVisualStyleBackColor = true;
-            this.Reminderbtn.Click += new System.EventHandler(this.Reminderbtn_Click);
-            // 
-            // viewprofilebutton
-            // 
-            this.viewprofilebutton.BackgroundImage = global::TheFinalProject.Properties.Resources.logoutbtn;
-            this.viewprofilebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.viewprofilebutton.FlatAppearance.BorderSize = 0;
-            this.viewprofilebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewprofilebutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.viewprofilebutton.ForeColor = System.Drawing.Color.Black;
-            this.viewprofilebutton.Location = new System.Drawing.Point(599, 55);
-            this.viewprofilebutton.Margin = new System.Windows.Forms.Padding(2);
-            this.viewprofilebutton.Name = "viewprofilebutton";
-            this.viewprofilebutton.Size = new System.Drawing.Size(120, 33);
-            this.viewprofilebutton.TabIndex = 16;
-            this.viewprofilebutton.Text = "logout";
-            this.viewprofilebutton.UseVisualStyleBackColor = true;
-            this.viewprofilebutton.Click += new System.EventHandler(this.viewprofilebutton_Click);
-            // 
-            // accountname
-            // 
-            this.accountname.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.accountname.Location = new System.Drawing.Point(625, 26);
-            this.accountname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.accountname.Name = "accountname";
-            this.accountname.Size = new System.Drawing.Size(223, 29);
-            this.accountname.TabIndex = 15;
-            this.accountname.Text = "label1";
+            this.pictureBox1.BackgroundImage = global::TheFinalProject.Properties.Resources.banner;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(984, 138);
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
             // 
             // coachfrm
             // 
@@ -459,8 +403,6 @@
             this.Text = "coachfrm";
             this.Load += new System.EventHandler(this.coachfrm_Load);
             this.usermainpanel.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.mybookingstab.ResumeLayout(false);
@@ -470,6 +412,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.upcomingsessionsdata)).EndInit();
             this.sessionstoapprovetab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sessionstoapprove)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -477,28 +420,23 @@
         #endregion
 
         private System.Windows.Forms.Panel usermainpanel;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label upcomingseshcount;
-        private System.Windows.Forms.Label toprocesscount;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button Reminderbtn;
-        private System.Windows.Forms.Button viewprofilebutton;
-        private System.Windows.Forms.Label accountname;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage mybookingstab;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel Pendingsessionspanel;
-        private System.Windows.Forms.DataGridView upcomingsessionsdata;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage sessionstoapprovetab;
         private System.Windows.Forms.Button refreshbtn;
         private System.Windows.Forms.Button declinebtn;
         private System.Windows.Forms.Button approvebtn;
         private System.Windows.Forms.DataGridView sessionstoapprove;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label accountname;
+        private System.Windows.Forms.Button viewprofilebutton;
+        private System.Windows.Forms.Button Reminderbtn;
+        private System.Windows.Forms.DataGridView upcomingsessionsdata;
     }
 }

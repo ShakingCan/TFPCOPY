@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.loginPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,7 +52,6 @@
             // loginPanel
             // 
             this.loginPanel.Controls.Add(this.pictureBox3);
-            this.loginPanel.Controls.Add(this.button1);
             this.loginPanel.Controls.Add(this.panel5);
             this.loginPanel.Controls.Add(this.pictureBox2);
             this.loginPanel.Controls.Add(this.pictureBox1);
@@ -63,16 +61,6 @@
             this.loginPanel.Size = new System.Drawing.Size(984, 511);
             this.loginPanel.TabIndex = 5;
             this.loginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.loginPanel_Paint);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(704, 437);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // pictureBox3
             // 
@@ -270,7 +258,6 @@
         private System.Windows.Forms.Button showpassbtn;
         private System.Windows.Forms.Label registerbtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
