@@ -136,6 +136,9 @@
   <data name="image 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logoutbtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoutbtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="approvebtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\approvebtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,8 +157,11 @@
   <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoutbtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoutbtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="receptiondesk-modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\receptiondesk-modified.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loginimagescreenshot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loginimagescreenshot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tambay mambo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tambay mambo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,7 +184,7 @@
   <data name="show pass icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\show pass icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loginimagescreenshot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loginimagescreenshot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="receptiondesk60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\receptiondesk60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

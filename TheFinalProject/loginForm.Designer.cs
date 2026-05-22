@@ -31,6 +31,7 @@
             this.loginPanel = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.showpassbtn = new System.Windows.Forms.Button();
             this.password = new System.Windows.Forms.TextBox();
@@ -76,6 +77,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.BackgroundImage = global::TheFinalProject.Properties.Resources.white_rect;
+            this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.showpassbtn);
             this.panel5.Controls.Add(this.password);
@@ -90,14 +92,26 @@
             this.panel5.Size = new System.Drawing.Size(345, 315);
             this.panel5.TabIndex = 12;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(114, 271);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(167, 17);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "info@betacellwellness.com";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(129, 285);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(39, 271);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(79, 19);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Contact us";
+            this.label1.Text = "Contact us:";
             // 
             // showpassbtn
             // 
@@ -129,6 +143,7 @@
             this.password.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseClick);
             this.password.TextChanged += new System.EventHandler(this.password_TextChanged);
             this.password.Enter += new System.EventHandler(this.password_Enter);
+            this.password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.password_KeyDown);
             this.password.Leave += new System.EventHandler(this.password_Leave);
             // 
             // passguidelogin
@@ -259,6 +274,7 @@
         private System.Windows.Forms.Label registerbtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -15,23 +15,266 @@ namespace TheFinalProject
     public partial class adminwindow : Form
     {
         private int processingcount;
+        private int selectedPrimaryKey = -1;
         public int ProcessingCount
         {
             get { return processingcount; }
             set { processingcount = value; }
         }
+        private string currentAccountName = "Loading...";
+        public string AccountNameVar
+        {
+            get { return currentAccountName; }
+            set { currentAccountName = value; }
+        }
+        private int CurrentUserID;
         List<string> allUsernames = new List<string>();
         string connectionString = @"Data Source=DESKTOP-MOE35KS;Initial Catalog=finalprojectDB;Integrated Security=True;";
+
         public adminwindow()
         {
             InitializeComponent();
+            
+        }
+        public adminwindow(int currentId)
+        {
+            InitializeComponent();
+            CurrentUserID = currentId;
+            this.Reminderbtn.Paint += new PaintEventHandler(Reminderbtn_Paint);
+            this.accountname.Parent = this.pictureBox1;
+
+            // 2. Now 'Transparent' will look directly at the gym banner image pixels
+            this.accountname.BackColor = Color.Transparent;
+            this.accountname.ForeColor = Color.White;
+        }
+        private void viewprofilebutton_Click(object sender, EventArgs e)
+        {
+            loginform lg = new loginform();
+            lg.Show();
+            this.Hide();
+            refreshnotif();
+        }
+        private void yourBackgroundContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+            // 1. Forces the text edges to blend perfectly into the gritty gym photo
+            e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+
+            // 2. Set your white font styling to match the brand mockup
+            using (Font font = new Font("Segoe UI", 14, FontStyle.Bold))
+            using (Brush brush = new SolidBrush(Color.White))
+            {
+                // 3. CRITICAL: Draw at (0, 0) so it paints cleanly inside the label boundaries,
+                // instead of flying off-screen into the void!
+                e.Graphics.DrawString(AccountNameVar, font, brush, 0, 0);
+            }
+        }
+
+        private void AllSessions_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var clickedRow = AllSessions.Rows[e.RowIndex];
+
+                if (clickedRow.Cells["RequestID"].Value != null)
+                {
+                    int clickedKey = Convert.ToInt32(clickedRow.Cells["RequestID"].Value);
+
+                    // OPTIONAL "TOGGLE" LOGIC: 
+                    // If they click the already checked row, uncheck it. Otherwise, check the new one.
+                    if (selectedPrimaryKey == clickedKey)
+                    {
+                        selectedPrimaryKey = -1; // Clear selection
+                    }
+                    else
+                    {
+                        selectedPrimaryKey = clickedKey; // Set new selection
+                    }
+
+                    // Force the grid to redraw and display the checkbox immediately
+                    AllSessions.Invalidate();
+
+                    // Optional: Test to see if it works!
+                    if (selectedPrimaryKey != -1)
+                    {
+                        MessageBox.Show($"Selected Primary Key: {selectedPrimaryKey}");
+                    }
+                }
+            }
+        }
+        private void UserAccountList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var clickedRow = useraccountslist.Rows[e.RowIndex];
+
+                if (clickedRow.Cells["ID"].Value != null)
+                {
+                    int clickedKey = Convert.ToInt32(clickedRow.Cells["ID"].Value);
+
+                    // OPTIONAL "TOGGLE" LOGIC: 
+                    // If they click the already checked row, uncheck it. Otherwise, check the new one.
+                    if (selectedPrimaryKey == clickedKey)
+                    {
+                        selectedPrimaryKey = -1; // Clear selection
+                    }
+                    else
+                    {
+                        selectedPrimaryKey = clickedKey; // Set new selection
+                    }
+
+                    // Force the grid to redraw and display the checkbox immediately
+                    useraccountslist.Invalidate();
+
+                    // Optional: Test to see if it works!
+                    if (selectedPrimaryKey != -1)
+                    {
+                        MessageBox.Show($"Selected Primary Key: {selectedPrimaryKey}");
+                    }
+                }
+            }
+        }
+        private void UserAccountList_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            if (sender is DataGridView grid)
+            {
+                var row = grid.Rows[e.RowIndex];
+                if (row.IsNewRow) return;
+
+                if (row.Cells["ID"].Value != null && int.TryParse(row.Cells["ID"].Value.ToString(), out int currentRowsKey))
+                {
+                    bool isSelected = (currentRowsKey == selectedPrimaryKey);
+
+                    int glyphSize = 14; // Checkboxes look slightly cleaner a tiny bit smaller (14x14)
+                    int x = e.RowBounds.Left + (grid.RowHeadersWidth - glyphSize) / 2;
+                    int y = e.RowBounds.Top + (row.Height - glyphSize) / 2;
+
+                    // Swapped to DrawCheckBox
+                    ButtonState state = isSelected ? ButtonState.Checked : ButtonState.Normal;
+                    ControlPaint.DrawCheckBox(e.Graphics, x, y, glyphSize, glyphSize, state);
+                }
+            }
+        }
+        private void AllSessions_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            if (sender is DataGridView grid)
+            {
+                var row = grid.Rows[e.RowIndex];
+                if (row.IsNewRow) return;
+
+                if (row.Cells["RequestID"].Value != null && int.TryParse(row.Cells["RequestID"].Value.ToString(), out int currentRowsKey))
+                {
+                    bool isSelected = (currentRowsKey == selectedPrimaryKey);
+
+                    int glyphSize = 14; // Checkboxes look slightly cleaner a tiny bit smaller (14x14)
+                    int x = e.RowBounds.Left + (grid.RowHeadersWidth - glyphSize) / 2;
+                    int y = e.RowBounds.Top + (row.Height - glyphSize) / 2;
+
+                    // Swapped to DrawCheckBox
+                    ButtonState state = isSelected ? ButtonState.Checked : ButtonState.Normal;
+                    ControlPaint.DrawCheckBox(e.Graphics, x, y, glyphSize, glyphSize, state);
+                }
+            }
+        }
+
+        private void Reminderbtn_Paint(object sender, PaintEventArgs e)
+        {
+            refreshnotif();
+            int totalCount = ProcessingCount;
+
+            // Only draw the red badge if there are actually pending/upcoming notifications!
+            if (totalCount > 0)
+            {
+                // Smooth out the circle edges so it looks clean and modern
+                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+
+                // 1. Define the size and position of the red circle
+                int circleRadius = 18;
+                int x = this.Reminderbtn.Width - circleRadius - 5; // 6 pixels off the right edge
+                int y = 8;                                        // 4 pixels down from the top edge
+
+                // 2. Draw the solid red circle
+                using (Brush redBrush = new SolidBrush(Color.Red))
+                {
+                    e.Graphics.FillEllipse(redBrush, x, y, circleRadius, circleRadius);
+                }
+
+                // 3. Draw the count number right inside the circle
+                string countText = ProcessingCount.ToString();
+                using (Font font = new Font("Segoe UI", 9, FontStyle.Bold))
+                using (Brush textBrush = new SolidBrush(Color.White))
+                {
+                    // Measure the text size so we can center it perfectly inside the circle
+                    SizeF textSize = e.Graphics.MeasureString(countText, font);
+                    float textX = x + (circleRadius - textSize.Width) / 2;
+                    float textY = y + (circleRadius - textSize.Height) / 2;
+
+                    e.Graphics.DrawString(countText, font, textBrush, textX, textY);
+                }
+            }
+        }
+
+        public void refreshnotif()
+        {
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string notifquery = @"SELECT COUNT(*) FROM BookingRequests WHERE (Status = 'Pending' OR Status IS NULL) AND RequestDateTime >= GETDATE()";
+
+                using (SqlCommand cmd = new SqlCommand(notifquery, conn))
+                {
+
+                    object result = cmd.ExecuteScalar();
+
+                   
+
+                    ProcessingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
+
+                    MessageBox.Show(ProcessingCount.ToString());
+                }
+
+            }
         }
 
         private void adminwindow_Load(object sender, EventArgs e)
         {
-            
+            Reminderbtn.Text = "  Reminders";
+            refreshnotif();
+            //this query needs adjustment
             using (SqlConnection conn = new SqlConnection(connectionString)) {
                conn.Open();
+                string notifquery = @"SELECT COUNT(*) FROM BookingRequests WHERE (Status = 'Pending' OR Status IS NULL) AND RequestDateTime >= GETDATE()";
+
+                using (SqlCommand cmd = new SqlCommand(notifquery, conn))
+                {
+
+                    object result = cmd.ExecuteScalar();
+
+                   
+
+                    ProcessingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
+
+
+                }
+
+                string usernamequery = "SELECT username FROM UsersNew WHERE ID = @userid";
+                using (SqlCommand command = new SqlCommand(usernamequery, conn))
+                {
+                    command.Parameters.AddWithValue("userid", CurrentUserID);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string username = reader["username"].ToString();
+                            accountname.Text = username;
+                            AccountNameVar = username;
+                        }
+                    }
+
+                }
+                this.accountname.Invalidate();
+
                 string query = @"
 SELECT 
     br.RequestID,
@@ -44,9 +287,10 @@ SELECT
     br.UserApproved,
     br.CoachApproved
 FROM BookingRequests br
-JOIN UsersNew u ON br.USERID = u.ID
-JOIN UsersNew c ON br.COACHID = c.ID
-WHERE Status LIKE '%e%'
+LEFT JOIN UsersNew u ON br.USERID = u.ID
+LEFT JOIN UsersNew c ON br.COACHID = c.ID
+WHERE RequestDateTime >= GETDATE()
+
 ORDER BY 
     CASE Status
         WHEN 'Pending' THEN 1
@@ -121,7 +365,7 @@ ORDER BY
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-                string alluserquery = "SELECT ID,username,role FROM UsersNew ORDER BY role";
+                string alluserquery = "SELECT ID,username,role FROM UsersNew WHERE role <> 'Admin' ORDER BY role";
 
                 using (SqlCommand cmd = new SqlCommand(alluserquery, con))
                 {
@@ -137,7 +381,8 @@ ORDER BY
 
 
             }
-              string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE (UserApproved = 'Approved') AND (CoachApproved = 'Approved') AND Status = 'Pending'";
+            //adjust this one 
+              string processingquery = @"SELECT COUNT(*) FROM BookingRequests WHERE (Status = 'Pending' OR Status IS NULL) AND RequestDateTime >= GETDATE()";
             using (SqlConnection con = new SqlConnection(connectionString))
             {con.Open();
                 using (SqlCommand cmd = new SqlCommand(processingquery, con))
@@ -150,11 +395,11 @@ ORDER BY
 
                     ProcessingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
-                    toprocesscount.Text = ProcessingCount.ToString();
+                  
                 }
             }
             int totalcount = ProcessingCount;
-            Reminderbtn.Text = "Reminders(" + totalcount + ")";
+            Reminderbtn.Text = "  Reminders";
 
 
 
@@ -263,7 +508,7 @@ ORDER BY
     }
         public void loadSessions()
         {
-            
+             refreshnotif();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"
@@ -278,9 +523,9 @@ SELECT
     br.UserApproved,
     br.CoachApproved
 FROM BookingRequests br
-JOIN UsersNew u ON br.USERID = u.ID
-JOIN UsersNew c ON br.COACHID = c.ID
-WHERE Status LIKE '%e%'
+LEFT JOIN UsersNew u ON br.USERID = u.ID
+LEFT JOIN UsersNew c ON br.COACHID = c.ID
+WHERE RequestDateTime >= GETDATE()
 ORDER BY 
     CASE Status
         WHEN 'Pending' THEN 1
@@ -429,14 +674,10 @@ ORDER BY
 
         }
 
-        private void Reminderbtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Reminderbtn_Click_1(object sender, EventArgs e)
         {
-            TogglePanel(panel2);
+            refreshnotif();
+
         }
         private void TogglePanel(Panel panel)
         {

@@ -165,7 +165,7 @@ namespace TheFinalProject.Resources
             searchbox.AutoCompleteSource = AutoCompleteSource.CustomSource;
             searchbox.DropDownStyle = ComboBoxStyle.DropDown;
             searchbox.Items.AddRange(allUsernames.ToArray());
-            MessageBox.Show(allUsernames.Count.ToString());
+            
 
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -231,7 +231,7 @@ namespace TheFinalProject.Resources
                     }
 
                 }
-                //needs fixing 
+                //fixed
                 string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\nAND (UserApproved IS NULL OR UserApproved = 'Pending') AND RequestDateTime >= GETDATE()";
 
                 using (SqlCommand cmd = new SqlCommand(processingquery, conn))
@@ -240,21 +240,20 @@ namespace TheFinalProject.Resources
 
                     object result = cmd.ExecuteScalar();
 
-                    MessageBox.Show(result.ToString());
+                   
 
                     ProcessingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
 
                 }
-                //needs fixing 
-                string upcomingreminderquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\n  AND Status = 'Approved'\r\n  AND UserApproved = 'Approved'\r\n  AND CoachApproved = 'Approved'\r\n  AND RequestDateTime >= CAST(GETDATE() AS DATE);";
-
+                //fixed
+                string upcomingreminderquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\n  AND Status = 'Approved'\r\n  AND UserApproved = 'Approved'\r\n  AND CoachApproved = 'Approved'\r\n  AND RequestDateTime >= GETDATE();";
                 using (SqlCommand cmd = new SqlCommand(upcomingreminderquery, conn))
                 {
                     cmd.Parameters.AddWithValue("@currentUserID", CurrentUserID);
 
                     object result = cmd.ExecuteScalar();
-                    MessageBox.Show(result.ToString());
+                   
 
                     UpcomingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
@@ -293,7 +292,7 @@ namespace TheFinalProject.Resources
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\nAND (UserApproved IS NULL OR UserApproved <> 'Approved') AND RequestDateTime = GETDATE()";
+                string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\nAND (UserApproved IS NULL OR UserApproved = 'Pending') AND RequestDateTime >= GETDATE()";
 
                 using (SqlCommand cmd = new SqlCommand(processingquery, conn))
                 {
@@ -308,7 +307,6 @@ namespace TheFinalProject.Resources
 
                 }
                 string upcomingreminderquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE USERID = @currentUserID\r\n  AND Status = 'Approved'\r\n  AND UserApproved = 'Approved'\r\n  AND CoachApproved = 'Approved'\r\n  AND RequestDateTime >= GETDATE();";
-
                 using (SqlCommand cmd = new SqlCommand(upcomingreminderquery, conn))
                 {
                     cmd.Parameters.AddWithValue("@currentUserID", CurrentUserID);
@@ -397,10 +395,11 @@ namespace TheFinalProject.Resources
                                 return;
                             }
                         }
-                        String query = "INSERT INTO BookingRequests(USERID, COACHID,RequestDateTime, Duration,UserApproved) VALUES (@UserID, @CoachID, @RequestDate,@Duration,@InnateStatus)";
+                        String query = "INSERT INTO BookingRequests(USERID, COACHID,RequestDateTime, Duration,UserApproved,CoachApproved) VALUES (@UserID, @CoachID, @RequestDate,@Duration,@InnateUserStatus,@InnateCoachStatus)";
                         using (SqlCommand cmd2 = new SqlCommand(query, conn))
                         {
-                            cmd2.Parameters.AddWithValue("@InnateStatus", "Pending");
+                            cmd2.Parameters.AddWithValue("@InnateUserStatus", "Pending");
+                            cmd2.Parameters.AddWithValue("@InnateCoachStatus", "Pending");
                             cmd2.Parameters.AddWithValue("@Duration", durationbox.Text.ToString());
                             cmd2.Parameters.AddWithValue("@UserID", CurrentUserID);
                             cmd2.Parameters.AddWithValue("@CoachID", coachId);
@@ -540,7 +539,8 @@ namespace TheFinalProject.Resources
                     JOIN UsersNew u ON br.UserID = u.ID
                     JOIN UsersNew c ON br.CoachID = c.ID
                     WHERE br.UserID = @CurrentUserID
-                    AND br.UserApproved IS NULL;";
+                    AND (br.UserApproved IS NULL OR br.UserApproved = 'Pending')
+                    AND RequestDateTime >= GETDATE();";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@CurrentUserID", CurrentUserID);

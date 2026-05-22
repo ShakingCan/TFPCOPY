@@ -101,9 +101,9 @@ namespace TheFinalProject
                         if (reader.Read()) {
                             int userID = Convert.ToInt32(result);
                             role = reader["role"].ToString();
-                            if (result != null && role =="User")
+                            if (result != null && role == "User")
                             {
-                               
+
                                 MessageBox.Show("Login successful!");
 
                                 Userfrm userForm = new Userfrm(userID);
@@ -117,6 +117,11 @@ namespace TheFinalProject
 
                                 coachfrm cform = new coachfrm(userID);
                                 cform.Show();
+                                this.Hide();
+                            } else if (result != null && role == "Admin") {
+                                MessageBox.Show("Login successful!");
+                                 adminwindow a = new adminwindow(userID);
+                                a.Show();
                                 this.Hide();
                             }
                         }
@@ -229,6 +234,18 @@ namespace TheFinalProject
         {
             adminwindow a = new adminwindow();
             a.Visible = true;
+        }
+
+        private void password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+               
+                e.SuppressKeyPress = true;
+
+             
+                loginBtn.PerformClick();
+            }
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,10 +15,11 @@ namespace TheFinalProject.Resources
     public partial class coachfrm : Form
     {
         private int selectedPrimaryKey = -1;
-        private string currentAccountName = "Loading...";
+       
         private int CurrentUserID;
         private int processingcount;
         private int upcomingcount;
+        private string currentAccountName = "Loading...";
         public string AccountNameVar
         {
             get { return currentAccountName; }
@@ -157,11 +159,13 @@ namespace TheFinalProject.Resources
         }
         private void coachfrm_Load(object sender, EventArgs e)
         {
-            
+          
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
               
                 conn.Open();
+
+                
                 string query = @"SELECT
                      br.RequestID AS RequestID,
                      u.username AS UserName,
@@ -234,11 +238,7 @@ namespace TheFinalProject.Resources
                     dataGridView2.DataSource = pastSessionstable;
 
                 }
-                string processingquery = @"
-    SELECT COUNT(*)
-    FROM BookingRequests
-    WHERE COACHID = @currentUserID
-    AND (CoachApproved IS NULL OR TRIM(CoachApproved) = 'Pending')";
+                string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE COACHID = @currentUserID\r\nAND (CoachApproved IS NULL OR CoachApproved = 'Pending') AND RequestDateTime >= GETDATE()";
 
                 using (SqlCommand cmd = new SqlCommand(processingquery, conn))
                 {
@@ -246,27 +246,28 @@ namespace TheFinalProject.Resources
 
                     object result = cmd.ExecuteScalar();
 
-                    MessageBox.Show(result.ToString());
+                    MessageBox.Show("Processing"+result.ToString());
 
                     ProcessingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
            
                 }
 
-                string upcomingreminderquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE COACHID = @currentUserID\r\n  AND Status = 'Approved'\r\n  AND UserApproved = 'Approved'\r\n  AND CoachApproved = 'Approved'\r\n  AND RequestDateTime >= CAST(GETDATE() AS DATE);";
-
+                string upcomingreminderquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE COACHID = @currentUserID\r\n  AND Status = 'Approved'\r\n  AND UserApproved = 'Approved'\r\n  AND CoachApproved = 'Approved'\r\n  AND RequestDateTime >= GETDATE();";
                 using (SqlCommand cmd = new SqlCommand(upcomingreminderquery, conn))
                 {
                     cmd.Parameters.AddWithValue("@currentUserID", CurrentUserID);
 
                     object result = cmd.ExecuteScalar();
-
+                    MessageBox.Show("Upcominmg" + result.ToString());
                     UpcomingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
                    
                 }
                 int totalcount = UpcomingCount + ProcessingCount;
                 Reminderbtn.Text = "  Reminders";
+
+                
                 string sessionstoapprovequery = @"SELECT 
                      br.RequestID AS RequestID,
                      u.username AS UserName,
@@ -276,7 +277,8 @@ namespace TheFinalProject.Resources
                     JOIN UsersNew u ON br.UserID = u.ID
                     JOIN UsersNew c ON br.CoachID = c.ID
                     WHERE br.CoachID = @CurrentUserID
-                    AND br.CoachApproved IS NULL;";
+                    AND (br.CoachApproved IS NULL OR br.CoachApproved = 'Pending')
+                    AND RequestDateTime >= GETDATE();";
                 using (SqlCommand cmd = new SqlCommand(sessionstoapprovequery, conn))
                 {
                     cmd.Parameters.AddWithValue("@CurrentUserID", CurrentUserID);
@@ -322,13 +324,8 @@ namespace TheFinalProject.Resources
             {
                 conn.Open();
                 //needs fixing
-                string processingquery = @"
-            SELECT COUNT(*) 
-            FROM BookingRequests 
-            WHERE COACHID = @currentUserID 
-              AND Status = 'Pending'
-              AND (CoachApproved IS NULL OR TRIM(CoachApproved) = 'Pending')
-              AND RequestDateTime >= GETDATE();";
+                string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE COACHID = @currentUserID\r\nAND (CoachApproved IS NULL OR CoachApproved = 'Pending') AND RequestDateTime >= GETDATE()";
+
 
                 using (SqlCommand cmd = new SqlCommand(processingquery, conn))
                 {
@@ -343,14 +340,7 @@ namespace TheFinalProject.Resources
                    
                 }
                 //needs fixing
-                string upcomingreminderquery = @"
-            SELECT COUNT(*) 
-            FROM BookingRequests 
-            WHERE COACHID = @currentUserID 
-              AND Status = 'Approved' 
-              AND UserApproved = 'Approved' 
-              AND CoachApproved = 'Approved' 
-              AND RequestDateTime >= GETDATE();";
+                string upcomingreminderquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE COACHID = @currentUserID\r\n  AND Status = 'Approved'\r\n  AND UserApproved = 'Approved'\r\n  AND CoachApproved = 'Approved'\r\n  AND RequestDateTime >= GETDATE();";
 
                 using (SqlCommand cmd = new SqlCommand(upcomingreminderquery, conn))
                 {
@@ -500,7 +490,8 @@ namespace TheFinalProject.Resources
                     JOIN UsersNew u ON br.UserID = u.ID
                     JOIN UsersNew c ON br.CoachID = c.ID
                     WHERE br.CoachID = @CurrentUserID
-                    AND br.CoachApproved IS NULL;";
+                    AND (br.CoachApproved IS NULL OR br.CoachApproved = 'Pending')
+                    AND RequestDateTime >= GETDATE();";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
