@@ -173,9 +173,10 @@ namespace TheFinalProject.Resources
                 conn.Open();
                 string query = @"SELECT
                      br.RequestID AS RequestID,
-                     u.username AS UserName,
-                     c.username AS CoachName,
-                     br.RequestDateTime
+                     u.username AS Client,
+                     c.username AS Coach,
+                     br.RequestDateTime AS Schedule,
+                    br.Duration AS Duration
                      FROM BookingRequests br
                     JOIN UsersNew u ON br.USERID = u.ID
                     JOIN UsersNew c ON br.COACHID = c.ID
@@ -203,9 +204,10 @@ namespace TheFinalProject.Resources
                 }
                 string pastquery = @"SELECT
                      br.RequestID AS RequestID,
-                     u.username AS UserName,
-                     c.username AS CoachName,
-                     br.RequestDateTime
+                     u.username AS Client,
+                     c.username AS Coach,
+                     br.RequestDateTime AS Schedule,
+                    br.Duration AS Duration
                      FROM BookingRequests br
                     JOIN UsersNew u ON br.USERID = u.ID
                     JOIN UsersNew c ON br.COACHID = c.ID
@@ -300,7 +302,7 @@ namespace TheFinalProject.Resources
 
                     object result = cmd.ExecuteScalar();
 
-                    MessageBox.Show(result.ToString());
+                   
 
                     ProcessingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
@@ -312,7 +314,7 @@ namespace TheFinalProject.Resources
                     cmd.Parameters.AddWithValue("@currentUserID", CurrentUserID);
 
                     object result = cmd.ExecuteScalar();
-                    MessageBox.Show(result.ToString());
+                    
 
                     UpcomingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
@@ -532,9 +534,10 @@ namespace TheFinalProject.Resources
                 conn.Open();
                 string query = @"SELECT 
                      br.RequestID AS RequestID,
-                     u.username AS UserName,
-                     c.username AS CoachName,
-                     br.RequestDateTime
+                     u.username AS Client,
+                     c.username AS Coach,
+                     br.RequestDateTime AS Schedule,
+                    br.Duration AS Duration
                      FROM BookingRequests br
                     JOIN UsersNew u ON br.UserID = u.ID
                     JOIN UsersNew c ON br.CoachID = c.ID
@@ -548,8 +551,12 @@ namespace TheFinalProject.Resources
                     DataTable Sessionstable = new DataTable();
 
                     adapter.Fill(Sessionstable);
-
+                   
                     dataGridView1.DataSource = Sessionstable;
+                    if (dataGridView1.Columns.Contains("RequestID"))
+                    {
+                        dataGridView1.Columns["RequestID"].Visible = false;
+                    }
                     MessageBox.Show("Session view refreshed");
                 }
 
@@ -617,9 +624,10 @@ namespace TheFinalProject.Resources
                 conn.Open();
                 string query = @"SELECT 
                      br.RequestID AS RequestID,
-                     u.username AS UserName,
-                     c.username AS CoachName,
-                     br.RequestDateTime
+                     u.username AS Client
+                     c.username AS Coach
+                     br.RequestDateTime AS Schedule,
+                     br.Duration AS Duration
                      FROM BookingRequests br
                     JOIN UsersNew u ON br.UserID = u.ID
                     JOIN UsersNew c ON br.CoachID = c.ID
@@ -852,7 +860,7 @@ namespace TheFinalProject.Resources
                     // Optional: Test to see if it works!
                     if (selectedPrimaryKey != -1)
                     {
-                        MessageBox.Show($"Selected Primary Key: {selectedPrimaryKey}");
+                        
                     }
                 }
             }

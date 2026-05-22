@@ -97,7 +97,7 @@ namespace TheFinalProject
                     // Optional: Test to see if it works!
                     if (selectedPrimaryKey != -1)
                     {
-                        MessageBox.Show($"Selected Primary Key: {selectedPrimaryKey}");
+                        
                     }
                 }
             }
@@ -129,7 +129,7 @@ namespace TheFinalProject
                     // Optional: Test to see if it works!
                     if (selectedPrimaryKey != -1)
                     {
-                        MessageBox.Show($"Selected Primary Key: {selectedPrimaryKey}");
+                         
                     }
                 }
             }
@@ -231,7 +231,7 @@ namespace TheFinalProject
 
                     ProcessingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
-                    MessageBox.Show(ProcessingCount.ToString());
+                    
                 }
 
             }
@@ -278,14 +278,13 @@ namespace TheFinalProject
                 string query = @"
 SELECT 
     br.RequestID,
-    u.username AS UserName,
-    c.username AS CoachName,
-    br.USERID,
-    br.COACHID,
-    br.RequestDateTime,
+    u.username AS Client,
+    c.username AS Coach,
+    br.RequestDateTime AS Schedule,
     br.Status,
-    br.UserApproved,
-    br.CoachApproved
+    br.Duration,
+    br.UserApproved AS 'User Confirmation',
+    br.CoachApproved AS 'Coach Approval'
 FROM BookingRequests br
 LEFT JOIN UsersNew u ON br.USERID = u.ID
 LEFT JOIN UsersNew c ON br.COACHID = c.ID
@@ -307,7 +306,10 @@ ORDER BY
 
                     AllSessions.DataSource = dt;
 
-
+                    if (AllSessions.Columns.Contains("RequestID"))
+                    {
+                        AllSessions.Columns["RequestID"].Visible = false;
+                    }
                 }
 
 
@@ -374,7 +376,10 @@ ORDER BY
                     adapter.Fill(dt);
 
                     useraccountslist.DataSource = dt;
-
+                    if (useraccountslist.Columns.Contains("RequestID"))
+                    {
+                        useraccountslist.Columns["RequestID"].Visible = false;
+                    }
 
                 }
 
@@ -513,18 +518,17 @@ ORDER BY
             {
                 string query = @"
 SELECT 
-    br.RequestID,
-    u.username AS UserName,
-    c.username AS CoachName,
-    br.USERID,
-    br.COACHID,
-    br.RequestDateTime,
+     br.RequestID,
+    u.username AS Client,
+    c.username AS Coach,
+    br.RequestDateTime AS Schedule,
     br.Status,
-    br.UserApproved,
-    br.CoachApproved
+    br.Duration,
+    br.UserApproved AS 'User Confirmation',
+    br.CoachApproved AS 'Coach Approval'
 FROM BookingRequests br
 LEFT JOIN UsersNew u ON br.USERID = u.ID
-LEFT JOIN UsersNew c ON br.COACHID = c.ID
+LEFT   JOIN UsersNew c ON br.COACHID = c.ID
 WHERE RequestDateTime >= GETDATE()
 ORDER BY 
     CASE Status
@@ -542,6 +546,10 @@ ORDER BY
                     adapter.Fill(Sessionstable);
 
                     AllSessions.DataSource = Sessionstable;
+                    if (AllSessions.Columns.Contains("RequestID"))
+                    {
+                        AllSessions.Columns["RequestID"].Visible = false;
+                    }
                     MessageBox.Show("Session view refreshed");
                 }
 

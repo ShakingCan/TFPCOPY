@@ -65,7 +65,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackgroundImage = global::TheFinalProject.Properties.Resources.loginpage_image;
+            this.pictureBox3.BackgroundImage = global::TheFinalProject.Properties.Resources.loginIMG;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(1, 2);
             this.pictureBox3.Name = "pictureBox3";

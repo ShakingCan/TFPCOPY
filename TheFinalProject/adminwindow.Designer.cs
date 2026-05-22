@@ -28,41 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminwindow));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminwindow));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.confirmbtn = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.resetStatus = new System.Windows.Forms.Button();
+            this.reject = new System.Windows.Forms.Button();
+            this.reassign = new System.Windows.Forms.Button();
+            this.approve = new System.Windows.Forms.Button();
             this.AllSessions = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.removeaccbtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.useraccountslist = new System.Windows.Forms.DataGridView();
             this.accountname = new System.Windows.Forms.Label();
             this.viewprofilebutton = new System.Windows.Forms.Button();
             this.Reminderbtn = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.confirmbtn = new System.Windows.Forms.Button();
-            this.resetStatus = new System.Windows.Forms.Button();
-            this.reject = new System.Windows.Forms.Button();
-            this.reassign = new System.Windows.Forms.Button();
-            this.approve = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.removeaccbtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AllSessions)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.useraccountslist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,6 +110,21 @@
             this.panel1.TabIndex = 22;
             this.panel1.Visible = false;
             // 
+            // confirmbtn
+            // 
+            this.confirmbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("confirmbtn.BackgroundImage")));
+            this.confirmbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.confirmbtn.FlatAppearance.BorderSize = 0;
+            this.confirmbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirmbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.confirmbtn.Location = new System.Drawing.Point(211, 131);
+            this.confirmbtn.Name = "confirmbtn";
+            this.confirmbtn.Size = new System.Drawing.Size(96, 37);
+            this.confirmbtn.TabIndex = 2;
+            this.confirmbtn.Text = "confirm";
+            this.confirmbtn.UseVisualStyleBackColor = true;
+            this.confirmbtn.Click += new System.EventHandler(this.confirmbtn_Click);
+            // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
@@ -128,6 +143,70 @@
             this.label1.Size = new System.Drawing.Size(127, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Select a coach";
+            // 
+            // resetStatus
+            // 
+            this.resetStatus.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
+            this.resetStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.resetStatus.FlatAppearance.BorderSize = 0;
+            this.resetStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.resetStatus.ForeColor = System.Drawing.Color.White;
+            this.resetStatus.Location = new System.Drawing.Point(367, 307);
+            this.resetStatus.Name = "resetStatus";
+            this.resetStatus.Size = new System.Drawing.Size(130, 37);
+            this.resetStatus.TabIndex = 11;
+            this.resetStatus.Text = "reset status";
+            this.resetStatus.UseVisualStyleBackColor = true;
+            this.resetStatus.Click += new System.EventHandler(this.resetStatus_Click);
+            // 
+            // reject
+            // 
+            this.reject.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
+            this.reject.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.reject.FlatAppearance.BorderSize = 0;
+            this.reject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reject.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.reject.ForeColor = System.Drawing.Color.White;
+            this.reject.Location = new System.Drawing.Point(121, 307);
+            this.reject.Name = "reject";
+            this.reject.Size = new System.Drawing.Size(96, 37);
+            this.reject.TabIndex = 10;
+            this.reject.Text = "Reject";
+            this.reject.UseVisualStyleBackColor = true;
+            this.reject.Click += new System.EventHandler(this.reject_Click);
+            // 
+            // reassign
+            // 
+            this.reassign.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
+            this.reassign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.reassign.FlatAppearance.BorderSize = 0;
+            this.reassign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reassign.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.reassign.ForeColor = System.Drawing.Color.White;
+            this.reassign.Location = new System.Drawing.Point(222, 307);
+            this.reassign.Name = "reassign";
+            this.reassign.Size = new System.Drawing.Size(130, 37);
+            this.reassign.TabIndex = 9;
+            this.reassign.Text = "Reassign coach";
+            this.reassign.UseVisualStyleBackColor = true;
+            this.reassign.Click += new System.EventHandler(this.reassign_Click);
+            // 
+            // approve
+            // 
+            this.approve.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
+            this.approve.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.approve.FlatAppearance.BorderSize = 0;
+            this.approve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.approve.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.approve.ForeColor = System.Drawing.Color.White;
+            this.approve.Location = new System.Drawing.Point(21, 307);
+            this.approve.Name = "approve";
+            this.approve.Size = new System.Drawing.Size(96, 37);
+            this.approve.TabIndex = 8;
+            this.approve.Text = "Approve";
+            this.approve.UseVisualStyleBackColor = true;
+            this.approve.Click += new System.EventHandler(this.approve_Click);
             // 
             // AllSessions
             // 
@@ -173,6 +252,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Accounts list";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::TheFinalProject.Properties.Resources.receptiondesk60;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(482, 345);
+            this.pictureBox3.TabIndex = 17;
+            this.pictureBox3.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -183,6 +272,38 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Accounts list";
             this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // removeaccbtn
+            // 
+            this.removeaccbtn.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
+            this.removeaccbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.removeaccbtn.FlatAppearance.BorderSize = 0;
+            this.removeaccbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeaccbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.removeaccbtn.ForeColor = System.Drawing.Color.White;
+            this.removeaccbtn.Location = new System.Drawing.Point(795, 274);
+            this.removeaccbtn.Name = "removeaccbtn";
+            this.removeaccbtn.Size = new System.Drawing.Size(130, 37);
+            this.removeaccbtn.TabIndex = 15;
+            this.removeaccbtn.Text = "Remove account";
+            this.removeaccbtn.UseVisualStyleBackColor = true;
+            this.removeaccbtn.Click += new System.EventHandler(this.removeaccbtn_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(567, 274);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 37);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Add account";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // useraccountslist
             // 
@@ -224,7 +345,7 @@
             // viewprofilebutton
             // 
             this.viewprofilebutton.BackColor = System.Drawing.Color.Transparent;
-            this.viewprofilebutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("viewprofilebutton.BackgroundImage")));
+            this.viewprofilebutton.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
             this.viewprofilebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.viewprofilebutton.FlatAppearance.BorderSize = 0;
             this.viewprofilebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -242,7 +363,7 @@
             // Reminderbtn
             // 
             this.Reminderbtn.BackColor = System.Drawing.Color.Transparent;
-            this.Reminderbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Reminderbtn.BackgroundImage")));
+            this.Reminderbtn.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
             this.Reminderbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Reminderbtn.FlatAppearance.BorderSize = 0;
             this.Reminderbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -268,127 +389,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(86, 62);
             this.pictureBox2.TabIndex = 36;
             this.pictureBox2.TabStop = false;
-            // 
-            // confirmbtn
-            // 
-            this.confirmbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("confirmbtn.BackgroundImage")));
-            this.confirmbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.confirmbtn.FlatAppearance.BorderSize = 0;
-            this.confirmbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.confirmbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.confirmbtn.Location = new System.Drawing.Point(211, 131);
-            this.confirmbtn.Name = "confirmbtn";
-            this.confirmbtn.Size = new System.Drawing.Size(96, 37);
-            this.confirmbtn.TabIndex = 2;
-            this.confirmbtn.Text = "confirm";
-            this.confirmbtn.UseVisualStyleBackColor = true;
-            this.confirmbtn.Click += new System.EventHandler(this.confirmbtn_Click);
-            // 
-            // resetStatus
-            // 
-            this.resetStatus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resetStatus.BackgroundImage")));
-            this.resetStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.resetStatus.FlatAppearance.BorderSize = 0;
-            this.resetStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.resetStatus.ForeColor = System.Drawing.Color.White;
-            this.resetStatus.Location = new System.Drawing.Point(367, 307);
-            this.resetStatus.Name = "resetStatus";
-            this.resetStatus.Size = new System.Drawing.Size(130, 37);
-            this.resetStatus.TabIndex = 11;
-            this.resetStatus.Text = "reset status";
-            this.resetStatus.UseVisualStyleBackColor = true;
-            this.resetStatus.Click += new System.EventHandler(this.resetStatus_Click);
-            // 
-            // reject
-            // 
-            this.reject.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("reject.BackgroundImage")));
-            this.reject.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.reject.FlatAppearance.BorderSize = 0;
-            this.reject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reject.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.reject.ForeColor = System.Drawing.Color.White;
-            this.reject.Location = new System.Drawing.Point(121, 307);
-            this.reject.Name = "reject";
-            this.reject.Size = new System.Drawing.Size(96, 37);
-            this.reject.TabIndex = 10;
-            this.reject.Text = "Reject";
-            this.reject.UseVisualStyleBackColor = true;
-            this.reject.Click += new System.EventHandler(this.reject_Click);
-            // 
-            // reassign
-            // 
-            this.reassign.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("reassign.BackgroundImage")));
-            this.reassign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.reassign.FlatAppearance.BorderSize = 0;
-            this.reassign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reassign.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.reassign.ForeColor = System.Drawing.Color.White;
-            this.reassign.Location = new System.Drawing.Point(222, 307);
-            this.reassign.Name = "reassign";
-            this.reassign.Size = new System.Drawing.Size(130, 37);
-            this.reassign.TabIndex = 9;
-            this.reassign.Text = "Reassign coach";
-            this.reassign.UseVisualStyleBackColor = true;
-            this.reassign.Click += new System.EventHandler(this.reassign_Click);
-            // 
-            // approve
-            // 
-            this.approve.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("approve.BackgroundImage")));
-            this.approve.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.approve.FlatAppearance.BorderSize = 0;
-            this.approve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.approve.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.approve.ForeColor = System.Drawing.Color.White;
-            this.approve.Location = new System.Drawing.Point(21, 307);
-            this.approve.Name = "approve";
-            this.approve.Size = new System.Drawing.Size(96, 37);
-            this.approve.TabIndex = 8;
-            this.approve.Text = "Approve";
-            this.approve.UseVisualStyleBackColor = true;
-            this.approve.Click += new System.EventHandler(this.approve_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::TheFinalProject.Properties.Resources.receptiondesk60;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(482, 345);
-            this.pictureBox3.TabIndex = 17;
-            this.pictureBox3.TabStop = false;
-            // 
-            // removeaccbtn
-            // 
-            this.removeaccbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("removeaccbtn.BackgroundImage")));
-            this.removeaccbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.removeaccbtn.FlatAppearance.BorderSize = 0;
-            this.removeaccbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.removeaccbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.removeaccbtn.ForeColor = System.Drawing.Color.White;
-            this.removeaccbtn.Location = new System.Drawing.Point(795, 274);
-            this.removeaccbtn.Name = "removeaccbtn";
-            this.removeaccbtn.Size = new System.Drawing.Size(130, 37);
-            this.removeaccbtn.TabIndex = 15;
-            this.removeaccbtn.Text = "Remove account";
-            this.removeaccbtn.UseVisualStyleBackColor = true;
-            this.removeaccbtn.Click += new System.EventHandler(this.removeaccbtn_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(567, 274);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 37);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Add account";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -421,9 +421,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.AllSessions)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.useraccountslist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

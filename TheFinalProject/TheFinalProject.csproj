@@ -33,7 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -209,6 +211,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\receptiondesk60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginIMG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\activeLoginBtn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roundedactivebntn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roundedactivebntn-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\TFPQueries.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

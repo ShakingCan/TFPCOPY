@@ -73,6 +73,16 @@ namespace TheFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap activeLoginBtn {
+            get {
+                object obj = ResourceManager.GetObject("activeLoginBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap adminbtns {
             get {
                 object obj = ResourceManager.GetObject("adminbtns", resourceCulture);
@@ -173,6 +183,16 @@ namespace TheFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap loginIMG {
+            get {
+                object obj = ResourceManager.GetObject("loginIMG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loginpage_image {
             get {
                 object obj = ResourceManager.GetObject("loginpage image", resourceCulture);
@@ -226,6 +246,26 @@ namespace TheFinalProject.Properties {
         internal static System.Drawing.Bitmap receptiondesk60 {
             get {
                 object obj = ResourceManager.GetObject("receptiondesk60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap roundedactivebntn {
+            get {
+                object obj = ResourceManager.GetObject("roundedactivebntn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap roundedactivebntn_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("roundedactivebntn-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

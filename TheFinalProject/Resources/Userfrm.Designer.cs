@@ -70,8 +70,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Reminderbtn = new System.Windows.Forms.Button();
             this.viewprofilebutton = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Confirmbook = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.refreshbtn = new System.Windows.Forms.Button();
             this.declinebtn = new System.Windows.Forms.Button();
             this.approvebtn = new System.Windows.Forms.Button();
@@ -265,8 +265,8 @@
             // 
             this.sessionbookingstab.BackColor = System.Drawing.Color.White;
             this.sessionbookingstab.Controls.Add(this.panel2);
-            this.sessionbookingstab.Controls.Add(this.pictureBox3);
             this.sessionbookingstab.Controls.Add(this.panel3);
+            this.sessionbookingstab.Controls.Add(this.pictureBox3);
             this.sessionbookingstab.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.sessionbookingstab.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.sessionbookingstab.Location = new System.Drawing.Point(4, 44);
@@ -506,6 +506,7 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightGray;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
@@ -518,7 +519,7 @@
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -548,7 +549,8 @@
             // 
             // Reminderbtn
             // 
-            this.Reminderbtn.BackgroundImage = global::TheFinalProject.Properties.Resources.logoutbtn;
+            this.Reminderbtn.BackColor = System.Drawing.Color.Transparent;
+            this.Reminderbtn.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
             this.Reminderbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Reminderbtn.FlatAppearance.BorderSize = 0;
             this.Reminderbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -559,12 +561,12 @@
             this.Reminderbtn.Size = new System.Drawing.Size(120, 33);
             this.Reminderbtn.TabIndex = 21;
             this.Reminderbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Reminderbtn.UseVisualStyleBackColor = true;
+            this.Reminderbtn.UseVisualStyleBackColor = false;
             this.Reminderbtn.Click += new System.EventHandler(this.Reminderbtn_Click);
             // 
             // viewprofilebutton
             // 
-            this.viewprofilebutton.BackgroundImage = global::TheFinalProject.Properties.Resources.logoutbtn;
+            this.viewprofilebutton.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
             this.viewprofilebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.viewprofilebutton.FlatAppearance.BorderSize = 0;
             this.viewprofilebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -578,17 +580,6 @@
             this.viewprofilebutton.Text = "logout";
             this.viewprofilebutton.UseVisualStyleBackColor = true;
             this.viewprofilebutton.Click += new System.EventHandler(this.viewprofilebutton_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::TheFinalProject.Properties.Resources.loginimagescreenshot;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(494, 345);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 29;
-            this.pictureBox3.TabStop = false;
             // 
             // Confirmbook
             // 
@@ -604,10 +595,21 @@
             this.Confirmbook.UseVisualStyleBackColor = true;
             this.Confirmbook.Click += new System.EventHandler(this.Confirmbook_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::TheFinalProject.Properties.Resources.loginimagescreenshot;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(494, 345);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 29;
+            this.pictureBox3.TabStop = false;
+            // 
             // refreshbtn
             // 
             this.refreshbtn.BackColor = System.Drawing.Color.White;
-            this.refreshbtn.BackgroundImage = global::TheFinalProject.Properties.Resources.approvebtn;
+            this.refreshbtn.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
             this.refreshbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.refreshbtn.FlatAppearance.BorderSize = 0;
             this.refreshbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -625,7 +627,7 @@
             // declinebtn
             // 
             this.declinebtn.BackColor = System.Drawing.Color.White;
-            this.declinebtn.BackgroundImage = global::TheFinalProject.Properties.Resources.approvebtn;
+            this.declinebtn.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
             this.declinebtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.declinebtn.FlatAppearance.BorderSize = 0;
             this.declinebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -642,7 +644,7 @@
             // 
             // approvebtn
             // 
-            this.approvebtn.BackgroundImage = global::TheFinalProject.Properties.Resources.approvebtn;
+            this.approvebtn.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
             this.approvebtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.approvebtn.FlatAppearance.BorderSize = 0;
             this.approvebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -80,7 +80,7 @@ namespace TheFinalProject.Resources
                     // Optional: Test to see if it works!
                     if (selectedPrimaryKey != -1)
                     {
-                        MessageBox.Show($"Selected Primary Key: {selectedPrimaryKey}");
+                        
                     }
                 }
             }
@@ -163,14 +163,15 @@ namespace TheFinalProject.Resources
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
               
-                conn.Open();
+                conn.Open(); 
 
-                
+
                 string query = @"SELECT
                      br.RequestID AS RequestID,
-                     u.username AS UserName,
-                     c.username AS CoachName,
-                     br.RequestDateTime
+                     u.username AS Client,
+                     c.username AS Coach,
+                    br.RequestDateTime AS Schedule,
+                    br.Duration AS Duration
                      FROM BookingRequests br
                     JOIN UsersNew u ON br.USERID = u.ID
                     JOIN UsersNew c ON br.COACHID = c.ID
@@ -214,9 +215,10 @@ namespace TheFinalProject.Resources
                 this.accountname.Invalidate();
                 string pastquery = @"SELECT
                      br.RequestID AS RequestID,
-                     u.username AS UserName,
-                     c.username AS CoachName,
-                     br.RequestDateTime
+                     u.username AS Client,
+                     c.username AS Coach,
+                     br.RequestDateTime AS Schedule,
+                     br.Duration AS Duration
                      FROM BookingRequests br
                     JOIN UsersNew u ON br.USERID = u.ID
                     JOIN UsersNew c ON br.COACHID = c.ID
@@ -234,8 +236,12 @@ namespace TheFinalProject.Resources
                     DataTable pastSessionstable = new DataTable();
                     
                     adapter.Fill(pastSessionstable);
-
+                   
                     dataGridView2.DataSource = pastSessionstable;
+                    if (dataGridView2.Columns.Contains("RequestID"))
+                    {
+                        dataGridView2.Columns["RequestID"].Visible = false;
+                    }
 
                 }
                 string processingquery = "SELECT COUNT(*)\r\nFROM BookingRequests\r\nWHERE COACHID = @currentUserID\r\nAND (CoachApproved IS NULL OR CoachApproved = 'Pending') AND RequestDateTime >= GETDATE()";
@@ -287,7 +293,13 @@ namespace TheFinalProject.Resources
 
                     adapter.Fill(Sessionstable);
 
+                    
+
                     sessionstoapprove.DataSource = Sessionstable;
+                    if (sessionstoapprove.Columns.Contains("RequestID"))
+                    {
+                        sessionstoapprove.Columns["RequestID"].Visible = false;
+                    }
                     MessageBox.Show("Session view refreshed");
                 }
 
@@ -333,7 +345,7 @@ namespace TheFinalProject.Resources
 
                     object result = cmd.ExecuteScalar();
 
-                    MessageBox.Show(result.ToString());
+
 
                     ProcessingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
@@ -480,12 +492,13 @@ namespace TheFinalProject.Resources
 
         }
         public void reloadSessions()
-        {
+        {   //pattern
             string sessionstoapprovequery = @"SELECT 
                      br.RequestID AS RequestID,
-                     u.username AS UserName,
-                     c.username AS CoachName,
-                     br.RequestDateTime
+                     u.username AS Client,
+                     c.username AS Coach,
+                     br.RequestDateTime AS Schedule,
+                    br.Duration AS Duration
                      FROM BookingRequests br
                     JOIN UsersNew u ON br.UserID = u.ID
                     JOIN UsersNew c ON br.CoachID = c.ID
@@ -504,7 +517,12 @@ namespace TheFinalProject.Resources
 
                     adapter.Fill(Sessionstable);
 
+                   
                     sessionstoapprove.DataSource = Sessionstable;
+                    if (sessionstoapprove.Columns.Contains("RequestID"))
+                    {
+                        sessionstoapprove.Columns["RequestID"].Visible = false;
+                    }
                     MessageBox.Show("Session view refreshed");
                 }
             }

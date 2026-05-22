@@ -1,0 +1,40 @@
+CREATE DATABASE finalprojectDB;
+USE finalprojectDB;
+CREATE TABLE UsersNew (
+    ID INT IDENTITY(1,1) NOT NULL,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    role VARCHAR(50) NOT NULL,
+
+    -- Primary Key Constraint
+    CONSTRAINT PK_UsersNew PRIMARY KEY CLUSTERED (ID),
+
+    -- Unique combination constraint for credentials
+    CONSTRAINT CS_uniqueusername UNIQUE NONCLUSTERED (username, password)
+);
+
+
+CREATE TABLE BookingRequests (
+    RequestID INT IDENTITY(1,1) NOT NULL,
+    USERID INT NULL,                        
+    COACHID INT NULL,                       
+    RequestDateTime DATETIME NULL,          
+    Status VARCHAR(50) NULL,                
+    CreatedAt DATETIME NULL,                
+    UserApproved VARCHAR(50) NULL,          
+    CoachApproved VARCHAR(50) NULL,         
+
+    -- Primary Key
+    CONSTRAINT PK_BookingRequests PRIMARY KEY CLUSTERED (RequestID),
+
+    -- Foreign Keys to UsersNew(ID)
+    CONSTRAINT FK_BookingRequests_User FOREIGN KEY (USERID) REFERENCES UsersNew(ID),
+    CONSTRAINT FK_BookingRequests_Coach FOREIGN KEY (COACHID) REFERENCES UsersNew(ID),
+
+    -- Unique Constraint
+    CONSTRAINT UQ_CoachSchedule UNIQUE NONCLUSTERED (COACHID, RequestDateTime),
+
+    -- Defaults
+    CONSTRAINT DF_BookingRequests_Status DEFAULT ('Pending') FOR Status,
+    CONSTRAINT DF_BookingRequests_CreatedAt DEFAULT (GETDATE()) FOR CreatedAt
+);
