@@ -263,12 +263,38 @@ namespace TheFinalProject.Resources
                 }
                 int totalcount = UpcomingCount + ProcessingCount;
                 Reminderbtn.Text = "  Reminders";
+                string sessionstoapprovequery = @"SELECT 
+                     br.RequestID AS RequestID,
+                     u.username AS Client,
+                     c.username AS Coach,
+                     br.RequestDateTime AS Schedule,
+                    br.Duration AS Duration
+                     FROM BookingRequests br
+                    JOIN UsersNew u ON br.UserID = u.ID
+                    JOIN UsersNew c ON br.CoachID = c.ID
+                    WHERE br.UserID = @CurrentUserID
+                    AND (br.UserApproved IS NULL OR br.UserApproved = 'Pending')
+                    AND RequestDateTime >= GETDATE();";
+                using (SqlCommand cmd = new SqlCommand(sessionstoapprovequery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@CurrentUserID", CurrentUserID);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable Sessionstable = new DataTable();
 
+                    adapter.Fill(Sessionstable);
+
+                    dataGridView1.DataSource = Sessionstable;
+                    if (dataGridView1.Columns.Contains("RequestID"))
+                    {
+                        dataGridView1.Columns["RequestID"].Visible = false;
+                    }
+                  
+                }
 
 
             }
 
-            loadSessions();
+            
 
             //implement data tables for upcoming sessions grid and past sessions
 

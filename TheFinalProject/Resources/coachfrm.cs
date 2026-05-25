@@ -273,12 +273,13 @@ namespace TheFinalProject.Resources
                 int totalcount = UpcomingCount + ProcessingCount;
                 Reminderbtn.Text = "  Reminders";
 
-                
+                //ts tweaking
                 string sessionstoapprovequery = @"SELECT 
                      br.RequestID AS RequestID,
-                     u.username AS UserName,
-                     c.username AS CoachName,
-                     br.RequestDateTime
+                     u.username AS Client,
+                     c.username AS Coach,
+                     br.RequestDateTime AS Schedule,
+                    br.Duration AS Duration
                      FROM BookingRequests br
                     JOIN UsersNew u ON br.UserID = u.ID
                     JOIN UsersNew c ON br.CoachID = c.ID
@@ -501,8 +502,8 @@ namespace TheFinalProject.Resources
                     br.Duration AS Duration
                      FROM BookingRequests br
                     JOIN UsersNew u ON br.UserID = u.ID
-                    JOIN UsersNew c ON br.CoachID = c.ID
-                    WHERE br.CoachID = @CurrentUserID
+                    JOIN UsersNew c ON br.COACHID = c.ID
+                    WHERE br.COACHID = @CurrentUserID
                     AND (br.CoachApproved IS NULL OR br.CoachApproved = 'Pending')
                     AND RequestDateTime >= GETDATE();";
             using (SqlConnection conn = new SqlConnection(connectionString))

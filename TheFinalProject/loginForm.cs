@@ -5,11 +5,18 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Enums;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.UI.Widget;
 using System.Windows.Forms;
 using TheFinalProject.Resources;
+using Tulpep.NotificationWindow;
+using ToastNotifications;
+using ToastNotifications.Lifetime;
+using ToastNotifications.Position;
+using YourProjectName;
 
 namespace TheFinalProject
 {
@@ -103,23 +110,30 @@ namespace TheFinalProject
                             role = reader["role"].ToString();
                             if (result != null && role == "User")
                             {
+                                //the goal is to find a notification pop up that suits
 
-                                MessageBox.Show("Login successful!");
 
+                                MessageBox.Show("Login Successful!"+"\r\nWelcome User: "+username.Text, "Authentication Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                               
                                 Userfrm userForm = new Userfrm(userID);
                                 userForm.Show();
                                 this.Hide();
+
+
                             }
                             else if (result != null && role == "Coach")
                             {
 
-                                MessageBox.Show("Login successful!");
+                                MessageBox.Show("Login Successful!" + "\r\nWelcome Coach: " + username.Text, "Authentication Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                 coachfrm cform = new coachfrm(userID);
                                 cform.Show();
                                 this.Hide();
                             } else if (result != null && role == "Admin") {
-                                MessageBox.Show("Login successful!");
+                                MessageBox.Show("Login Successful!" + "\r\nWelcome Admin: " + username.Text, "Authentication Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                
                                  adminwindow a = new adminwindow(userID);
                                 a.Show();
                                 this.Hide();
@@ -127,7 +141,7 @@ namespace TheFinalProject
                         }
                         else
                         {
-                            MessageBox.Show("Invalid username or password!");
+                            MessageBox.Show("Incorrect username or password.", "Authentication Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                     }
