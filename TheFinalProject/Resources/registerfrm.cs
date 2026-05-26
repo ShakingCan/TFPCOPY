@@ -14,7 +14,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 namespace TheFinalProject.Resources
 {
-    public partial class registerform : Form   
+    public partial class registerform : UserControl
     {
         public registerform()
         {
@@ -187,11 +187,11 @@ namespace TheFinalProject.Resources
                 {
                     MessageBox.Show(ex.Message);
                 }
-                this.Close();
+               
             }
 
             
-
+            this.Dispose();
 
         }
 

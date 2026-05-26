@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="adminwindow.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="adminwindow.Designer.cs">
       <DependentUpon>adminwindow.cs</DependentUpon>
@@ -80,13 +80,13 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\coachfrm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Resources\coachfrm.Designer.cs">
       <DependentUpon>coachfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\registerfrm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Resources\registerfrm.Designer.cs">
       <DependentUpon>registerfrm.cs</DependentUpon>
@@ -101,13 +101,13 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Resources\Userfrm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Resources\Userfrm.Designer.cs">
       <DependentUpon>Userfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\userRegistry.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Resources\userRegistry.Designer.cs">
       <DependentUpon>userRegistry.cs</DependentUpon>

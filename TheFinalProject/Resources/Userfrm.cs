@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace TheFinalProject.Resources
 {
-    public partial class Userfrm : Form
+    public partial class Userfrm : UserControl
     {
         private int selectedPrimaryKey = -1;
         string connectionString = @"Data Source=DESKTOP-MOE35KS;Initial Catalog=finalprojectDB;Integrated Security=True;";
@@ -38,6 +38,7 @@ namespace TheFinalProject.Resources
         private int CurrentUserID;
 
         List<string> allUsernames = new List<string>();
+        public Userfrm() { InitializeComponent(); }
         public Userfrm(int userId)
         {
             InitializeComponent();
@@ -400,7 +401,7 @@ namespace TheFinalProject.Resources
                             object result = cmd.ExecuteScalar();
                             if (result == null)
                             {
-                                MessageBox.Show("Coach not found!");
+                                MessageBox.Show("Coach not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
                             else
@@ -435,7 +436,7 @@ namespace TheFinalProject.Resources
                             cmd2.ExecuteNonQuery();
 
                             //debug shit
-                            MessageBox.Show("Booking request sent successfully!");
+                            MessageBox.Show("Booking successful "+ "You may double check the details in sessions to process tab ", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                         }
@@ -471,6 +472,7 @@ namespace TheFinalProject.Resources
         //this will also be used in the coach feature
         private void approvebtn_Click(object sender, EventArgs e)
         {
+
             int requestID;
             if (dataGridView1.CurrentRow == null)
             {
@@ -495,7 +497,7 @@ namespace TheFinalProject.Resources
                     cmd.ExecuteNonQuery();
 
                     //debug shit
-                    MessageBox.Show("Session approved");
+                Information: MessageBox.Show("Session approved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
 
@@ -533,7 +535,7 @@ namespace TheFinalProject.Resources
                     cmd.ExecuteNonQuery();
 
                     //debug shit
-                    MessageBox.Show("Session declined");
+                Information: MessageBox.Show("Session rejected.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
 
@@ -583,7 +585,7 @@ namespace TheFinalProject.Resources
                     {
                         dataGridView1.Columns["RequestID"].Visible = false;
                     }
-                    MessageBox.Show("Session view refreshed");
+                    
                 }
 
 
@@ -756,9 +758,8 @@ namespace TheFinalProject.Resources
 
         private void viewprofilebutton_Click(object sender, EventArgs e)
         {
-            loginform lg = new loginform();
-            lg.Show();
-            this.Hide();
+           
+            this.Dispose(); 
             refreshnotif();
         }
 
@@ -771,6 +772,8 @@ namespace TheFinalProject.Resources
         {
 
             refreshnotif();
+            MessageBox.Show("You have "+upcomingcount+" sessions today\r\nand "+processingcount+" sessions to process", "Reminders", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
         private void TogglePanel(Panel panel)
         {
@@ -817,6 +820,8 @@ namespace TheFinalProject.Resources
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            refreshnotif();
+            loadSessions();
             if (tabControl1.SelectedIndex == 2)
             {
                 approvebtn.Visible = true;

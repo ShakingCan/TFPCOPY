@@ -33,9 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.accountname = new System.Windows.Forms.Label();
+            this.viewprofilebutton = new System.Windows.Forms.Button();
+            this.Reminderbtn = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.confirmbtn = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,21 +55,89 @@
             this.removeaccbtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.useraccountslist = new System.Windows.Forms.DataGridView();
-            this.accountname = new System.Windows.Forms.Label();
-            this.viewprofilebutton = new System.Windows.Forms.Button();
-            this.Reminderbtn = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AllSessions)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.useraccountslist)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.accountname);
+            this.panel1.Controls.Add(this.viewprofilebutton);
+            this.panel1.Controls.Add(this.Reminderbtn);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.tabControl1);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(984, 511);
+            this.panel1.TabIndex = 0;
+            // 
+            // accountname
+            // 
+            this.accountname.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.accountname.Location = new System.Drawing.Point(607, 13);
+            this.accountname.Name = "accountname";
+            this.accountname.Size = new System.Drawing.Size(242, 35);
+            this.accountname.TabIndex = 47;
+            this.accountname.Text = "label2";
+            // 
+            // viewprofilebutton
+            // 
+            this.viewprofilebutton.BackColor = System.Drawing.Color.Transparent;
+            this.viewprofilebutton.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
+            this.viewprofilebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.viewprofilebutton.FlatAppearance.BorderSize = 0;
+            this.viewprofilebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewprofilebutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.viewprofilebutton.ForeColor = System.Drawing.Color.White;
+            this.viewprofilebutton.Location = new System.Drawing.Point(603, 51);
+            this.viewprofilebutton.Margin = new System.Windows.Forms.Padding(2);
+            this.viewprofilebutton.Name = "viewprofilebutton";
+            this.viewprofilebutton.Size = new System.Drawing.Size(120, 33);
+            this.viewprofilebutton.TabIndex = 46;
+            this.viewprofilebutton.Text = "logout";
+            this.viewprofilebutton.UseVisualStyleBackColor = false;
+            this.viewprofilebutton.Click += new System.EventHandler(this.viewprofilebutton_Click);
+            // 
+            // Reminderbtn
+            // 
+            this.Reminderbtn.BackColor = System.Drawing.Color.Transparent;
+            this.Reminderbtn.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
+            this.Reminderbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Reminderbtn.FlatAppearance.BorderSize = 0;
+            this.Reminderbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reminderbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.Reminderbtn.ForeColor = System.Drawing.Color.White;
+            this.Reminderbtn.Location = new System.Drawing.Point(729, 51);
+            this.Reminderbtn.Name = "Reminderbtn";
+            this.Reminderbtn.Size = new System.Drawing.Size(120, 33);
+            this.Reminderbtn.TabIndex = 45;
+            this.Reminderbtn.Text = "  Reminders";
+            this.Reminderbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Reminderbtn.UseVisualStyleBackColor = false;
+            this.Reminderbtn.Click += new System.EventHandler(this.Reminderbtn_Click_1);
+            this.Reminderbtn.Paint += new System.Windows.Forms.PaintEventHandler(this.Reminderbtn_Paint);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(865, 13);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(86, 62);
+            this.pictureBox2.TabIndex = 44;
+            this.pictureBox2.TabStop = false;
             // 
             // tabControl1
             // 
@@ -73,17 +146,18 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl1.ItemSize = new System.Drawing.Size(140, 40);
-            this.tabControl1.Location = new System.Drawing.Point(-7, 122);
+            this.tabControl1.Location = new System.Drawing.Point(-3, 118);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(991, 399);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl1.TabIndex = 7;
+            this.tabControl1.TabIndex = 42;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem_1);
+            this.tabControl1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.resetStatus);
             this.tabPage1.Controls.Add(this.reject);
             this.tabPage1.Controls.Add(this.reassign);
@@ -97,18 +171,17 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sessions list";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.Controls.Add(this.confirmbtn);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(255, 29);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(513, 203);
-            this.panel1.TabIndex = 22;
-            this.panel1.Visible = false;
+            this.panel2.Controls.Add(this.confirmbtn);
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(255, 29);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(513, 203);
+            this.panel2.TabIndex = 22;
+            this.panel2.Visible = false;
             // 
             // confirmbtn
             // 
@@ -133,6 +206,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(153, 29);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -271,7 +345,6 @@
             this.label2.Size = new System.Drawing.Size(118, 25);
             this.label2.TabIndex = 16;
             this.label2.Text = "Accounts list";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // removeaccbtn
             // 
@@ -332,125 +405,64 @@
             this.useraccountslist.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.UserAccountList_RowHeaderMouseClick);
             this.useraccountslist.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.UserAccountList_RowPostPaint);
             // 
-            // accountname
-            // 
-            this.accountname.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.accountname.Location = new System.Drawing.Point(603, 17);
-            this.accountname.Name = "accountname";
-            this.accountname.Size = new System.Drawing.Size(242, 35);
-            this.accountname.TabIndex = 41;
-            this.accountname.Text = "label2";
-            this.accountname.Paint += new System.Windows.Forms.PaintEventHandler(this.yourBackgroundContainer_Paint);
-            // 
-            // viewprofilebutton
-            // 
-            this.viewprofilebutton.BackColor = System.Drawing.Color.Transparent;
-            this.viewprofilebutton.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
-            this.viewprofilebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.viewprofilebutton.FlatAppearance.BorderSize = 0;
-            this.viewprofilebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewprofilebutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.viewprofilebutton.ForeColor = System.Drawing.Color.White;
-            this.viewprofilebutton.Location = new System.Drawing.Point(599, 55);
-            this.viewprofilebutton.Margin = new System.Windows.Forms.Padding(2);
-            this.viewprofilebutton.Name = "viewprofilebutton";
-            this.viewprofilebutton.Size = new System.Drawing.Size(120, 33);
-            this.viewprofilebutton.TabIndex = 40;
-            this.viewprofilebutton.Text = "logout";
-            this.viewprofilebutton.UseVisualStyleBackColor = false;
-            this.viewprofilebutton.Click += new System.EventHandler(this.viewprofilebutton_Click);
-            // 
-            // Reminderbtn
-            // 
-            this.Reminderbtn.BackColor = System.Drawing.Color.Transparent;
-            this.Reminderbtn.BackgroundImage = global::TheFinalProject.Properties.Resources.roundedactivebntn_removebg_preview;
-            this.Reminderbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Reminderbtn.FlatAppearance.BorderSize = 0;
-            this.Reminderbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Reminderbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.Reminderbtn.ForeColor = System.Drawing.Color.White;
-            this.Reminderbtn.Location = new System.Drawing.Point(725, 55);
-            this.Reminderbtn.Name = "Reminderbtn";
-            this.Reminderbtn.Size = new System.Drawing.Size(120, 33);
-            this.Reminderbtn.TabIndex = 39;
-            this.Reminderbtn.Text = "  Reminders";
-            this.Reminderbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Reminderbtn.UseVisualStyleBackColor = false;
-            this.Reminderbtn.Click += new System.EventHandler(this.Reminderbtn_Click_1);
-            this.Reminderbtn.Paint += new System.Windows.Forms.PaintEventHandler(this.Reminderbtn_Paint);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(861, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(86, 62);
-            this.pictureBox2.TabIndex = 36;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -2);
+            this.pictureBox1.Location = new System.Drawing.Point(4, -6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(984, 138);
-            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabIndex = 43;
             this.pictureBox1.TabStop = false;
             // 
             // adminwindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 511);
-            this.Controls.Add(this.accountname);
-            this.Controls.Add(this.viewprofilebutton);
-            this.Controls.Add(this.Reminderbtn);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel1);
             this.Name = "adminwindow";
-            this.Text = "adminwindow";
+            this.Size = new System.Drawing.Size(984, 511);
             this.Load += new System.EventHandler(this.adminwindow_Load);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AllSessions)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.useraccountslist)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label accountname;
+        private System.Windows.Forms.Button viewprofilebutton;
+        private System.Windows.Forms.Button Reminderbtn;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button confirmbtn;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button resetStatus;
         private System.Windows.Forms.Button reject;
         private System.Windows.Forms.Button reassign;
         private System.Windows.Forms.Button approve;
         private System.Windows.Forms.DataGridView AllSessions;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button removeaccbtn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView useraccountslist;
-        private System.Windows.Forms.Button removeaccbtn;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button confirmbtn;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button Reminderbtn;
-        private System.Windows.Forms.Button viewprofilebutton;
-        private System.Windows.Forms.Label accountname;
-        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

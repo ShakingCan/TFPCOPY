@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace TheFinalProject.Resources
 {
-    public partial class coachfrm : Form
+    public partial class coachfrm : UserControl
     {
         private int selectedPrimaryKey = -1;
        
@@ -252,7 +252,7 @@ namespace TheFinalProject.Resources
 
                     object result = cmd.ExecuteScalar();
 
-                    MessageBox.Show("Processing"+result.ToString());
+                    
 
                     ProcessingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
@@ -265,7 +265,7 @@ namespace TheFinalProject.Resources
                     cmd.Parameters.AddWithValue("@currentUserID", CurrentUserID);
 
                     object result = cmd.ExecuteScalar();
-                    MessageBox.Show("Upcominmg" + result.ToString());
+                    
                     UpcomingCount = result == DBNull.Value ? 0 : Convert.ToInt32(result);
 
                    
@@ -301,7 +301,7 @@ namespace TheFinalProject.Resources
                     {
                         sessionstoapprove.Columns["RequestID"].Visible = false;
                     }
-                    MessageBox.Show("Session view refreshed");
+                   
                 }
 
             }//the value isnt getting passed so its the damn curly braces
@@ -408,6 +408,7 @@ namespace TheFinalProject.Resources
         {
           
             refreshnotif();
+            MessageBox.Show("You have " + upcomingcount + " sessions today\r\nand " + processingcount + " sessions to process", "Reminders", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void TogglePanel(Panel panel)
         {
@@ -440,7 +441,7 @@ namespace TheFinalProject.Resources
                     cmd.ExecuteNonQuery();
 
                     //debug shit
-                    MessageBox.Show("Session approved");
+                   Information: MessageBox.Show("Session approved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
 
@@ -476,7 +477,7 @@ namespace TheFinalProject.Resources
                     cmd.ExecuteNonQuery();
 
                     //debug shit
-                    MessageBox.Show("Session rejected");
+                information: MessageBox.Show("Session rejected.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
 
@@ -524,16 +525,14 @@ namespace TheFinalProject.Resources
                     {
                         sessionstoapprove.Columns["RequestID"].Visible = false;
                     }
-                    MessageBox.Show("Session view refreshed");
+                    
                 }
             }
         }
 
         private void viewprofilebutton_Click(object sender, EventArgs e)
         {
-            loginform lg = new loginform();
-            lg.Show();
-            this.Hide();
+            this.Dispose();
             refreshnotif();
         }
 

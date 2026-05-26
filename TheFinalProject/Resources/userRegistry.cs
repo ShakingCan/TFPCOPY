@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace TheFinalProject.Resources
 {
-    public partial class userRegistry : Form
+    public partial class userRegistry : UserControl
     {
         public userRegistry()
         {
@@ -79,8 +79,9 @@ namespace TheFinalProject.Resources
                 {
                     MessageBox.Show(ex.Message);
                 }
-                this.Close();
+               
             }
+            this.Dispose();
         }
 
         private void RegisterUsername_Click(object sender, EventArgs e)

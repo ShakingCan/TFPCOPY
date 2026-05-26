@@ -25,6 +25,8 @@ namespace TheFinalProject
         public loginform()
         {
             InitializeComponent();
+          
+
         }
 
         private void username_TextChanged(object sender, EventArgs e)
@@ -118,9 +120,14 @@ namespace TheFinalProject
 
                                
                                 Userfrm userForm = new Userfrm(userID);
+                                userForm.Dock = DockStyle.Fill;
+                                
+                                loginPanel.Controls.Add(userForm);
                                 userForm.Show();
-                                this.Hide();
-
+                                userForm.BringToFront();
+                                userForm.Visible = true;
+                                username.Text = "Username";
+                                password.Text = "Password";
 
                             }
                             else if (result != null && role == "Coach")
@@ -128,15 +135,29 @@ namespace TheFinalProject
 
                                 MessageBox.Show("Login Successful!" + "\r\nWelcome Coach: " + username.Text, "Authentication Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                coachfrm cform = new coachfrm(userID);
-                                cform.Show();
-                                this.Hide();
-                            } else if (result != null && role == "Admin") {
+                                coachfrm cfrom = new coachfrm(userID);
+                                cfrom.Dock = DockStyle.Fill;
+
+                                loginPanel.Controls.Add(cfrom);
+                                cfrom.Show();
+                                cfrom.BringToFront();
+                                cfrom.Visible = true;
+                                username.Text = "Username";
+                                password.Text = "Password";
+
+                            }
+                            else if (result != null && role == "Admin") {
                                 MessageBox.Show("Login Successful!" + "\r\nWelcome Admin: " + username.Text, "Authentication Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                
-                                 adminwindow a = new adminwindow(userID);
-                                a.Show();
-                                this.Hide();
+
+                                adminwindow aw = new adminwindow(userID);
+                                aw.Dock = DockStyle.Fill;
+
+                                loginPanel.Controls.Add(aw);
+                                aw.Show();
+                                aw.BringToFront();
+                                aw.Visible = true;
+                                username.Text = "Username";
+                                password.Text = "Password";x
                             }
                         }
                         else

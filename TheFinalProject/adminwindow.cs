@@ -12,7 +12,7 @@ using TheFinalProject.Resources;
 
 namespace TheFinalProject
 {
-    public partial class adminwindow : Form
+    public partial class adminwindow : UserControl
     {
         private int processingcount;
         private int selectedPrimaryKey = -1;
@@ -49,9 +49,7 @@ namespace TheFinalProject
         }
         private void viewprofilebutton_Click(object sender, EventArgs e)
         {
-            loginform lg = new loginform();
-            lg.Show();
-            this.Hide();
+            this.Dispose();
             refreshnotif();
         }
         private void yourBackgroundContainer_Paint(object sender, PaintEventArgs e)
@@ -435,7 +433,7 @@ ORDER BY
                         cmd.ExecuteNonQuery();
 
                     }
-
+                MessageBox.Show("Session approved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     loadSessions();
                 }
             }
@@ -468,6 +466,7 @@ ORDER BY
                         cmd.ExecuteNonQuery();
 
                     }
+                    MessageBox.Show("Session rejected.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     loadSessions();
 
                 }
@@ -499,6 +498,7 @@ ORDER BY
                         cmd.ExecuteNonQuery();
 
                     }
+                    MessageBox.Show("Status reset successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     loadSessions();
 
 
@@ -560,12 +560,14 @@ ORDER BY
 
         private void reassign_Click(object sender, EventArgs e)
         {
-           
+
             if (AllSessions.CurrentRow != null)
-            { panel1.Visible = true; }
+            { panel2.Visible = true; }
+            else { MessageBox.Show("Please select a row first"); }
                
                 
             }
+       
            
 
 
@@ -575,20 +577,7 @@ ORDER BY
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string input = comboBox1.Text.ToLower();
 
-            comboBox1.Items.Clear();
-
-            foreach (var name in allUsernames)
-            {
-                if (name.ToLower().Contains(input))
-                {
-                    comboBox1.Items.Add(name);
-                }
-            }
-
-            comboBox1.SelectionStart = comboBox1.Text.Length;
-            comboBox1.DroppedDown = true;
         }
 
         private void confirmbtn_Click(object sender, EventArgs e)
@@ -627,7 +616,8 @@ ORDER BY
 
 
             }
-            panel1.Visible = false;
+            MessageBox.Show("Reassignment successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            panel2.Visible = false;
             loadSessions();
 
         }
@@ -666,11 +656,11 @@ ORDER BY
                     {
                         // Optionally, remove the row from the DataGridView to reflect the change
                         useraccountslist.Rows.RemoveAt(useraccountslist.CurrentRow.Index);
-                        MessageBox.Show("Record deleted successfully.");
+                        MessageBox.Show("Account successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("No record found with that ID.");
+                        MessageBox.Show("No accounts selectedd.");
                     }
                 }
             }
@@ -685,6 +675,7 @@ ORDER BY
         private void Reminderbtn_Click_1(object sender, EventArgs e)
         {
             refreshnotif();
+            MessageBox.Show("You have "+processingcount + " session to process", "Reminders", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         private void TogglePanel(Panel panel)
