@@ -153,11 +153,11 @@ namespace TheFinalProject
                                 aw.Dock = DockStyle.Fill;
 
                                 loginPanel.Controls.Add(aw);
-                                aw.Show();
+                                aw.Show(); 
                                 aw.BringToFront();
                                 aw.Visible = true;
                                 username.Text = "Username";
-                                password.Text = "Password";x
+                                password.Text = "Password"; 
                             }
                         }
                         else

@@ -138,7 +138,7 @@ namespace TheFinalProject.Resources
 
 
 
-            if (!Coachtoggle.Checked && !Usertoggle.Checked)
+            if (!coach.Checked && !userrr.Checked)
             {
                 MessageBox.Show("Please select account type!");
             }
@@ -180,6 +180,8 @@ namespace TheFinalProject.Resources
                             cmd.Parameters.AddWithValue("@password", RegisterPassword.Text.Trim());
                             cmd.Parameters.AddWithValue("@role", Coachtoggle.Checked ? "Coach" : "User");
                             cmd.ExecuteNonQuery();
+                            MessageBox.Show("Account Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Dispose();
                         }
                     }
                 }   
@@ -191,7 +193,7 @@ namespace TheFinalProject.Resources
             }
 
             
-            this.Dispose();
+            
 
         }
 

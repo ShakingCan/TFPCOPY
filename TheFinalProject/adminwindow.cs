@@ -624,9 +624,14 @@ ORDER BY
 
         private void addaccount_Click(object sender, EventArgs e)
         {
-           registerform rf = new registerform();
+            
+            registerform rf = new registerform();
+            rf.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(rf);
             rf.Visible = true;
-            this.Hide();
+            rf.BringToFront();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -710,6 +715,33 @@ ORDER BY
 
             // Draw the text in the middle
             TextRenderer.DrawText(e.Graphics, page.Text, page.Font, tabBounds, textColor, TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
+        }
+
+        private void refreshbtn_Click(object sender, EventArgs e)
+        {
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string alluserquery = "SELECT ID,username,role FROM UsersNew WHERE role <> 'Admin' ORDER BY role";
+
+                using (SqlCommand cmd = new SqlCommand(alluserquery, con))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    useraccountslist.DataSource = dt;
+                    if (useraccountslist.Columns.Contains("RequestID"))
+                    {
+                        useraccountslist.Columns["RequestID"].Visible = false;
+                    }
+
+                }
+
+
+
+            }
         }
     }
 
