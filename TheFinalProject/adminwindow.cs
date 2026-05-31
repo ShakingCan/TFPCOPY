@@ -721,7 +721,7 @@ ORDER BY
         {
 
             using (SqlConnection con = new SqlConnection(connectionString))
-            {
+            {   
                 con.Open();
                 string alluserquery = "SELECT ID,username,role FROM UsersNew WHERE role <> 'Admin' ORDER BY role";
 
