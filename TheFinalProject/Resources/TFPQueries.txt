@@ -38,3 +38,15 @@ CREATE TABLE BookingRequests (
     CONSTRAINT DF_BookingRequests_Status DEFAULT ('Pending') FOR Status,
     CONSTRAINT DF_BookingRequests_CreatedAt DEFAULT (GETDATE()) FOR CreatedAt
 );
+
+
+
+CREATE TABLE Attendance (
+    AttendanceID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT NOT NULL,
+    LogDate DATE NOT NULL, 
+    Status VARCHAR(20) DEFAULT 'Present',
+    CONSTRAINT User_ID_const FOREIGN KEY (UserID) REFERENCES UsersNew (ID)
+);   
+ALTER TABLE Attendance
+ADD CONSTRAINT UQ_Attendance_LogDate UNIQUE (LogDate);

@@ -67,6 +67,15 @@
     <Compile Include="adminwindow.Designer.cs">
       <DependentUpon>adminwindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AttendanceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceWindow.Designer.cs">
+      <DependentUpon>AttendanceWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalendarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="chart.cs" />
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
@@ -114,6 +123,9 @@
     </Compile>
     <EmbeddedResource Include="adminwindow.resx">
       <DependentUpon>adminwindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceWindow.resx">
+      <DependentUpon>AttendanceWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>

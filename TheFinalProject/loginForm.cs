@@ -128,6 +128,25 @@ namespace TheFinalProject
                                 userForm.Visible = true;
                                 username.Text = "Username";
                                 password.Text = "Password";
+                              
+                               using(SqlConnection con = new SqlConnection(connectionString))
+                                {
+                                    con.Open();
+                                    using (SqlCommand command = new SqlCommand())
+                                    {// this is still on beta testing and needs to implement the damn application of the calendar thing and add animations to everythnig
+                                        command.CommandText = "SELECT ID FROM UsersNew WHERE username = @username AND password = @password";
+                                        command.Parameters.AddWithValue("@username", username.Text);
+                                        command.Parameters.AddWithValue("@password", password.Text);
+                                        Object resssult = command.ExecuteScalar();
+                                        int userid = Convert.ToInt32(resssult);
+
+                                        command.CommandText = "ÏNSERT INTO Attendance(UserID, LogDate, Status) VALUES (@userid, @logdate, @status)";
+                                        command.Parameters.AddWithValue("@userid", userid );
+                                        command.Parameters.AddWithValue("@logdate", DateTime.Today);
+                                        command.Parameters.AddWithValue("@status", "Online");
+                                        command.ExecuteNonQuery();
+                                    }
+                                }
 
                             }
                             else if (result != null && role == "Coach")
@@ -179,8 +198,9 @@ namespace TheFinalProject
        
 
         private void Form1_Load(object sender, EventArgs e)
-        { 
-            
+        {
+            AttendanceWindow w = new AttendanceWindow();
+            w.ShowDialog();
             loginPanel.Visible = true;
             loginPanel.BringToFront();
             username.Text = "Username";
